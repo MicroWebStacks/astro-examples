@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { get_count } from './events';
+
+const current_count = get_count()
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Astro SSE Counter <span class="text-gradient">{current_count}</span></h1>
+		<p>SSE: Server Sent Events with Node18 using ReadableStream()</p>
+		<p>Events are coming from a separate file using a timer and Emitter</p>
+		<p>Note that reloading the page has no effect on server counter</p>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
+
+<script>
+	const evtSource = new EventSource("/api/stream")
+	
+	evtSource.onmessage = (event) => {
+		const span = document.querySelector('.text-gradient')
+		const data = JSON.parse(event.data)
+		console.log(data.counter)
+		span.textContent = data.counter
+
+	}
+	evtSource.onerror = (err) => {
+		  console.error("EventSource failed:", err);
+		  evtSource.close();
+	};	
+</script>
