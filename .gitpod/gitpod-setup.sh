@@ -23,7 +23,7 @@ echo "Loading example project:" $EXAMPLE_PROJECT
 cd "$GITPOD_REPO_ROOT"/examples/"$EXAMPLE_PROJECT" || exit
 # Open the main page in VSCode
 code src/pages/index.astro
-# Start Astro
+# Start Astro preview
 pnpm install
 pnpm run build
 pnpm preview
