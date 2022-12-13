@@ -26,4 +26,4 @@ code src/pages/index.astro
 # Start Astro preview
 pnpm install
 pnpm run build
-pnpm preview
+pnpm run preview
