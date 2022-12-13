@@ -1,10 +1,10 @@
-# 02_ssr-counter
+# 03_sse-counter
 
-shared global var demo. reload the page to increment the counter. All pages share the same counter
+SSE: Server Sent Events with Node18 using ReadableStream()
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
+Events are coming from a separate file using a timer and Emitter
 
-[![open in Codesandbox](../media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
+Note that reloading the page has no effect on server counter
 
-[![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
-
+requires Node18, therefore currently only on Gitpod
+[![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/03_sse-counter)
