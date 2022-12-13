@@ -6,9 +6,6 @@ tasks:
       # Update node version and run first sample
     init: |
       nvm install 18.12.1
-      cd 01_basics
-      pnpm install
-      pnpm run dev
     command: |
       .gitpod/gitpod-setup.sh
 ports:
