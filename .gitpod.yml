@@ -7,6 +7,7 @@ tasks:
     init: |
       nvm install 18.12.1
     command: |
+      chmod a+x .gitpod/gitpod-setup.sh
       .gitpod/gitpod-setup.sh
 ports:
   - port: 3000
