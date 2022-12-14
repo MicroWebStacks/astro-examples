@@ -3,11 +3,11 @@ import { suid } from '../libs/utils';
 
 export interface Props {
 	title: string;
+	uid:BigInteger;
 }
 
-const { title } = Astro.props;
+const { title,uid } = Astro.props;
 
-const uid = suid()
 ---
 
 <li class="card" data-uid={uid}>

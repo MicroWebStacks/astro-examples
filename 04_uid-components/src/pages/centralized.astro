@@ -13,12 +13,12 @@ const c3 = sequence_uid()
 	<main>
 		<h1>Astro <span class="text-gradient">UID</span> Scoped Components</h1>
 		<p>Every component has a generated UID to scope its js code</p>
-		<h2>Time+Random UIDs</h2>
-		<p>Easiest variant, decentralized but not reproducible, new ids on reload</p>
+		<h2>Centralized UIDs</h2>
+		<p>not recommended due to collision risk (separately built components)</p>
 		<ul>
-			<Card title="Test" />
-			<Card title="Test" />
-			<Card title="Test" />
+			<CardUid title="Test" uid={c1} />
+			<CardUid title="Test" uid={c2} />
+			<CardUid title="Test" uid={c3} />
 		</ul>
 	</main>
 </Layout>
