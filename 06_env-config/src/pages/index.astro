@@ -1,17 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { get_count } from './events';
+import { get_var } from './server';
 
-const current_count = get_count()
+const env_var = get_var()
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Astro SSE Counter <span class="text-gradient">{current_count}</span></h1>
-		<p>SSE: Server Sent Events with Node18 using ReadableStream()</p>
-		<p>Events are coming from a separate file using a timer and Emitter</p>
-		<p>Note that reloading the page has no effect on server counter</p>
+		<h1>Astro Server Script Var <span class="text-gradient">{env_var}</span></h1>
 	</main>
 </Layout>
 
