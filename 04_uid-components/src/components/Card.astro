@@ -1,11 +1,13 @@
 ---
+import { suid } from '../libs/utils';
+
 export interface Props {
 	title: string;
-	body: string;
-	href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { title } = Astro.props;
+
+const uid = suid()
 ---
 
 <li class="link-card">
@@ -14,9 +16,7 @@ const { href, title, body } = Astro.props;
 			{title}
 			<span>&rarr;</span>
 		</h2>
-		<p>
-			{body}
-		</p>
+		<p>This instance uid = {uid}</p>
 	</a>
 </li>
 <style>
@@ -60,3 +60,4 @@ const { href, title, body } = Astro.props;
 		color: rgb(var(--accent));
 	}
 </style>
+
