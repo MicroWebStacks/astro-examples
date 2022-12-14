@@ -70,7 +70,7 @@ Using unified config for all of `astro.config.mjs`, `.astro` and `.js` server fi
 
 # 06_env-config
 
-Using unified config for all of `astro.config.mjs`, `.astro` and `.js` server files
+using environment variables from file in `astro.config.mjs` and `.js` server files
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/06_env_config)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/06_env_config)
