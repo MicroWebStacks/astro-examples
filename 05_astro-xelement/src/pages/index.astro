@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/XCard.astro'
+import { sequence_uid } from '../libs/utils';
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Astro <span class="text-gradient">UID</span> Scoped Components</h1>
+		<p>Every component has a generated UID to scope its js code</p>
+		<h2>Time+Random UIDs</h2>
+		<p>Easiest variant, decentralized but not reproducible, new ids on reload</p>
+		<ul>
+			<Card title="Test" />
+			<Card title="Test" />
+			<Card title="Test" />
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
