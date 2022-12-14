@@ -1,4 +1,4 @@
-
+import {dirname, normalize, basename, sep,join} from 'path'
 let next_uid = 1
 
 function uid(){
@@ -17,8 +17,21 @@ function sequence_uid(){
   return result
 }
 
+function rel_to_abs(reference,relative){
+    return join(dirname(normalize(reference)),relative).replace("file:\\","")
+}
+  
+function project_dir(url){
+    let project = rel_to_abs(url,"../..")
+    if(import.meta.env.PROD){
+        project = rel_to_abs(url,"..")
+    }
+    return basename(project)
+}
+
 export{
     uid,
     suid,
-    sequence_uid
+    sequence_uid,
+    project_dir
 }
