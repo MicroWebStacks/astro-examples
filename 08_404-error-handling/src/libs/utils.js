@@ -22,11 +22,7 @@ function rel_to_abs(reference,relative){
 }
   
 function project_dir(url){
-    let project = rel_to_abs(url,"../..")
-    if(import.meta.env.PROD){
-        project = rel_to_abs(url,"..")
-    }
-    return basename(project)
+    return basename(rel_to_abs(url,"../.."))
 }
 
 export{
