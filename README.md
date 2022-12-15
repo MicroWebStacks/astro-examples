@@ -76,3 +76,4 @@ using environment variables from file in `astro.config.mjs` and `.js` server fil
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/06_env_config)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/06_env_config)
 
+# 404
