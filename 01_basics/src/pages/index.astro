@@ -1,15 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-console.log(`index.astro> node version = ${process.version}`)
+import { project_dir } from '../libs/utils';
 
+const proj = project_dir(import.meta.url)
 const node_version = process.version
+console.log(`index.astro> node version = ${node_version}`)
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>01_basics</h1>
-		<h2>Astro Node version <span class="text-gradient">{node_version}</span></h2>
+		<h1>Astro Node version <span class="text-gradient">{node_version}</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
 			This is a minimal example that shows the node version running
 		</p>

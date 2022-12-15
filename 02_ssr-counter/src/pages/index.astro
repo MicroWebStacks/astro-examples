@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { get_count, increment } from './shared';
+import { project_dir } from '../libs/utils';
+
+const proj = project_dir(import.meta.url)
 
 increment()
 const current_count = get_count()
@@ -10,6 +13,7 @@ const current_count = get_count()
 <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Astro page1 count = <span class="text-gradient">{current_count}</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<a href="/page2">page2</a>
 		<p>shared global var demo. reload the page to increment the counter. All pages share the same counter</p>
 	</main>
