@@ -84,4 +84,14 @@ Page not found redirect to 404
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/08_404-error-handling)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/08_404-error-handling)
 
-custom page : https://codepen.io/Stephane/pen/Jdozrp
+custom 404 page from : https://codepen.io/Stephane/pen/Jdozrp
+
+# 09_dynamic-imports
+This is about dynamic import only loading js when the components js logic decides to do it.
+This is not about Astro script directives e.g. `client:load` which loading event cannot be customized by the user.
+With the current example Astro/Vite add another loading of the dynamic script on startup
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/09_dynamic-imports)
+[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/09_dynamic-imports)
+[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/09_dynamic-imports)
+

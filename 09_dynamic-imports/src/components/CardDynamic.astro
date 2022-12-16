@@ -1,0 +1,50 @@
+---
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+---
+
+<li class="card">
+	<h2>
+		{title}
+	</h2>
+	<div class="counter">
+		<button class="plus">+</button>
+		<p class="value">0</p>
+		<button class="minus">-</button>
+	</div>
+</li>
+<style>
+	.card {
+		list-style: none;
+		margin:0.3rem;
+		padding: 0.3rem;
+		padding-left: 0.6rem;
+		padding-bottom: 0.6rem;
+		background-color: white;
+		background-image: var(--accent-gradient);
+		background-size: 400%;
+		border-radius: 0.5rem;
+		background-position: 100%;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	}
+	.counter{
+		display:flex;
+		gap: 10px;
+		margin:10px;
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		color: #444;
+	}
+</style>
+
+<script>
+	const card = await import('./Card')
+	card.init_card(".card")
+</script>
