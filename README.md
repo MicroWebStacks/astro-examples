@@ -90,6 +90,7 @@ custom 404 page from : https://codepen.io/Stephane/pen/Jdozrp
 [09_dynamic-imports](./09_dynamic-imports)
 
 This is about dynamically importing a js script only when the component logic decides to do it. In this case, after 2 seconds from window load.
+
 Not only `<Card title="Test" client:visible/>` is not supported by astro as directive reserved for framework components only, but also, it does not give fine granularity to decide exactly when to load a js script.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/09_dynamic-imports)
