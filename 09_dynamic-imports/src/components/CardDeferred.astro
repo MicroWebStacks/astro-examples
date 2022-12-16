@@ -12,6 +12,7 @@ const { title } = Astro.props;
 	<h2>
 		{title}
 	</h2>
+	<p class="message">idle</p>
 	<div class="counter">
 		<button class="plus">+</button>
 		<p class="value">0</p>
@@ -48,6 +49,7 @@ const { title } = Astro.props;
 	setTimeout(()=>{
 		import('./Card').then((card)=>{
 			card.init_card(".card")
+			document.querySelector(".message").textContent = "interactive"
 		})
 	}
 	,2000)
