@@ -44,13 +44,7 @@ const { title } = Astro.props;
 	}
 </style>
 
-<script >
-	const cards = document.querySelectorAll(".card")
-	cards.forEach(card => {
-		const plus = card.querySelector('button.plus')
-		const minus = card.querySelector('button.minus')
-		const value = card.querySelector(".value")
-		plus.onclick  = ()=>{value.textContent = parseInt(value.textContent) + 1}
-		minus.onclick = ()=>{value.textContent = parseInt(value.textContent) - 1}
-	});
+<script>
+	import {init_card} from './Card'
+	init_card(".card")
 </script>
