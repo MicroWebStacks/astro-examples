@@ -45,6 +45,20 @@ const { title } = Astro.props;
 </style>
 
 <script>
-	import {init_card} from './Card'
-	init_card(".card")
+	//static import also possible
+	//import {init_card} from './Card'	
+
+	//dynmaic import
+	const card = await import('./Card')
+	card.init_card(".card")
+
+	function test_deferred_load(){
+		setTimeout(()=>{
+			import('./Card').then((card)=>{
+				card.init_card(".card")
+			})
+		}
+		,2000)
+	}
+	//test_deferred_load()
 </script>
