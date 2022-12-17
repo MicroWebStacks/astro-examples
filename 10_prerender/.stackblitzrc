@@ -1,0 +1,7 @@
+{
+  "installDependencies": true,
+  "startCommand": "node dist/server/entry.mjs",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
