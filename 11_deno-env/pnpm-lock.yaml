@@ -22,8 +22,8 @@ packages:
     resolution: {integrity: sha512-lvPpoOA6Fc1NpJrPT65ZOhhFieYkiBds9wzOhWX55lXMUpNPu5CUxqzgDAkNSTIoXHZxkxHfi+6EpFNnRZBBYQ==}
     dev: false
 
-  /@astrojs/compiler/0.31.0:
-    resolution: {integrity: sha512-V8/Re/wXgXTZzpfWs4KZBLU5dRhnO6kSd4e3vObGuj+HFGHjaD11wws1zvaC9cXLQyQsM5CSrGagFGYlRZKvVQ==}
+  /@astrojs/compiler/0.31.1:
+    resolution: {integrity: sha512-HgjKVwFZ3LwKnGv8gI0J6MhIniUyKwSmGwo7pTDTn14iwfqovfgzVPeJ0+KFpuKBbB4z1lsFNbD/c1WXZyKz6A==}
     dev: false
 
   /@astrojs/deno/3.0.0_astro@1.7.1:
@@ -50,7 +50,7 @@ packages:
       vscode-languageserver-protocol: 3.17.2
       vscode-languageserver-textdocument: 1.0.8
       vscode-languageserver-types: 3.17.2
-      vscode-uri: 3.0.6
+      vscode-uri: 3.0.7
     dev: false
 
   /@astrojs/markdown-remark/1.1.3:
@@ -157,7 +157,7 @@ packages:
       convert-source-map: 1.9.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
-      json5: 2.2.1
+      json5: 2.2.2
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
@@ -675,7 +675,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 0.31.0
+      '@astrojs/compiler': 0.31.1
       '@astrojs/language-server': 0.28.3
       '@astrojs/markdown-remark': 1.1.3
       '@astrojs/telemetry': 1.0.1
@@ -733,9 +733,9 @@ packages:
       unist-util-visit: 4.1.1
       vfile: 5.3.6
       vite: 3.2.5
-      vitefu: 0.2.3_vite@3.2.5
+      vitefu: 0.2.4_vite@3.2.5
       yargs-parser: 21.1.1
-      zod: 3.20.0
+      zod: 3.20.2
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -795,7 +795,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001439
       electron-to-chromium: 1.4.284
-      node-releases: 2.0.6
+      node-releases: 2.0.8
       update-browserslist-db: 1.0.10_browserslist@4.21.4
     dev: false
 
@@ -1751,8 +1751,8 @@ packages:
     resolution: {integrity: sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==}
     dev: false
 
-  /json5/2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
+  /json5/2.2.2:
+    resolution: {integrity: sha512-46Tk9JiOL2z7ytNQWFLpj99RZkVgeHf87yGQKsIkaPz1qSH9UczKH1rO7K3wgRselo0tYMUNfecYpm/p1vC7tQ==}
     engines: {node: '>=6'}
     hasBin: true
     dev: false
@@ -1894,7 +1894,7 @@ packages:
     resolution: {integrity: sha512-p+PrYlkw9DeCRkTVw1duWqPRHX6Ywh2BNKJQcZbCwAuP/59B0Lk9kakuAd7KbQprVO4GzdW8eS5++A9PUSqIyw==}
     dependencies:
       '@types/mdast': 3.0.10
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
       micromark-util-normalize-identifier: 1.0.0
     dev: false
 
@@ -1902,7 +1902,7 @@ packages:
     resolution: {integrity: sha512-T/4DVHXcujH6jx1yqpcAYYwd+z5lAYMw4Ls6yhTfbMMtCt0PHY4gEfhW9+lKsLBtyhUGKRIzcUA2FATVqnvPDA==}
     dependencies:
       '@types/mdast': 3.0.10
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
     dev: false
 
   /mdast-util-gfm-table/1.0.6:
@@ -1911,7 +1911,7 @@ packages:
       '@types/mdast': 3.0.10
       markdown-table: 3.0.3
       mdast-util-from-markdown: 1.2.0
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1920,7 +1920,7 @@ packages:
     resolution: {integrity: sha512-KZ4KLmPdABXOsfnM6JHUIjxEvcx2ulk656Z/4Balw071/5qgnhz+H1uGtf2zIGnrnvDC8xR4Fj9uKbjAFGNIeA==}
     dependencies:
       '@types/mdast': 3.0.10
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
     dev: false
 
   /mdast-util-gfm/2.0.1:
@@ -1932,7 +1932,7 @@ packages:
       mdast-util-gfm-strikethrough: 1.0.2
       mdast-util-gfm-table: 1.0.6
       mdast-util-gfm-task-list-item: 1.0.1
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1944,7 +1944,7 @@ packages:
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.10
       mdast-util-from-markdown: 1.2.0
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1954,7 +1954,7 @@ packages:
     dependencies:
       '@types/estree-jsx': 0.0.1
       '@types/mdast': 3.0.10
-      mdast-util-to-markdown: 1.3.0
+      mdast-util-to-markdown: 1.4.0
       parse-entities: 4.0.0
       stringify-entities: 4.0.3
       unist-util-remove-position: 4.0.1
@@ -1976,8 +1976,8 @@ packages:
       unist-util-visit: 4.1.1
     dev: false
 
-  /mdast-util-to-markdown/1.3.0:
-    resolution: {integrity: sha512-6tUSs4r+KK4JGTTiQ7FfHmVOaDrLQJPmpjD6wPMlHGUVXoG9Vjc3jIeP+uyBWRf8clwB2blM+W7+KrlMYQnftA==}
+  /mdast-util-to-markdown/1.4.0:
+    resolution: {integrity: sha512-IjXARf/O8VGx/pc5SZ7syfydq1DYL9vd92orsG5U0b4GNCmAvXzu+n7sbzfIKrXwB0AVrYk3NV2kXl0AIi9LCA==}
     dependencies:
       '@types/mdast': 3.0.10
       '@types/unist': 2.0.6
@@ -2357,8 +2357,8 @@ packages:
       formdata-polyfill: 4.0.10
     dev: false
 
-  /node-releases/2.0.6:
-    resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
+  /node-releases/2.0.8:
+    resolution: {integrity: sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==}
     dev: false
 
   /npm-run-path/5.1.0:
@@ -3034,7 +3034,7 @@ packages:
     dependencies:
       '@types/json5': 0.0.30
       '@types/resolve': 1.20.2
-      json5: 2.2.1
+      json5: 2.2.2
       resolve: 1.22.1
       strip-bom: 4.0.0
       type-fest: 0.13.1
@@ -3239,8 +3239,8 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitefu/0.2.3_vite@3.2.5:
-    resolution: {integrity: sha512-75l7TTuU8isAhz1QFtNKjDkqjxvndfMC1AfIMjJ0ZQ59ZD0Ow9QOIsJJX16Wv9PS8f+zMzp6fHy5cCbKG/yVUQ==}
+  /vitefu/0.2.4_vite@3.2.5:
+    resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
     peerDependenciesMeta:
@@ -3256,7 +3256,7 @@ packages:
       '@vscode/l10n': 0.0.10
       vscode-languageserver-textdocument: 1.0.8
       vscode-languageserver-types: 3.17.2
-      vscode-uri: 3.0.6
+      vscode-uri: 3.0.7
     dev: false
 
   /vscode-html-languageservice/5.0.3:
@@ -3265,7 +3265,7 @@ packages:
       '@vscode/l10n': 0.0.10
       vscode-languageserver-textdocument: 1.0.8
       vscode-languageserver-types: 3.17.2
-      vscode-uri: 3.0.6
+      vscode-uri: 3.0.7
     dev: false
 
   /vscode-jsonrpc/8.0.2:
@@ -3311,8 +3311,8 @@ packages:
     resolution: {integrity: sha512-8TEXQxlldWAuIODdukIb+TR5s+9Ds40eSJrw+1iDDA9IFORPjMELarNQE3myz5XIkWWpdprmJjm1/SxMlWOC8A==}
     dev: false
 
-  /vscode-uri/3.0.6:
-    resolution: {integrity: sha512-fmL7V1eiDBFRRnu+gfRWTzyPpNIHJTc4mWnFkwBUmO9U3KPgJAmTx7oxi2bl/Rh6HLdU7+4C9wlj0k2E4AdKFQ==}
+  /vscode-uri/3.0.7:
+    resolution: {integrity: sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==}
     dev: false
 
   /wcwidth/1.0.1:
@@ -3386,8 +3386,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /zod/3.20.0:
-    resolution: {integrity: sha512-ZWxs7oM5ixoo1BMoxTNeDMYSih/F/FUnExsnRtHT04rG6q0Bd74TKS45RGXw07TOalOZyyzdKaYH38k8yTEv9A==}
+  /zod/3.20.2:
+    resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
     dev: false
 
   /zwitch/2.0.4:
