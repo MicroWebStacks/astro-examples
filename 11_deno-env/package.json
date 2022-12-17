@@ -9,8 +9,9 @@
     "build": "astro build",
     "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
     "astro": "astro",
-    "sandbox":"pnpm run build && deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
-    "deno-install": "curl -fsSL https://deno.land/x/install/install.sh | sh && export DENO_INSTALL=\"~/.local\" &&  export PATH=\"$DENO_INSTALL/bin:$PATH\""
+    "sandbox":"curl -fsSL https://deno.land/x/install/install.sh | sh && export DENO_INSTALL=\"~/.local\" &&  export PATH=\"$DENO_INSTALL/bin:$PATH\" && pnpm run build && deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
+    "deno-gitpod": "curl -fsSL https://deno.land/x/install/install.sh | sh && export DENO_INSTALL='/home/gitpod/.deno' &&  export PATH='$DENO_INSTALL/bin:$PATH'"
+
   },
   "dependencies": {
     "@astrojs/deno": "^3.0.0",

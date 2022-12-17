@@ -1,6 +1,6 @@
 {
   "installDependencies": true,
-  "startCommand": "pnpm run build && node dist/server/entry.mjs",
+  "startCommand": "pnpm run build && pnpm run deno-gitpod && chmod a+x run.sh && ./run.sh",
   "env": {
     "NODE_ENV": "production"
   }
