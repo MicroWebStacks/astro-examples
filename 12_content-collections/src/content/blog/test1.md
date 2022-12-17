@@ -1,8 +1,8 @@
 ---
 title: My First Entry
-slug: firt-one
+slug: first-one
 ---
 # Big title 1
 hello from test 1
 
-![tree](./tree.svg)
+![tree](/tree.svg)

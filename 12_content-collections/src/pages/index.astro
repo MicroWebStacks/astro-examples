@@ -22,7 +22,9 @@ const test2 = await post2.render();
 		<p class="instructions" >Demo for Markdown Conetnt Collections</p>
 		<ul>
 			{blogPosts.map(post => (
-			  <li>{post.data.title}</li>
+				<li>
+					<a href={`/blog/${post.data.slug}`}>{post.data.title}</a>
+				</li>
 			))}
 		</ul>
 		<p>

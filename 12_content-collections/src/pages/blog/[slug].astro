@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, CollectionEntry } from 'astro:content';
+
+const { slug } = Astro.params;
+console.log(`[slug].astro> ${slug}`)
+
+const blogs = await getCollection('blog',({ data }) => {return data.slug === slug;});
+const post = blogs[0]//first with matching slug
+const { Content } = await post.render();
+---
+<Layout title={post.data.title}>
+  <Content/>
+  <a href="/">Back Home</a>
+</Layout>
