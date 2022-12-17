@@ -110,9 +110,7 @@ Note: Testing this example only makes sense in production mode (with build and r
 
 This example uses the experimental `prerender` feature. index page `'/'` is prerendered while `'/rerender'` page is server side rendered on every fetch
 
-Note testing only makes sense in production not in development:
+Note only Stackbliz working for this sample (Codesandbox and Gitpod wip)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/10_prerender)
-[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/10_prerender)
-[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/10_prerender)
 
