@@ -1,0 +1,7 @@
+{
+  "installDependencies": true,
+  "startCommand": "pnpm run build && node dist/server/entry.mjs",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
