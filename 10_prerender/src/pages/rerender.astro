@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { project_dir } from '../libs/utils';
+
+const proj = project_dir(import.meta.url)
+const render_time = new Date()
+console.log(`prerender.astro> render time = ${render_time}`)
+console.log(`file path : ${import.meta.url}`)
+console.log(`process path : ${process.cwd()}`)
+
+---
+
+<Layout title="SSR">
+	<main>
+		<h1>Astro <span class="text-gradient">Prerender</span></h1>
+		<p>github repo <a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">{proj}</a></p>
+		<p class="instructions">
+			Page rendered at </br>
+			'{render_time}'
+		</p>
+		<p class="instructions">
+			This is an SSR page, reloading the page always result in rerender
+		</p>
+		<a href="/">Go To Prerendered Page</a>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
