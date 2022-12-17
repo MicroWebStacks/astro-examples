@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { project_dir } from '../libs/utils';
 
-const proj = project_dir(import.meta.url)
+const proj = "10_prerender"
 const render_time = new Date()
 console.log(`prerender.astro> render time = ${render_time}`)
 console.log(`file path : ${import.meta.url}`)
