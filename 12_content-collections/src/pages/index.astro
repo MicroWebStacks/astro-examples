@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection,getEntry } from 'astro:content';
+
+const blogPosts = await getCollection('blog');	//for the meta data only
+
+const proj = "12_content-collections"
+
+
+const post1 = await getEntry('blog', 'test1.md');
+const test1 = await post1.render();
+
+const post2 = await getEntry('blog', 'test2.md');
+const test2 = await post2.render();
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Content <span class="text-gradient">Collections</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<p class="instructions" >Demo for Markdown Conetnt Collections</p>
+		<ul>
+			{blogPosts.map(post => (
+			  <li>{post.data.title}</li>
+			))}
+		</ul>
+		<p>
+			<test1.Content/>
+		</p>
+		<p>
+			<test2.Content/>
+		</p>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
