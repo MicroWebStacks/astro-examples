@@ -162,7 +162,7 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 # 14_client-storage-counter
 [14_client-storage-counter](./14_client-storage-counter)
 
-* This counter is using `sessionStorage` for client side persistency, and therefore avoid cookies.
+* This counter is using `sessionStorage` for client side persistency, and therefore avoids cookies.
 * For UI sensitive elements (such as menu, sidebar, modal,...) it is important to prevent flicker. Such Flicker can happen when the server sends a default value upon page refresh and then javascript adjusts the value after reading it from the session sotrage. To prevent that, every time the client changes the value, the server state needs to be updated through a `put` request to a server endpoint
 * For the server to know which client has whic counter, a counters map for each session_id is stored
 * The session ID is created by the server when a request URL does not contain `session_id` parameter, it is passed to the client within the html components, the client takes it upon page load and use it in case no sessionStorage session_id available. Then stick it to the URL parameters for future queries
