@@ -1,17 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection,getEntry } from 'astro:content';
-
-const blogPosts = await getCollection('blog');	//for the meta data only
+import { getCollection } from 'astro:content';
 
 const proj = "12_content-collections"
 
-
-const post1 = await getEntry('blog', 'test1.md');
-const test1 = await post1.render();
-
-const post2 = await getEntry('blog', 'test2.md');
-const test2 = await post2.render();
+const blogPosts = await getCollection('blog');	//for the meta data only
+//parallel render, equivalent single call `posts[0] = await blogPosts[0].render()`
+const posts = await Promise.all(blogPosts.map(async (item)=> {
+    const result = await item.render();
+    return result;
+}));
 
 ---
 
@@ -19,7 +17,10 @@ const test2 = await post2.render();
 	<main>
 		<h1>Content <span class="text-gradient">Collections</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
-		<p class="instructions" >Demo for Markdown Conetnt Collections</p>
+		<p class="instructions" >Demo for Markdown Conetnt Collections
+		</br>
+			This page is rendering all markdown pages
+		</p>
 		<ul>
 			{blogPosts.map(post => (
 				<li>
@@ -27,12 +28,13 @@ const test2 = await post2.render();
 				</li>
 			))}
 		</ul>
-		<p>
-			<test1.Content/>
-		</p>
-		<p>
-			<test2.Content/>
-		</p>
+		{
+			posts.map((post)=>(
+			<p>
+				<post.Content/>
+			</p>
+			))
+		}
 	</main>
 </Layout>
 

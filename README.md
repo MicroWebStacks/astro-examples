@@ -131,6 +131,8 @@ project : https://dash.deno.com/projects/astro-env
 [12_content-collections](./12_content-collections)
 
 Simplest example with content collections
+* Index page is using `getCollection()` API for info retrieval and rendering of a markdown array in parallel async call
+* every page is rendered in a dynamic path `[...slug].astro` also using `getCollection()` with a filter on the slug name, because `getEntry()` takes filename as input which is not known for the query
 
 Astro docs : https://docs.astro.build/en/guides/content-collections/
 
