@@ -27,11 +27,9 @@ if(counter == null){
 		<h1>Session ID <span class="text-gradient session_id">{session_id}</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
-		Using cookies !!! This example is using 'counter' cookie !!!
+		Using session Storage and URL parameters
 		</br>
 		This counter will persist through pages relaod despite being a client counter.
-			</br>
-			Only a single counter is used in this example given that a single cookie is used
 		</p>
 		<ul>
 			<Card title="Persistent" init={counter}/>
