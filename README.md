@@ -139,3 +139,21 @@ Astro docs : https://docs.astro.build/en/guides/content-collections/
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/12_content-collections)
 
 - https://freesvg.org/1542512156 : tree
+
+# 13_client-persistent-counter
+[13_client-persistent-counter](./13_client-persistent-counter)
+
+This counter will persist through pages relaod despite being a client counter.
+It is using a cookie `counter=1`.
+
+For Astro SSR there is an advantage for using a cookie over using client sotrage :
+* Automatically sent with every client request
+* no need to create a server endpoint to submit the client updated value
+* No display flicker !!!! Upon request, the response will contain the valid html counter value
+
+Note : Only a single counter is used in this example given that a single cookie is used
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
+[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
+[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
+
