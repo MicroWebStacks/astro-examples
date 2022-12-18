@@ -1,0 +1,94 @@
+---
+
+export interface Props {
+	title: string;
+	init: number;
+}
+
+const { title,init } = Astro.props;
+
+---
+
+<li class="card">
+	<h2>
+		{title}
+	</h2>
+	<div class="counter">
+		<button class="plus">+</button>
+		<p class="value">{init}</p>
+		<button class="minus">-</button>
+		<button class="clear">clear</button>
+	</div>
+</li>
+<style>
+	.card {
+		list-style: none;
+		margin:0.3rem;
+		padding: 0.3rem;
+		padding-left: 0.6rem;
+		padding-bottom: 0.6rem;
+		background-color: white;
+		background-image: var(--accent-gradient);
+		background-size: 400%;
+		border-radius: 0.5rem;
+		background-position: 100%;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	}
+	.counter{
+		display:flex;
+		gap: 10px;
+		margin:10px;
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		color: #444;
+	}
+</style>
+
+<script>
+	let session_id = sessionStorage.getItem("session_id")
+	if(!session_id){
+		session_id = document.querySelector("span.session_id").textContent
+		sessionStorage.setItem("session_id",session_id)
+	}
+	window.history.replaceState(null, null, `?session_id=${session_id}`);
+
+	console.log()
+
+	function get_counter(){
+		const counter = parseInt(sessionStorage.getItem("counter"))
+		if(counter){
+			return counter
+		}else{
+			return 0
+		}
+	}
+	function set_counter(counter){
+		sessionStorage.setItem("counter",counter)
+		console.log(`new counter value = ${counter}`)
+	}
+	console.log("int cards")
+	const cards = document.querySelectorAll(".card")
+	cards.forEach(card => {
+		const plus = card.querySelector('button.plus')
+		const minus = card.querySelector('button.minus')
+		const clear = card.querySelector('button.clear')
+		const value = card.querySelector(".value")
+		value.textContent =  get_counter()
+		plus.onclick  = ()=>{
+			const new_val = get_counter() + 1
+			value.textContent =  new_val
+			set_counter(new_val)
+		}
+		minus.onclick = ()=>{
+			const new_val = get_counter() - 1
+			value.textContent =  new_val
+			set_counter(new_val)
+		}
+		clear.onclick = ()=>{
+			set_counter(0)
+			value.textContent =  0
+		}
+	});
+</script>

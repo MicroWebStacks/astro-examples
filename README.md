@@ -160,3 +160,14 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
 
+# 14_client-storage-counter
+[14_client-storage-counter](./14_client-storage-counter)
+
+This is a persistent client side counter that does not use cookies, it is based on Browser's sessionStorage
+
+TODO prevent server flicker by updating storage session's state with put endpoint
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/14_client-storage-counter)
+[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/14_client-storage-counter)
+[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/14_client-storage-counter)
+
