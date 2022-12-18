@@ -1,6 +1,3 @@
-import {dirname, normalize, basename, sep,join} from 'path'
-let next_uid = 1
-
 function uid(){
     return Date.now()+"_"+Math.floor(Math.random() * 10000)
 }
@@ -11,23 +8,20 @@ function suid(){
     return sub+"_"+Math.floor(Math.random() * 10000)
 }
 
-function sequence_uid(){
-  const result = next_uid
-  next_uid += 1
-  return result
-}
+async function async_put(url, data) {
+	const response = await fetch(url, {
+		method: 'PUT',
+		headers: {
+		'Content-type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	})
 
-function rel_to_abs(reference,relative){
-    return join(dirname(normalize(reference)),relative).replace("file:\\","")
-}
-  
-function project_dir(url){
-    return basename(rel_to_abs(url,"../.."))
-}
+	return await response.json()
+	}
 
 export{
     uid,
     suid,
-    sequence_uid,
-    project_dir
+    async_put
 }

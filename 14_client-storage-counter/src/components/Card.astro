@@ -47,6 +47,7 @@ const { title,init } = Astro.props;
 </style>
 
 <script>
+	import {async_put} from '../libs/utils'
 	let session_id = sessionStorage.getItem("session_id")
 	if(!session_id){
 		session_id = document.querySelector("span.session_id").textContent
@@ -66,7 +67,9 @@ const { title,init } = Astro.props;
 	}
 	function set_counter(counter){
 		sessionStorage.setItem("counter",counter)
-		console.log(`new counter value = ${counter}`)
+		async_put("api/counter",{session_id:session_id,counter:counter}).then((resp)=>{
+			console.log(`new counter put value = ${counter}`)
+		})
 	}
 	console.log("int cards")
 	const cards = document.querySelectorAll(".card")
