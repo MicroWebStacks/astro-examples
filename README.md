@@ -132,7 +132,8 @@ project : https://dash.deno.com/projects/astro-env
 
 Simplest example with content collections
 
-Astro docs : https://docs.astro.build/en/guides/content-collections/
+* Astro docs : https://docs.astro.build/en/guides/content-collections/
+* Astro official example : https://github.com/withastro/astro/tree/main/examples/with-content
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/12_content-collections)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/12_content-collections)
