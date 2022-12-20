@@ -13,3 +13,4 @@ Note : Only a single counter is used in this example given that a single cookie 
 Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 
 [![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
+
