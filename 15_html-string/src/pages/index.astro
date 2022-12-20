@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import RawCard from '../components/Card.astro?raw';
 import StringWrapper from '../components/StringWrapper.astro';
 
 const proj = "15_html-string"
@@ -14,7 +15,7 @@ const proj = "15_html-string"
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p>generates an html string out of a component</p>
 		<ul>
-			<StringWrapper>
+			<StringWrapper raw={RawCard}>
 				<Card title="Test" />
 			</StringWrapper>
 		</ul>
