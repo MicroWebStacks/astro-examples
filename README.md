@@ -4,6 +4,8 @@ showcase examples for isolated simple usage patterns
 [01_basics](./01_basics)
 This is a minimal example that shows the node version running
 
+<img src="./media/01_basics.png" width="400">
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/01_basics)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/01_basics)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/01_basics)
@@ -14,6 +16,12 @@ This is a minimal example that shows the node version running
 [02_ssr-counter](./02_ssr-counter)
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
+
+<img src="./media/02_ssr-counter.drawio.svg" width="500">
+
+<img src="./media/02_ssr-counter.png" width="400">
+
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
@@ -27,6 +35,10 @@ SSE: Server Sent Events. global var using a timer and Emitter
 Server keeps couter state. reloading the page has no effect on the counter
 
 requires Node18 Node18 for ReadableStream(), currently only on Gitpod
+
+<img src="./media/03_sse-counter.drawio.svg" width="700">
+
+<img src="./media/03_sse-counter.png" width="400">
 
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/03_sse-counter)
 
