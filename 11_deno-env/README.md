@@ -1,5 +1,5 @@
 # 11_deno-env
-[11_deno-env](./11_deno-env)
+[../11_deno-env](../11_deno-env)
 
 Testing environment variables in deno and deno.deploy
 

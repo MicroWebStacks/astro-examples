@@ -1,5 +1,5 @@
 # 06_astro-xelement
-[06_astro-xelement](./06_astro-xelement)
+[../06_astro-xelement](../06_astro-xelement)
 
 Using unified config for all of `astro.config.mjs`, `.astro` and `.js` server files
 

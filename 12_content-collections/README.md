@@ -1,5 +1,5 @@
 # 12_content-collections
-[12_content-collections](./12_content-collections)
+[../12_content-collections](../12_content-collections)
 
 Simplest example with content collections
 * Index page is using `getCollection()` API for info retrieval and rendering of a markdown array in parallel async call

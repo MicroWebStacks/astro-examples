@@ -1,5 +1,5 @@
 # 14_client-storage-counter
-[14_client-storage-counter](./14_client-storage-counter)
+[../14_client-storage-counter](../14_client-storage-counter)
 
 * This counter is using `sessionStorage` for client side persistency, and therefore avoids cookies.
 * For UI sensitive elements (such as menu, sidebar, modal,...) it is important to prevent flicker. Such Flicker can happen when the server sends a default value upon page refresh and then javascript adjusts the value after reading it from the session sotrage. To prevent that, every time the client changes the value, the server state needs to be updated through a `put` request to a server endpoint

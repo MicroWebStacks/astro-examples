@@ -1,5 +1,5 @@
 # 05_client-uid-counters
-[05_client-uid-counters](./05_client-uid-counters)
+[../05_client-uid-counters](../05_client-uid-counters)
 
 Decentralized scoping js execution on an Astro component used mutiple times on the same page
 

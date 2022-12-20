@@ -1,5 +1,5 @@
 # 13_client-persistent-counter
-[13_client-persistent-counter](./13_client-persistent-counter)
+[../13_client-persistent-counter](../13_client-persistent-counter)
 
 This counter uses a cookie `counter=1` to persist through pages relaod despite being a client counter.
 

@@ -1,5 +1,5 @@
 # 08_404-error-handling
-[08_404-error-handling](./08_404-error-handling)
+[../08_404-error-handling](../08_404-error-handling)
 
 Page not found redirect to 404
 

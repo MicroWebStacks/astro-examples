@@ -1,5 +1,5 @@
 # 03_sse-counter
-[03_sse-counter](./03_sse-counter)
+[../03_sse-counter](../03_sse-counter)
 
 SSE: Server Sent Events. global var using a timer and Emitter
 

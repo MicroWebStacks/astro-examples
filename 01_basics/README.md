@@ -1,5 +1,6 @@
 # 01_basics
-[01_basics](./01_basics)
+[../01_basics](../01_basics)
+
 This is a minimal example that shows the node version running
 
 <img src="../media/01_basics.png" width="400">

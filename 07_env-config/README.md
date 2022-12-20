@@ -1,5 +1,5 @@
 # 07_env-config
-[07_env-config](./07_env-config)
+[../07_env-config](../07_env-config)
 
 using environment variables from file in `astro.config.mjs` and `.js` server files
 

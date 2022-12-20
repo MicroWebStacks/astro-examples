@@ -11,9 +11,11 @@ def save_file(fileName,data):
     return
 
 def copy_section(section):
-    section_readme_file = section.splitlines()[0]+"/README.md"
+    section_name = section.splitlines()[0]
+    section_readme_file = section_name+"/README.md"
     section = '# ' + section
     section = section.replace("./media","../media")
+    section = section.replace(f"./{section_name}",f"../{section_name}")
     save_file(section_readme_file,section)
     return
 readme = load_file("README.md")

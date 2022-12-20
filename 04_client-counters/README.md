@@ -1,5 +1,5 @@
 # 04_client-counters
-[04_client-counters](./04_client-counters)
+[../04_client-counters](../04_client-counters)
 
 simpler with a single client script but without single instance management, applies to all
 

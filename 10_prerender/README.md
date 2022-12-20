@@ -1,5 +1,5 @@
 # 10_prerender
-[10_prerender](./10_prerender)
+[../10_prerender](../10_prerender)
 
 This example uses the experimental `prerender` feature. index page `'/'` is prerendered while `'/rerender'` page is server side rendered on every fetch
 

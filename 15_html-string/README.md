@@ -1,5 +1,5 @@
 # 15_html-string
-[15_html-string](./15_html-string)
+[../15_html-string](../15_html-string)
 
 example to show how to generate an html string out of a component using a Wrapper and `Astro.slots.render()`
 
