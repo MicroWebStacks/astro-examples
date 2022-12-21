@@ -213,6 +213,16 @@ example to show how to generate an html string out of a component using a Wrappe
 * https://stackoverflow.com/questions/73382889/how-can-i-render-a-astro-component-to-a-html-string/74853279#74853279
 
 
+# 16_images
+[./16_images](./16_images)
+
+example using astrojs/image integration
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/16_images)
+[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/16_images)
+[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/16_images)
+
+
 # More Astro examples
 
 ## astro-big doc
