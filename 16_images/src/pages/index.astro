@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import MyLocal from '../components/MyLocal.astro';
 import MyPicture from '../components/MyPicture.astro';
-import MyImage from '../components/MyPicture.astro';
+import MyImage from '../components/MyImage.astro';
 
 const proj = "16_images"
 const node_version = process.version
@@ -12,15 +12,15 @@ console.log(`index.astro> node version = ${node_version}`)
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<MyLocal/>
-		<MyPicture/>
-		<MyImage/>
 		<h1>Astro <span class="text-gradient">Images</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
 			This is a minimal example that shows the node version running
 		</p>
 		<a href="https://github.com/MicroWebStacks/astro-examples/tree/main/01_basics">github</a>
+		<a href="/picture">picture</a>
+		<a href="/image">image</a>
+		<a href="/local">local</a>
 	</main>
 </Layout>
 
