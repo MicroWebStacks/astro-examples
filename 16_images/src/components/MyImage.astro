@@ -1,0 +1,7 @@
+---
+import { getImage } from '@astrojs/image';
+
+const { src } = await getImage({src: '../assets/test.png'});
+---
+
+<link rel="preload" as="image" href={src} alt="alt text">

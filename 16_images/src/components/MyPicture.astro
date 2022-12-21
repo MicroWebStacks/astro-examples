@@ -1,0 +1,10 @@
+---
+import { Image, Picture } from '@astrojs/image/components';
+import florence from "../images/florence-3.png";
+---
+<Picture
+  src={florence}
+  widths={[200, 400, 800]}
+  sizes="(max-width: 800px) 100vw, 800px"
+  alt="Florence Smith Project Manager Picture"
+/>
