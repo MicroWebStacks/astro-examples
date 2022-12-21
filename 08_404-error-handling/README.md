@@ -8,4 +8,3 @@ Page not found redirect to 404
 [![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/08_404-error-handling)
 
 custom 404 page from : https://codepen.io/Stephane/pen/Jdozrp
-

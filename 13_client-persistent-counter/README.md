@@ -14,3 +14,5 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 
 [![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
 
+## references
+* https://stackoverflow.com/questions/73341205/why-does-the-icon-in-this-astro-svelte-component-flicker-on-refresh/74873656#74873656

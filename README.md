@@ -1,5 +1,6 @@
 showcase examples for isolated simple usage patterns
 
+
 # 01_basics
 [./01_basics](./01_basics)
 
@@ -172,6 +173,8 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/13_client-persistent-counter)
 
+## references
+* https://stackoverflow.com/questions/73341205/why-does-the-icon-in-this-astro-svelte-component-flicker-on-refresh/74873656#74873656
 # 14_client-storage-counter
 [./14_client-storage-counter](./14_client-storage-counter)
 
@@ -186,6 +189,9 @@ Note : this implementation is for demo purpose only and suffers from memory leak
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/14_client-storage-counter)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/14_client-storage-counter)
 
+## references
+* https://stackoverflow.com/questions/73341205/why-does-the-icon-in-this-astro-svelte-component-flicker-on-refresh/74873656#74873656
+
 # 15_html-string
 [./15_html-string](./15_html-string)
 
@@ -196,3 +202,40 @@ example to show how to generate an html string out of a component using a Wrappe
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/15_html-string)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/15_html-string)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/15_html-string)
+
+## references
+* https://stackoverflow.com/questions/73382889/how-can-i-render-a-astro-component-to-a-html-string/74853279#74853279
+
+
+# More Astro examples
+
+## astro-big doc
+
+* Astro Theme submission https://astro.build/themes/details/astro-big-doc/
+* Github repo : https://github.com/MicroWebStacks/astro-big-doc
+* Live demo : https://microwebstacks.github.io/astro-big-doc/blog/gallery.mdx/
+
+Main features :
+
+* Clean Markdown without js pollution : Layout injected from .astro files
+* Free Path selection : can be placed anywhere within the repo
+* Relative assets management : uses relative assets located in the same directory as the Markdown file
+* Enhancement with Astro components : standard tags can be replaced with an Astro component without touching the Markdown files
+* Modal Images and Gallery Components
+* Nav Bar, Hierarchical menu, Table of Content with scroll spy,...
+
+## astro-home-control
+* Github repo : https://github.com/MicroWebStacks/astro-home-control
+
+Main features :
+
+* Home Automation MQTT Client running on Astro as SSR
+* Client page update with Server Sent Events
+* Custom switches with feedback and custom sliders with animated SVG
+
+## astro-lottie
+
+* Github repo : https://github.com/MicroWebStacks/astro-examples_react-lottie
+* https://airbnb.design/lottie/
+* https://github.com/Gamote/lottie-react
+

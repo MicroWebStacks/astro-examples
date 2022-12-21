@@ -10,4 +10,3 @@ This is a minimal example that shows the node version running
 [![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/01_basics)
 
 
-

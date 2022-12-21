@@ -1,3 +1,4 @@
+import os
 
 def load_file(filename):
     with open(filename, "r") as file:
@@ -12,15 +13,18 @@ def save_file(fileName,data):
 
 def copy_section(section):
     section_name = section.splitlines()[0]
-    section_readme_file = section_name+"/README.md"
-    section = '# ' + section
-    section = section.replace("./media","../media")
-    section = section.replace(f"./{section_name}",f"../{section_name}")
-    save_file(section_readme_file,section)
+    if(os.path.isdir(section_name)):
+        section_readme_file = section_name+"/README.md"
+        section = '# ' + section
+        section = section.replace("./media","../media")
+        section = section.replace(f"./{section_name}",f"../{section_name}")
+        save_file(section_readme_file,section)
+    else:
+        print(f"{section_name} is not an example directory")
     return
 readme = load_file("README.md")
 
-sections = readme.split("# ")
+sections = readme.split("\n# ")
 print(f" {len(sections)} sections found")
 for section in sections[1:]:    #skip first because it does not have a heading '# '
     copy_section(section)

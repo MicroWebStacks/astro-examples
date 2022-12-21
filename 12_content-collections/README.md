@@ -13,4 +13,3 @@ Simplest example with content collections
 [![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/12_content-collections)
 
 - https://freesvg.org/1542512156 : tree
-
