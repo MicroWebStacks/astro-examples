@@ -1,13 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro'
-import { sequence_uid } from '../libs/utils';
-import { project_dir } from '../libs/utils';
 
-const proj = project_dir(import.meta.url)
-const c1 = sequence_uid()
-const c2 = sequence_uid()
-const c3 = sequence_uid()
+const proj = "05_client-uid-counters"
 
 console.log("index.astro>")
 ---

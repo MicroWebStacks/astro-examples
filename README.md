@@ -47,11 +47,15 @@ requires Node18 Node18 for ReadableStream(), currently only on Gitpod
 # 04_client-counters
 [./04_client-counters](./04_client-counters)
 
-simpler with a single client script but without single instance management, applies to all
+A simple approach for multiple instances of a component. A `<script>` is included once. It initiates all components of a class on page load without requiring unique identification
+
+<img src="./media/04_client-counters.png" width="400">
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/04_client-counters)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/04_client-counters)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/04_client-counters)
+
+
 
 
 # 05_client-uid-counters
@@ -74,6 +78,8 @@ Alternatives:
 
 Optionally:
 * a hash function could be used if an unidentifieable id is desired that does not reflect the user input (using counting numbers or names,...), if the input data is too big such as complete file or if the uid is required to always have the same consistent format e.g. number of characters which the user cannot guarantee.
+
+<img src="./media/05_client-uid-counters.png" width="400">
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/05_client-uid-counters)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/05_client-uid-counters)
@@ -224,6 +230,11 @@ Main features :
 * Modal Images and Gallery Components
 * Nav Bar, Hierarchical menu, Table of Content with scroll spy,...
 
+screenshot :
+
+<img src="./media/astro-big-doc.png" width="400">
+
+
 ## astro-home-control
 * Github repo : https://github.com/MicroWebStacks/astro-home-control
 
@@ -232,6 +243,10 @@ Main features :
 * Home Automation MQTT Client running on Astro as SSR
 * Client page update with Server Sent Events
 * Custom switches with feedback and custom sliders with animated SVG
+
+screenshot :
+
+<img src="./media/astro-home-control.png" width="400">
 
 ## astro-lottie
 

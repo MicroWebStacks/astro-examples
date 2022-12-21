@@ -1,16 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro'
-import { project_dir } from '../libs/utils';
 
-const proj = project_dir(import.meta.url)
-
+const proj = "04_client-counters"
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Astro <span class="text-gradient">UID</span> Scoped Components</h1>
+		<h1>Astro <span class="text-gradient">Multi instance</span> Components</h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p>Every component has a generated UID to scope its js code</p>
 		<h2>Time+Random UIDs</h2>
