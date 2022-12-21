@@ -182,7 +182,7 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 ## references
 * https://stackoverflow.com/questions/73341205/why-does-the-icon-in-this-astro-svelte-component-flicker-on-refresh/74873656#74873656
 
-* todo : check example with blocling head script
+* todo : check example with blocling head script can solve ssg
 
 # 14_client-storage-counter
 [./14_client-storage-counter](./14_client-storage-counter)
