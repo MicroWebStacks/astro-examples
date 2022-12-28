@@ -5,19 +5,19 @@ import {get,set} from './shared'
 
 const proj = "18_ssr-cache"
 
+let uid = get()
 
-if(get() == 0){
-	console.log(`index> assigning new id`)
-	set(suid())
+if(uid == 0){
+	uid = suid()
+	set(uid)
+	console.log(`index> assigning new id (${uid})`)
+}else{
+	console.log(`index> existing id (${uid})`)
 }
-
-const uid = get()
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-console.log(`index> start id(${uid})`)
 await delay(2000)
 console.log(`index> done`)
 

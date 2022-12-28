@@ -1,1 +1,1 @@
-node server/server.js
+node dist/server/entry.mjs
