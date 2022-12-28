@@ -230,6 +230,8 @@ example using astrojs/image integration
 
 Generate javascript that can be executed on the client. The UID set by the server, is fetched by the client inside a javascript file
 
+Note : although functional, this method is not recommended due to Vite complaning about dynamic import and security risk it implies.
+
 <img src="./media/17_dynamic-javascript.png" width="400">
 
 
