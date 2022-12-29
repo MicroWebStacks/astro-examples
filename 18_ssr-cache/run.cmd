@@ -1,1 +1,1 @@
-node dist/server/entry.mjs
+start pnpm run proxy && pnpm run preview

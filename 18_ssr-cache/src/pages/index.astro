@@ -1,25 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { suid } from '../libs/utils';
-import {get,set} from './shared'
+import {get,set} from './page-data'
+import {set_url_hash} from './cacheManager'
 
 const proj = "18_ssr-cache"
 
-let uid = get()
+const timeout = 2000
 
+let uid = get()
 if(uid == 0){
 	uid = suid()
-	set(uid)
-	console.log(`index> assigning new id (${uid})`)
+	set(uid)//TODO update hash within set(uid)
+    await set_url_hash(Astro.url.pathname,uid)
+	console.log(`index> assigning new id (${uid}) to '${Astro.url.pathname}'`)
 }else{
-	console.log(`index> existing id (${uid})`)
+	console.log(`index> existing id (${uid}) in '${Astro.url.pathname}'`)
 }
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-await delay(2000)
+await delay(timeout)
 console.log(`index> done`)
+
+
 
 ---
 
@@ -28,7 +33,7 @@ console.log(`index> done`)
 		<h1>Server cache <span class="text-gradient">{uid}</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
-			example for testing server cache. Fresh load has 500 ms delay.
+			example for testing server cache. Fresh load has {timeout} ms delay.
 		</p>
 		<p class="client"></p>
 		<button class="update">update (spoil cache)</button>
@@ -67,8 +72,9 @@ console.log(`index> done`)
 	import {async_put,suid} from '../libs/utils'
 	document.querySelector(".update").onclick = ()=>{
 		const newVal = suid()
-		async_put("api/update",{value:newVal}).then((resp)=>{
+		async_put("/api/update",{value:newVal}).then((resp)=>{
 			console.log(newVal)
+			console.log(resp)
 		})
 	}
 </script>
