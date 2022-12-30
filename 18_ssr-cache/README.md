@@ -1,12 +1,23 @@
 # 18_ssr-cache
 [../18_ssr-cache](../18_ssr-cache)
 
-* astro-mode : SSR-standalone
-* express    : proxy
+* adapter : node-standalone
+* proxy   : express
 
-* Astro uses streaming and already has response sent when calling the page SSR code :( https://docs.astro.build/en/guides/server-side-rendering/#astrorequestheaders
+Running mode :
 
-* updating response headers requires a middleware
+* astro starts with `pnpm run preview` listens on port 4000
+* express starts with `pnpm run proxy` listens on port 3000
+* first client page load from proxy : cache miss, proxy fetches data from SSR
+* SSR generates the page and assigns a page hash
+* page hash is updated on the proxy
+* when the proxy fetches the page it identifies the cached page with its hash
+* follow up request checks if page is available and if hash is fresh
+* when the user updates the data, the server updates the page hash
+* follow up requests on the proxy show the page to be stale due to old cached page, the proxy fetches the page with the new hash
+
+<img src="../media/18_ssr-cache.drawio.svg" width="700">
+
 
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/18_ssr-cache)

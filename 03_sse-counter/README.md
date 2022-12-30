@@ -1,7 +1,7 @@
 # 03_sse-counter
 [../03_sse-counter](../03_sse-counter)
 
-* mode : SSR-standalone
+* adapter : node-standalone
 
 SSE: Server Sent Events. global var using a timer and Emitter
 

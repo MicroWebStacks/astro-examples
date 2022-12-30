@@ -1,7 +1,7 @@
 # 19_cookie-counter
 [../19_cookie-counter](../19_cookie-counter)
 
-* mode : SSR-standalone
+* adapter : node-standalone
 
 Counts the pages load for a specific client with cookies. This examples shows how to get and set a cookie from a .astro page while example 13 gets the cookie from the server and set it from the client. 
 
