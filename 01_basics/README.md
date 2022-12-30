@@ -1,6 +1,8 @@
 # 01_basics
 [../01_basics](../01_basics)
 
+* mode : static
+
 This is a minimal example that shows the node version running
 
 <img src="../media/01_basics.png" width="400">

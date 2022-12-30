@@ -1,4 +1,7 @@
 # 04_client-counters
+
+* mode : static
+
 [../04_client-counters](../04_client-counters)
 
 A simple approach for multiple instances of a component. A `<script>` is included once. It initiates all components of a class on page load without requiring unique identification

@@ -1,6 +1,8 @@
 # 11_deno-env
 [../11_deno-env](../11_deno-env)
 
+* adapter : deno
+
 Testing environment variables in deno and deno.deploy
 
 demo : https://astro-env.deno.dev/

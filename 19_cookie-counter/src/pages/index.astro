@@ -1,20 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const proj = "01_basics"
-const node_version = process.version
-console.log(`index.astro> node version = ${node_version}`)
+const proj = "19_cookie-counter"
+
+let counter = 0
+
+if(Astro.cookies.has("counter")){
+	const cookie = Astro.cookies.get("counter")
+	counter = parseInt(cookie.value) + 1
+	console.log(`index> cookie exist (${counter})`)
+}else{
+	console.log("index> cookie does not exist starting from 0")
+}
+
+Astro.cookies.set("counter",counter)
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Astro Node version <span class="text-gradient">{node_version}</span></h1>
+		<h1>Astro cookie <span class="text-gradient">{counter}</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
-			This is a minimal example that shows the node version running
+			Counts the pages load for a specific client with cookies
 		</p>
-		<a href="https://github.com/MicroWebStacks/astro-examples/tree/main/01_basics">github</a>
 	</main>
 </Layout>
 

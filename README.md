@@ -4,6 +4,8 @@ showcase examples for isolated simple usage patterns
 # 01_basics
 [./01_basics](./01_basics)
 
+* mode : static
+
 This is a minimal example that shows the node version running
 
 <img src="./media/01_basics.png" width="400">
@@ -16,6 +18,8 @@ This is a minimal example that shows the node version running
 
 # 02_ssr-counter
 [./02_ssr-counter](./02_ssr-counter)
+
+* mode : SSR-standalone
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
@@ -32,6 +36,8 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 03_sse-counter
 [./03_sse-counter](./03_sse-counter)
 
+* mode : SSR-standalone
+
 SSE: Server Sent Events. global var using a timer and Emitter
 
 Server keeps couter state. reloading the page has no effect on the counter
@@ -45,6 +51,9 @@ requires Node18 Node18 for ReadableStream(), currently only on Gitpod
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/03_sse-counter)
 
 # 04_client-counters
+
+* mode : static
+
 [./04_client-counters](./04_client-counters)
 
 A simple approach for multiple instances of a component. A `<script>` is included once. It initiates all components of a class on page load without requiring unique identification
@@ -136,6 +145,8 @@ Note only Stackbliz working for this sample (Codesandbox and Gitpod wip)
 
 # 11_deno-env
 [./11_deno-env](./11_deno-env)
+
+* adapter : deno
 
 Testing environment variables in deno and deno.deploy
 
@@ -242,6 +253,9 @@ Note : although functional, this method is not recommended due to Vite complanin
 # 18_ssr-cache
 [./18_ssr-cache](./18_ssr-cache)
 
+* astro-mode : SSR-standalone
+* express    : proxy
+
 * Astro uses streaming and already has response sent when calling the page SSR code :( https://docs.astro.build/en/guides/server-side-rendering/#astrorequestheaders
 
 * updating response headers requires a middleware
@@ -251,6 +265,16 @@ Note : although functional, this method is not recommended due to Vite complanin
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/18_ssr-cache)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/18_ssr-cache)
 
+# 19_cookie-counter
+[./19_cookie-counter](./19_cookie-counter)
+
+* mode : SSR-standalone
+
+Counts the pages load for a specific client with cookies. This examples shows how to get and set a cookie from a .astro page while example 13 gets the cookie from the server and set it from the client. 
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/19_cookie-counter)
+[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/19_cookie-counter)
+[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/19_cookie-counter)
 
 # More Astro examples
 
