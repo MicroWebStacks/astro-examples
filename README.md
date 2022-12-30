@@ -242,7 +242,7 @@ Note : although functional, this method is not recommended due to Vite complanin
 # 18_ssr-cache
 [./18_ssr-cache](./18_ssr-cache)
 
-* Astro uses streaming and already has response sent when calling the page SSR code :( https://docs.astro.build/en/guides/server-side-rendering/#astrorequestheaders
+* Astro uses streaming and can send response from page, just not from component code :( https://docs.astro.build/en/guides/server-side-rendering/#astrorequestheaders
 
 * updating response headers requires a middleware
 
