@@ -4,8 +4,6 @@ showcase examples for isolated simple usage patterns
 # 01_basics
 [./01_basics](./01_basics)
 
-* mode : static
-
 This is a minimal example that shows the node version running
 
 <img src="./media/01_basics.png" width="400">
@@ -19,7 +17,7 @@ This is a minimal example that shows the node version running
 # 02_ssr-counter
 [./02_ssr-counter](./02_ssr-counter)
 
-* mode : SSR-standalone
+* adapter : node-standalone
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
@@ -36,7 +34,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 03_sse-counter
 [./03_sse-counter](./03_sse-counter)
 
-* mode : SSR-standalone
+* adapter : node-standalone
 
 SSE: Server Sent Events. global var using a timer and Emitter
 
@@ -51,8 +49,6 @@ requires Node18 Node18 for ReadableStream(), currently only on Gitpod
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/03_sse-counter)
 
 # 04_client-counters
-
-* mode : static
 
 [./04_client-counters](./04_client-counters)
 
@@ -269,7 +265,7 @@ Note : although functional, this method is not recommended due to Vite complanin
 # 19_cookie-counter
 [./19_cookie-counter](./19_cookie-counter)
 
-* mode : SSR-standalone
+* adapter : node-standalone
 
 Counts the pages load for a specific client with cookies. This examples shows how to get and set a cookie from a .astro page while example 13 gets the cookie from the server and set it from the client. 
 
