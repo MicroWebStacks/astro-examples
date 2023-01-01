@@ -254,6 +254,10 @@ Note : although functional, this method is not recommended due to Vite complanin
 * adapter : node-standalone
 * proxy   : express
 
+* cache event-drive content
+* call purge method
+* put pass througn
+
 Running mode :
 
 * astro starts with `pnpm run preview` listens on port 4000
