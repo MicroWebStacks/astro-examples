@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.static('dist/client/'))
 
-app.use(cacheHandler);
+app.get('/',cacheHandler);
 app.use(ssrHandler);
 
 app.use((req, res, next) => {
