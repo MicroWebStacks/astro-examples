@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { suid } from '../libs/utils';
+import {get,set} from './page-data'
+import {set_url_hash} from './cacheManager'
+
+const proj = "20_ssr-cache-proxy"
+
+const timeout = 2000
+
+let uid = get()
+if(uid == 0){
+	uid = suid()
+	set(uid)//TODO update hash within set(uid)
+    await set_url_hash(Astro.url.pathname,uid)
+	console.log(`index> assigning new id (${uid}) to '${Astro.url.pathname}'`)
+}else{
+	console.log(`index> existing id (${uid}) in '${Astro.url.pathname}'`)
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+await delay(timeout)
+console.log(`index> done`)
+
+
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Server cache <span class="text-gradient">{uid}</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<p class="instructions">
+			example for testing server cache. Fresh load has {timeout} ms delay.
+		</p>
+		<p class="client"></p>
+		<button class="update">update (spoil cache)</button>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
+
+<script>
+	import {async_put,suid} from '../libs/utils'
+	document.querySelector(".update").onclick = ()=>{
+		const newVal = suid()
+		console.log(`updating with '${newVal}'`)
+		async_put("/api/update",{value:newVal}).then((resp)=>{
+			console.log(newVal)
+			console.log(resp)
+		})
+	}
+</script>
