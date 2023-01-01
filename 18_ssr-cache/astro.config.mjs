@@ -1,9 +1,29 @@
 import node from '@astrojs/node'
-import { defineConfig } from 'astro/config';
+import * as dotenv from 'dotenv'
 
-export default defineConfig({
-  output: "server",
-  adapter: node({
-    mode: 'middleware'
-  })
-});
+dotenv.config()
+
+
+let config = {}
+
+if(process.env.SERVER == "PROXY"){
+  config = {
+    output: "server",
+    server:{
+      port:4000
+    },
+    adapter: node({
+      mode: 'standalone'
+    })
+  }
+}
+else if(process.env.SERVER == "MIDDLEWARE"){
+  config = {
+    output: "server",
+    adapter: node({
+      mode: 'middleware'
+    })
+  }  
+}
+
+export default config;

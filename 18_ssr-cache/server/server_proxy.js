@@ -1,5 +1,5 @@
 import express from 'express';
-import {cacheHandler} from './cacheRouter.js'
+import {cacheHandler} from './cacheRouter_proxy.js'
 
 const port = 3000
 const app = express();
