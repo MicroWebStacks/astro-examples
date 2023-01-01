@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "node dist/server/entry.mjs",
-    "proxy": "node server/server.js",
+    "proxy": "node server/server_middleware.js",
     "astro": "astro"
   },
   "dependencies": {
