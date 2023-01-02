@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import { suid } from '../libs/utils';
 import {get,set} from './page-data'
-import {set_url_hash} from './cacheManager'
 
 const proj = "21_ssr-cache-middleware"
 
@@ -12,11 +11,13 @@ let uid = get()
 if(uid == 0){
 	uid = suid()
 	set(uid)//TODO update hash within set(uid)
-    await set_url_hash(Astro.url.pathname,uid)
 	console.log(`index> assigning new id (${uid}) to '${Astro.url.pathname}'`)
 }else{
 	console.log(`index> existing id (${uid}) in '${Astro.url.pathname}'`)
 }
+
+//hash = ETag
+Astro.response.headers.set("ETag",uid)
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));

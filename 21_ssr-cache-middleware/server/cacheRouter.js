@@ -4,15 +4,15 @@ import {cache_has,cache_get,cache_set} from './cacheState.js'
 
 //https://stackoverflow.com/questions/19215042/express-logging-response-body
 function configure_catch_response(res,url) {
-    var oldWrite = res.write,
-        oldEnd = res.end;
+    var original_write = res.write,
+        original_end = res.end;
   
     var chunks = [];
   
     res.write = function (chunk) {
       chunks.push(chunk);
   
-      return oldWrite.apply(res, arguments);
+      return original_write.apply(res, arguments);
     };
   
     res.end = function (chunk) {
@@ -20,12 +20,11 @@ function configure_catch_response(res,url) {
             chunks.push(chunk);
         }
         const body = Buffer.concat(chunks).toString('utf8');
-        cache_set(url,body).then(
-            //done updating the cache
-            console.log("cache> updated")
-        )
-
-        oldEnd.apply(res, arguments);
+        const hash = res.get("ETag")
+        cache_set(url,body,hash)
+        console.log(`cache> updated with hash ${hash}`)
+        
+        original_end.apply(res, arguments);
     };
 }
 

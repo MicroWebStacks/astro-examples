@@ -5,11 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "node server/server.js",
     "build": "astro build",
-    "preview": "node dist/server/entry.mjs",
-    "middleware": "node server/server.js",
-    "proxy": "node server/server.js",
     "astro": "astro"
   },
   "dependencies": {

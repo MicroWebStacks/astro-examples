@@ -1,13 +1,14 @@
 import {promises as fs} from 'fs'
 
-const pages = {}
+const hashes = {}
 
-async function set_url_hash(url,hash){
-    pages[url] = hash
-
-    await fs.writeFile('./hashes.json', JSON.stringify(pages), 'utf8');
+async function update_url_hash(url,hash){
+    const text = await fs.readFile('./hashes.json', 'utf8');
+    const hashes = JSON.parse(text)
+    hashes[url] = hash
+    await fs.writeFile('./hashes.json', JSON.stringify(hashes), 'utf8');
 }
 
 export{
-    set_url_hash
+    update_url_hash
 }

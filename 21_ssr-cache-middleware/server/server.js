@@ -1,6 +1,6 @@
 import express from 'express';
 import { handler as ssrHandler } from '../dist/server/entry.mjs';
-import {cacheHandler} from './cacheRouter_middleware.js'
+import {cacheHandler} from './cacheRouter.js'
 
 const port = 3000
 const app = express();
@@ -15,5 +15,5 @@ app.use((req, res, next) => {
     res.status(404).send("Sorry can't find that!")
   })
 
-console.log(`cache proxy listening on port ${port}`)
+console.log(`cache middleware listening on port ${port}`)
 app.listen(port);
