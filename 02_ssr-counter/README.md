@@ -1,6 +1,8 @@
 # 02_ssr-counter
 [../02_ssr-counter](../02_ssr-counter)
 
+* adapter : node-standalone
+
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
 <img src="../media/02_ssr-counter.drawio.svg" width="500">

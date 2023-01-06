@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { suid } from '../libs/utils';
+import { set_data } from './data';
+const proj = "17_dynamic-javascript"
+
+const value = suid()
+
+set_data(value)
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Dynamic js <span class="text-gradient">{value}</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<p class="instructions">
+			Generate javascript that can be executed on the client. The UID set by the server, is fetched by the client on a js file
+		</p>
+		<p class="client"></p>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
+
+<script src="/api/dyn_js" is:inline/>
+
+
+<script >
+	//(index):9 Uncaught TypeError: o.map is not a function
+	//const url = '/api/dyn_js'
+	//import(url).then(		console.log("imported")	)
+</script>
