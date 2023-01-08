@@ -5,7 +5,7 @@ function remarkCheck() {
     console.log("   ---   remarkCheck   ---")
     visit(syntaxTree,  node => {
       console.log(`check : ${node.type}`)
-      //console.log(node)
+      console.log(node)
     });
     return syntaxTree;
   };

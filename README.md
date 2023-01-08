@@ -317,13 +317,12 @@ Same concept as the previous example but here the cache proxy and Astro SSR are 
 
 Example for testing SVG usage within `.astro`, `.md` and `.mdx`
 
-critical features under test :
-* usage of svg `<defs/>` tag
-* usage of attributes with ':' e.g. `xmlns:xlink`
-* usage of html comment inside svg
+This highlights incompatibility of inlined SVG when injected from remark/rehype plugins in an mdx file
+* attributes with ':' e.g. `xmlns:xlink` gets treated as .jsx and converted to `xmlnsXlink`, `xmlns` or `xmlnsxlink`, all of which break the SVG rendering
 
-out of scope :
-* mdx does not support html comments inside SVG `<!-- This is a html comment -->`
+Note :
+* html comments not supported
+* html empty new lines of spaces also break the html parsing as indentation takes precendence
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)

@@ -1,0 +1,254 @@
+{
+    "astro:jsx": true,
+    "props": {
+        "children": [
+            "\n",
+            {
+                "astro:jsx": true,
+                "type": "svg",
+                "props": {
+                    "xmlns": "http://www.w3.org/2000/svg",
+                    "xmlnsXlink": "http://www.w3.org/1999/xlink",
+                    "contentStyleType": "text/css",
+                    "height": "120px",
+                    "preserveAspectRatio": "none",
+                    "style": {
+                        "width": "192px",
+                        "height": "120px",
+                        "background": "#FFFFFF"
+                    },
+                    "version": "1.1",
+                    "viewBox": "0 0 192 120",
+                    "width": "192px",
+                    "zoomAndPan": "magnify",
+                    "children": [
+                        "\n    ",
+                        {
+                            "astro:jsx": true,
+                            "type": "defs",
+                            "props": {}
+                        },
+                        "\n    ",
+                        {
+                            "astro:jsx": true,
+                            "type": "g",
+                            "props": {
+                                "children": [
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "line",
+                                        "props": {
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "0.5",
+                                                "strokeDasharray": "5.0,5.0"
+                                            },
+                                            "x1": "39",
+                                            "x2": "39",
+                                            "y1": "36.2969",
+                                            "y2": "85.4297"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "line",
+                                        "props": {
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "0.5",
+                                                "strokeDasharray": "5.0,5.0"
+                                            },
+                                            "x1": "160",
+                                            "x2": "160",
+                                            "y1": "36.2969",
+                                            "y2": "85.4297"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "rect",
+                                        "props": {
+                                            "fill": "#E2E2F0",
+                                            "height": "30.2969",
+                                            "rx": "2.5",
+                                            "ry": "2.5",
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "0.5"
+                                            },
+                                            "width": "68",
+                                            "x": "5",
+                                            "y": "5"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "text",
+                                        "props": {
+                                            "fill": "#000000",
+                                            "fontFamily": "sans-serif",
+                                            "fontSize": "14",
+                                            "lengthAdjust": "spacing",
+                                            "textLength": "54",
+                                            "x": "12",
+                                            "y": "24.9951",
+                                            "children": "Michael"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "rect",
+                                        "props": {
+                                            "fill": "#E2E2F0",
+                                            "height": "30.2969",
+                                            "rx": "2.5",
+                                            "ry": "2.5",
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "0.5"
+                                            },
+                                            "width": "68",
+                                            "x": "5",
+                                            "y": "84.4297"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "text",
+                                        "props": {
+                                            "fill": "#000000",
+                                            "fontFamily": "sans-serif",
+                                            "fontSize": "14",
+                                            "lengthAdjust": "spacing",
+                                            "textLength": "54",
+                                            "x": "12",
+                                            "y": "104.4248",
+                                            "children": "Michael"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "rect",
+                                        "props": {
+                                            "fill": "#E2E2F0",
+                                            "height": "30.2969",
+                                            "rx": "2.5",
+                                            "ry": "2.5",
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "0.5"
+                                            },
+                                            "width": "52",
+                                            "x": "134",
+                                            "y": "5"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "text",
+                                        "props": {
+                                            "fill": "#000000",
+                                            "fontFamily": "sans-serif",
+                                            "fontSize": "14",
+                                            "lengthAdjust": "spacing",
+                                            "textLength": "38",
+                                            "x": "141",
+                                            "y": "24.9951",
+                                            "children": "Maria"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "rect",
+                                        "props": {
+                                            "fill": "#E2E2F0",
+                                            "height": "30.2969",
+                                            "rx": "2.5",
+                                            "ry": "2.5",
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "0.5"
+                                            },
+                                            "width": "52",
+                                            "x": "134",
+                                            "y": "84.4297"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "text",
+                                        "props": {
+                                            "fill": "#000000",
+                                            "fontFamily": "sans-serif",
+                                            "fontSize": "14",
+                                            "lengthAdjust": "spacing",
+                                            "textLength": "38",
+                                            "x": "141",
+                                            "y": "104.4248",
+                                            "children": "Maria"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "polygon",
+                                        "props": {
+                                            "fill": "#181818",
+                                            "points": "148,63.4297,158,67.4297,148,71.4297,152,67.4297",
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "1.0"
+                                            }
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "line",
+                                        "props": {
+                                            "style": {
+                                                "stroke": "#181818",
+                                                "strokeWidth": "1.0"
+                                            },
+                                            "x1": "39",
+                                            "x2": "154",
+                                            "y1": "67.4297",
+                                            "y2": "67.4297"
+                                        }
+                                    },
+                                    "\n        ",
+                                    {
+                                        "astro:jsx": true,
+                                        "type": "text",
+                                        "props": {
+                                            "fill": "#000000",
+                                            "fontFamily": "sans-serif",
+                                            "fontSize": "13",
+                                            "lengthAdjust": "spacing",
+                                            "textLength": "97",
+                                            "x": "46",
+                                            "y": "62.3638",
+                                            "children": "Message(Hello)"
+                                        }
+                                    },
+                                    "\n    "
+                                ]
+                            }
+                        },
+                        "\n"
+                    ]
+                }
+            }
+        ]
+    }
+}

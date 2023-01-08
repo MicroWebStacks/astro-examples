@@ -1,0 +1,34 @@
+---
+import Puml from './puml_only_md.md'
+import PumlX from './puml_only_mdx.mdx'
+import PumlXObj from './puml_only_mdx_obj.mdx'
+
+console.log(Puml)
+console.log(PumlX)
+
+const puml = await Puml()
+const pumlX = await PumlX()
+console.log(" -------- MD Start  --------")
+console.log(JSON.stringify(puml))
+console.log(" -------- MD finish   --------")
+//console.log(puml.props.children.length)
+//console.log(typeof puml.props.children)
+console.log(" -------- MDX Start  --------")
+console.log(JSON.stringify(pumlX))
+console.log(" -------- MDX finish   --------")
+//console.log(pumlX.props.children.length)
+//console.log(typeof pumlX.props.children)
+//console.log(pumlX.props.children[0])
+//console.log(pumlX.props.children[1])
+
+
+---
+
+<div>MD</div>
+<Puml/>
+
+<div>MDX</div>
+<PumlX/>
+
+<div>MDX Obj</div>
+<PumlXObj/>
