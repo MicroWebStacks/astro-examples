@@ -4,17 +4,16 @@
 <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" width="100px">
     <!-- Some graphical objects to use -->
     <defs>
-      <circle id="myCircle" cx="0" cy="0" r="5" />
-  
-      <linearGradient id="myGradient" gradientTransform="rotate(90)">
+        <circle id="myCircle" cx="0" cy="0" r="5" />
+        
+        <linearGradient id="myGradient" gradientTransform="rotate(90)">
         <stop offset="20%" stop-color="gold" />
         <stop offset="90%" stop-color="red" />
-      </linearGradient>
+        </linearGradient>
     </defs>
-  
     <!-- using my graphical objects -->
     <use x="5" y="5" href="#myCircle" fill="url('#myGradient')" />
-  </svg>
+</svg>
 
 # Math Equation with defs
 <svg style="vertical-align: -1.552ex;" xmlns="http://www.w3.org/2000/svg" width="14.293ex"
@@ -78,5 +77,40 @@
                 </g>
             </g>
         </g>
+    </g>
+</svg>
+
+# Plantuml
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    contentStyleType="text/css" height="120px" preserveAspectRatio="none"
+    style="width:192px;height:120px;background:#FFFFFF;" version="1.1" viewBox="0 0 192 120"
+    width="192px" zoomAndPan="magnify">
+    <defs />
+    <g>
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="39" x2="39"
+            y1="36.2969" y2="85.4297" />
+        <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="160" x2="160"
+            y1="36.2969" y2="85.4297" />
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5"
+            style="stroke:#181818;stroke-width:0.5;" width="68" x="5" y="5" />
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="54" x="12" y="24.9951">Michael</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5"
+            style="stroke:#181818;stroke-width:0.5;" width="68" x="5" y="84.4297" />
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="54" x="12" y="104.4248">Michael</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5"
+            style="stroke:#181818;stroke-width:0.5;" width="52" x="134" y="5" />
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="38" x="141" y="24.9951">Maria</text>
+        <rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5"
+            style="stroke:#181818;stroke-width:0.5;" width="52" x="134" y="84.4297" />
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="38" x="141" y="104.4248">Maria</text>
+        <polygon fill="#181818" points="148,63.4297,158,67.4297,148,71.4297,152,67.4297"
+            style="stroke:#181818;stroke-width:1.0;" />
+        <line style="stroke:#181818;stroke-width:1.0;" x1="39" x2="154" y1="67.4297" y2="67.4297" />
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing"
+            textLength="97" x="46" y="62.3638">Message(Hello)</text><!--SRC=[yyrCpaXCpL7GjLFmJIpAJ5ImKl1DBIvEJ4_Ly4ZDoSdN1000]-->
     </g>
 </svg>

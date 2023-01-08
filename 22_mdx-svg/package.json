@@ -13,5 +13,10 @@
   "dependencies": {
     "astro": "^2.0.0-beta.0",
     "@astrojs/mdx": "^0.15.0-beta.1"
-  }
+  },
+  "devDependencies": {
+    "rehype-mathjax": "^4.0.2",
+    "remark-math": "^5.1.1",
+    "unist-util-visit": "^4.1.1"
+  }  
 }

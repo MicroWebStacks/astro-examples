@@ -1,0 +1,26 @@
+---
+import Formula from './formula_md.md'
+import FormulaX from './formula_mdx.mdx'
+
+console.log(Formula)
+console.log(FormulaX)
+
+const form = await Formula()
+const formX = await FormulaX()
+console.log("MD   --------")
+console.log(form.props.children.length)
+console.log(typeof form.props.children)
+console.log("MDX --------")
+console.log(formX.props.children.length)
+console.log(typeof formX.props.children)
+console.log(formX.props.children[0])
+console.log(formX.props.children[1])
+
+
+---
+
+<div>MD</div>
+<Formula/>
+
+<div>MDX</div>
+<FormulaX/>

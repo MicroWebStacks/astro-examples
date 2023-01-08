@@ -322,6 +322,9 @@ critical features under test :
 * usage of attributes with ':' e.g. `xmlns:xlink`
 * usage of html comment inside svg
 
+out of scope :
+* mdx does not support html comments inside SVG `<!-- This is a html comment -->`
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)
