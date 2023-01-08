@@ -12,3 +12,7 @@ critical features under test :
 [![open in Codesandbox](../media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)
 [![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/22_mdx-svg)
 
+## references
+* github issue https://github.com/withastro/astro/issues/5796#issuecomment-1374766914
+
+
