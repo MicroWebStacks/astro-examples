@@ -350,7 +350,11 @@ Note :
 # 24_api-proxy
 [./24_api-proxy](./24_api-proxy)
 
-(Fail) test reference for Vite `server.proxy` feature
+* can Astro proxy a service with the Vite server.proxy feature ?
+    * No, Astro does not forward server.proxy to Vite
+* does Astro need a proxy to access a different port running on the same host ?
+    * No, because Astro frontmatter runs on the server so has access to localhost ports
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/24_api-proxy)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/24_api-proxy)

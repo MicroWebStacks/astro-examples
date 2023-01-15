@@ -3,13 +3,13 @@ import {green_log} from './utils'
 
 async function config_setup({ updateConfig, config, addPageExtension, command }) {
     green_log(`astro:config:setup> running (${command})`)
-}
-
-async function config_done({ config }){
-    green_log(`astro:config:done> start`)
+	config.server.proxy = {'/api': 'http://localhost:4000'}
 	console.log(config.server)
 	console.log(config.vite)
-	green_log(`astro:config:done> end`)
+    green_log(`astro:config:setup> end`)
+}
+
+async function config_done(){
 }
 
 async function server_setup({ server }){
@@ -21,7 +21,7 @@ async function server_start({ address }){
 async function server_done(){
 	green_log(`astro:server:done>`)
 }
-async function build_start({ buildConfig }){
+async function build_start(){
 	green_log(`astro:build:start>`)
 }
 async function build_setup({vite, pages, target}){
