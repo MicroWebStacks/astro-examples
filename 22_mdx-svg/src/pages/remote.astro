@@ -1,0 +1,18 @@
+---
+import fs from 'node:fs/promises'
+import {compile} from '@mdx-js/mdx'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
+
+const jsx_text =   String(
+    await compile(await fs.readFile('./src/pages/formula_mdx.mdx'), {
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex]
+    })
+  )
+
+
+await fs.writeFile('./src/pages/formula_mdx.jsx',jsx_text)
+
+---
+

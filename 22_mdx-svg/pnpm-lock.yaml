@@ -2,14 +2,18 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/mdx': ^0.15.0-beta.1
+  '@mdx-js/mdx': ^2.2.1
   astro: ^2.0.0-beta.0
+  rehype-katex: ^6.0.2
   rehype-mathjax: ^4.0.2
   remark-math: ^5.1.1
   unist-util-visit: ^4.1.1
 
 dependencies:
   '@astrojs/mdx': 0.15.0-beta.1
+  '@mdx-js/mdx': 2.2.1
   astro: 2.0.0-beta.0
+  rehype-katex: 6.0.2
 
 devDependencies:
   rehype-mathjax: 4.0.2
@@ -867,7 +871,6 @@ packages:
 
   /@types/katex/0.11.1:
     resolution: {integrity: sha512-DUlIj2nk0YnJdlWgsFuVKcX27MLW0KbKmGVoUHmFr+74FYYNUDAaj9ZqTADvsbE8rfxuVmSFc7KczYn5Y09ozg==}
-    dev: true
 
   /@types/mathjax/0.0.37:
     resolution: {integrity: sha512-y0WSZBtBNQwcYipTU/BhgeFu1EZNlFvUNCmkMXV9kBQZq7/o5z82dNVyH3yy2Xv5zzeNeQoHSL4Xm06+EQiH+g==}
@@ -1282,7 +1285,6 @@ packages:
   /commander/8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
-    dev: true
 
   /commander/9.2.0:
     resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
@@ -2154,7 +2156,6 @@ packages:
       '@types/unist': 2.0.6
       hast-util-is-element: 2.1.2
       unist-util-find-after: 4.0.0
-    dev: true
 
   /hast-util-whitespace/2.0.0:
     resolution: {integrity: sha512-Pkw+xBHuV6xFeJprJe2BBEoDV+AvQySaz3pPDRUs5PNZEMQjpXJJueqrpcHIXxnWTcAGi/UOCgVShlkY6kLoqg==}
@@ -2429,6 +2430,13 @@ packages:
     dependencies:
       commander: 8.3.0
     dev: true
+
+  /katex/0.15.6:
+    resolution: {integrity: sha512-UpzJy4yrnqnhXvRPhjEuLA4lcPn6eRngixW7Q3TJErjg3Aw2PuLFBzTkdUb89UtumxjhHTqL3a5GDGETMSwgJA==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: false
 
   /kind-of/6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -3463,6 +3471,19 @@ packages:
       tslib: 2.4.1
     dev: false
 
+  /rehype-katex/6.0.2:
+    resolution: {integrity: sha512-C4gDAlS1+l0hJqctyiU64f9CvT00S03qV1T6HiMzbSuLBgWUtcqydWHY9OpKrm0SpkK16FNd62CDKyWLwV2ppg==}
+    dependencies:
+      '@types/hast': 2.3.4
+      '@types/katex': 0.11.1
+      hast-util-to-text: 3.1.2
+      katex: 0.15.6
+      rehype-parse: 8.0.4
+      unified: 10.1.2
+      unist-util-remove-position: 4.0.1
+      unist-util-visit: 4.1.1
+    dev: false
+
   /rehype-mathjax/4.0.2:
     resolution: {integrity: sha512-9q4Q4icTIbM5RtvQ4XquvEApGV2oDMaSVa5G3DwXomWU4fAPWYcOOt+iQRNaIH3RBMbFF239QbE5K7hm7rxMPQ==}
     dependencies:
@@ -4042,7 +4063,6 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
       unist-util-is: 5.1.1
-    dev: true
 
   /unist-util-generated/2.0.0:
     resolution: {integrity: sha512-TiWE6DVtVe7Ye2QxOVW9kqybs6cZexNwTwSMVgkfjEReqy/xwGpAXb99OxktoWwmL+Z+Epb0Dn8/GNDYP1wnUw==}
