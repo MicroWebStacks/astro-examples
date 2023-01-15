@@ -16,5 +16,3 @@ Note :
 
 ## references
 * github issue https://github.com/withastro/astro/issues/5796#issuecomment-1374766914
-
-

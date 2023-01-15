@@ -1,20 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { get_count, increment } from './shared';
+import { Markdown } from "astro-remote";
+import Heading from "../components/Heading.astro";
+import { suid } from '../libs/utils';
 
-const proj = "02_ssr-counter"
+const proj = "23_remote-markdown"
 
-increment()
-const current_count = get_count()
+
+const readme = `# hello markdown
+**style** text
+## heading 2
+more text
+
+dynamic vals = **${suid()}**
+`
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Astro page1 count = <span class="text-gradient">{current_count}</span></h1>
+		<h1>Astro remote <span class="text-gradient">Markdown</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
-		<a href="/page2">page2</a>
-		<p>shared global var demo. reload the page to increment the counter. All pages share the same counter</p>
+		<p>remote markdown here is generated with added new dynmaic value on page reload</p>
+		<div class="instructions">
+
+			<Markdown
+			content={readme}
+			components={{ Heading }}
+			/>
+		</div>
 	</main>
 </Layout>
 
