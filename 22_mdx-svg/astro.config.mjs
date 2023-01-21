@@ -20,7 +20,7 @@ export default defineConfig({
           remarkPUMLObj,
           remarkPUMLSvg,
           remarkMath,
-          //remarkCheck
+          remarkCheck
         ],
         rehypePlugins: [
           rehypeMathjax,
