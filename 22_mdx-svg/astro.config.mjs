@@ -6,9 +6,14 @@ import {remarkCheck} from './remark/remark-check'
 import {rehypeCheck} from './remark/rehype-check'
 import remarkMath from "remark-math"
 import rehypeMathjax from "rehype-mathjax"
+import node from '@astrojs/node'
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
+  adapter: node({
+    mode: 'standalone'
+  }),
     markdown:{
         syntaxHighlight: false,
         remarkPlugins: [
