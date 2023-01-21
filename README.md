@@ -367,6 +367,7 @@ Note :
 
 * jwt (secure cookie)
 * scalability stress test and limiting facrors (e.g. 15000 pages)
+* request specific context passing in Astro to avoid props drilling
 
 # More Astro examples
 
