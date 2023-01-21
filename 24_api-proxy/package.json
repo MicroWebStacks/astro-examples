@@ -10,12 +10,10 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "astro-remote": "^0.2.3",
-    "@astrojs/node": "^5.0.0-beta.1",
-    "express": "^4.18.2"
-  },
   "devDependencies": {
     "astro": "^2.0.0-beta.2"
-  }  
+  } ,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

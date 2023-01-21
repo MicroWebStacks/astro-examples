@@ -1,7 +1,14 @@
-import node from '@astrojs/node'
 import { defineConfig } from 'astro/config';
+import {int_test} from './src/libs/integration-test'
 
 export default defineConfig({
+  server:{
+    port: 3000,
+    proxy: {
+      '/api': 'http://localhost:4000'
+    }
+},
+  integrations: [int_test()],
   vite: {
     optimizeDeps: {
       esbuildOptions: {
@@ -11,6 +18,7 @@ export default defineConfig({
       }
     },
     server: {
+      port:5000,
       proxy: {
         '/api': 'http://localhost:4000'
       }
