@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
 import {remarkPUMLObj} from './remark/remark-plantuml-object'
 import {remarkPUMLSvg} from './remark/remark-plantuml-svg'
-import {remarkCheck} from './remark/remark-check'
+import {remarkLayoutCheck} from './remark/remark-layout-check'
 import {rehypeCheck} from './remark/rehype-check'
 import remarkMath from "remark-math"
 import rehypeMathjax from "rehype-mathjax"
@@ -20,7 +20,7 @@ export default defineConfig({
           remarkPUMLObj,
           remarkPUMLSvg,
           remarkMath,
-          remarkCheck
+          remarkLayoutCheck
         ],
         rehypePlugins: [
           rehypeMathjax,
