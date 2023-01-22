@@ -25,8 +25,8 @@
     },
     "local":{
         "output":"static",
-        "count":10,
-        "path":"src/local/markdown/",
+        "count":100,
+        "path":["src/pages/md/","local/markdown/"],
         "ext":".md"
     }
 }

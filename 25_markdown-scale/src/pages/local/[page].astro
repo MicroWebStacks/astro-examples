@@ -18,10 +18,8 @@ if(found){
 }
 
 export async function getStaticPaths(){
-    console.log("get static patsh")
     const posts = import.meta.glob('../../../local/markdown/**/*.{md,mdx}')
     const static_files_paths = Object.keys(posts).map((file)=>(file.replace("../../../local/markdown/","").replace(".mdx","").replace(".md","")))
-    console.log(static_files_paths)
     return static_files_paths.map((url)=>({params:{page:url}}))
 }
 
