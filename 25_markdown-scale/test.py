@@ -5,6 +5,7 @@ from os.path import dirname,join,isdir
 import subprocess
 from pathlib import Path
 import math
+import time
 
 root = Path('.')
 
@@ -23,6 +24,20 @@ def convert_size(size_bytes):
    s = round(size_bytes / p, 2)
    return "%s %s" % (s, size_name[i])
 
+def convert_time(seconds):
+    minutes = int(seconds / 60)
+    milliseconds = int((seconds - int(seconds))*1000)
+    seconds = int(seconds % 60)
+    text = ""
+    if(minutes != 0):
+        text += f"{minutes} mn "
+    if(seconds != 0):
+        text += f"{seconds} s "
+    if(milliseconds != 0):
+        text += f"{milliseconds} ms"
+    text.rstrip(" ")
+    return text
+
 def clear(dir):
     if isdir(dir):
         shutil.rmtree(dir)
@@ -40,21 +55,36 @@ def clear_all(config_list):
     return
 
 def test(config):
+    report = {}
     file_dir = join(root,config["path"])
 
     for id in range(config["count"]):
         text_id = "{:06d}".format(id)
-        save(template,file_dir+text_id+config["ext"])
+        content = f"# Page {text_id}\n" + template
+        save(content,file_dir+text_id+config["ext"])
 
-    print(f'saved {config["count"]} "{config["ext"]}" pages in {file_dir}')
+    report["count"] = config["count"]
+    report["ext"] = config["ext"]
+    report["path"] = config["path"]
+    start_build = time.time()
+    proc = subprocess.run(["build.cmd"])#TODO ["pnpm","run","build"] the system cannot find the specific file
+    if(proc.returncode == 0):
+        dir_size_bates = dir_size(join(root,"dist"))
+        report["size"] = dir_size_bates
+        report["size_text"] = convert_size(dir_size_bates)
+        time_sec = time.time() - start_build
+        report["time"] = time_sec
+        report["time_text"] = convert_time(time_sec)
+        report["status"] = "pass"
+    else:
+        report["status"] = "fail"
+    return report
 
 
 template = open("template.md").read()
 config_list = json.load(open("pages_count.json"))
 
 clear_all(config_list)
-test(config_list[0])
-proc = subprocess.run(["build.cmd"])#TODO ["pnpm","run","build"] the system cannot find the specific file
-if(proc.returncode == 0):
-    dir_size_bates = dir_size(join(root,"dist"))
-    print(f"build size = {convert_size(dir_size_bates)}")
+report = test(config_list[0])
+
+print(report)
