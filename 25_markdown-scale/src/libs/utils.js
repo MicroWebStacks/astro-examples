@@ -1,4 +1,4 @@
-import {dirname, normalize, basename, sep,join} from 'path'
+import {dirname, normalize, basename, join} from 'path'
 let next_uid = 1
 
 function uid(){

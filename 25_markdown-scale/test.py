@@ -77,6 +77,7 @@ def clear_all(path_list):
     return
 
 def test(config):
+    print(f"running test : {config}")
     report = {}
     file_dir = join(root,config["path"])
 
@@ -104,9 +105,9 @@ def test(config):
     return report
 
 def run_config_list(config_list):
-    clear_all(["src/pages/md/","src/pages/mdx/","local/md/","local/mdx/"])
     reports = []
     for config in config_list:
+        clear_all(["src/pages/md/","src/pages/mdx/","local/md/","local/mdx/"])
         report = test(config)
         reports.append(report)
     return reports
