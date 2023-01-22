@@ -1,3 +1,4 @@
+import mdx from "@astrojs/mdx";
 import node from '@astrojs/node'
 import { defineConfig } from 'astro/config';
 
@@ -7,5 +8,6 @@ export default defineConfig({
   output: output,
   adapter: node({
     mode: 'standalone'
-  })
+  }),
+  integrations: [mdx()]
 });

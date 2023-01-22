@@ -1,5 +1,6 @@
 import json
 import shutil
+import sys
 import os
 from os import mkdir
 from os.path import dirname,join,isdir
@@ -8,6 +9,7 @@ from pathlib import Path
 import math
 import time
 from copy import deepcopy
+
 
 root = Path('.')
 
@@ -65,8 +67,10 @@ def append_jsonl(data,path):
     for entry in data:
         jsonline = json.dumps(entry)
         append(jsonline+'\n',path)
-        del entry["size_bytes"]
-        del entry["time_sec"]
+        if("size_bytes" in entry):
+            del entry["size_bytes"]
+        if("time_sec" in entry):
+            del entry["time_sec"]
         jsonline = json.dumps(entry)
         print(jsonline)
     return
@@ -92,8 +96,8 @@ def test(config):
     test_env = os.environ.copy()
     test_env["OUTPUT"] = config["output"]
     proc = subprocess.run(["build.cmd"], env=test_env)#TODO ["pnpm","run","build"] the system cannot find the specific file
-    if(proc.returncode == 0):
-        dir_size_bates = dir_size(join(root,"dist"))
+    dir_size_bates = dir_size(join(root,"dist"))
+    if(dir_size_bates != 0):
         report["size"] = convert_size(dir_size_bates)
         report["size_bytes"] = dir_size_bates
         time_sec = time.time() - start_build
@@ -107,7 +111,7 @@ def test(config):
 def run_config_list(config_list):
     reports = []
     for config in config_list:
-        clear_all(["src/pages/md/","src/pages/mdx/","local/md/","local/mdx/"])
+        clear_all(clear_path_list)
         report = test(config)
         reports.append(report)
     return reports
@@ -141,8 +145,14 @@ def test_range(filename,batch,reports_filename):
     append_jsonl(reports,reports_filename)
     return
 
+#--------- main ---------
 
 template = open("template.md").read()
+clear_path_list = ["dist","src/pages/md/","src/pages/mdx/","local/md/","local/mdx/"]
 
-#test_list("test_list.json","output","reports.jsonl")
-test_range("test_range.json","output_count","reports.jsonl")
+
+if(len(sys.argv) == 2):
+    batch = sys.argv[1]
+else:
+    batch = "local"
+test_range("test_range.json",batch,"reports.jsonl")
