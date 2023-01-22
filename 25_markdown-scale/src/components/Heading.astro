@@ -1,0 +1,18 @@
+---
+const { as: Component, href } = Astro.props;
+---
+
+<Component>
+    <a href={href}>
+        <slot />
+    </a>
+</Component>
+
+<style>
+  h1 {
+    color: #5599bb;
+  }
+  a{
+	text-decoration: none;
+  }
+</style>

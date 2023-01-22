@@ -336,6 +336,9 @@ Note :
 # 23_remote-markdown
 [./23_remote-markdown](./23_remote-markdown)
 
+* adapter : node-standalone
+
+features
 * `astro-remote` works with astr v2 but not an official integration
 * Passing default components only `Heading, CodeBlock, CodeSpan, Note` no mapping of custom components, e.g. images,...
 
@@ -352,6 +355,14 @@ Note :
 # 24_api-proxy
 [./24_api-proxy](./24_api-proxy)
 
+4 Locations where to alter server config
+
+* `/vite.config.js`
+* `/astro.config.mjs:server.port,proxy`
+* `/astro.config.mjs:site.server.port,proxy`
+* `/src/libs/inetgration-test.js:config_setup().update_config()`
+
+summary
 * can Astro proxy a service with the Vite server.proxy feature ?
     * No, Astro does not forward server.proxy to Vite
 * does Astro need a proxy to access a different port running on the same host ?
@@ -365,10 +376,25 @@ Note :
 ## references
 * Vite feature : https://vitejs.dev/config/server-options.html#server-proxy
 * Stack issue : https://stackoverflow.com/questions/73212935/astro-how-to-proxy-service-calls
+
+# 25_markdown-scale
+[./25_markdown-scale](./25_markdown-scale)
+
+* scalability stress test and limiting facrors (e.g. 15000 pages)
+* markdown pages generator
+    * pages markdown
+    * pages mdx
+    * local markdown in .astro
+    * local mdx in .astro
+    * remote markdown
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/25_markdown-scale)
+[![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/25_markdown-scale)
+[![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/25_markdown-scale)
+
 # Upcoming
 
 * jwt (secure cookie)
-* scalability stress test and limiting facrors (e.g. 15000 pages)
 * request specific context passing in Astro to avoid props drilling
 
 # More Astro examples

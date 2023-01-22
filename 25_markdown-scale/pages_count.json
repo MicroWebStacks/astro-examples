@@ -1,0 +1,22 @@
+[
+    {
+        "count":10,
+        "path":"src/pages/md/",
+        "ext":".md"
+    },
+    {
+        "count":10,
+        "path":"src/pages/mdx/",
+        "ext":".mdx"
+    },
+    {
+            "count":10,
+            "path":"local/md/",
+            "ext":".md"
+        },
+    {
+        "count":10,
+        "path":"local/mdx/",
+        "ext":".mdx"
+    }
+]
