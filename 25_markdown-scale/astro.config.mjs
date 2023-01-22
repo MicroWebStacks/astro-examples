@@ -1,8 +1,10 @@
 import node from '@astrojs/node'
 import { defineConfig } from 'astro/config';
 
+const output = process.env.OUTPUT?process.env.OUTPUT:"static"
+
 export default defineConfig({
-  output: "server",
+  output: output,
   adapter: node({
     mode: 'standalone'
   })

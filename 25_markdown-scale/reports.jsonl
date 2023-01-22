@@ -1,0 +1,6 @@
+{"output": "static", "count": 10, "path": "src/pages/md/", "ext": ".md", "size": "8.3 KB", "size_bytes": 8499, "time": "3 s 293 ms", "time_sec": 3.293891191482544, "status": "pass"}
+{"output": "server", "count": 10, "path": "src/pages/md/", "ext": ".md", "size": "1.39 MB", "size_bytes": 1456881, "time": "4 s 709 ms", "time_sec": 4.70980978012085, "status": "pass"}
+{"output": "static", "count": 10, "path": "src/pages/md/", "ext": ".md", "size": "8.3 KB", "size_bytes": 8498, "time": "3 s 312 ms", "time_sec": 3.3122940063476562, "status": "pass"}
+{"output": "server", "count": 10, "path": "src/pages/md/", "ext": ".md", "size": "1.39 MB", "size_bytes": 1456881, "time": "4 s 752 ms", "time_sec": 4.75214147567749, "status": "pass"}
+{"output": "static", "count": 10, "path": "src/pages/md/", "ext": ".md", "size": "8.3 KB", "size_bytes": 8499, "time": "3 s 264 ms", "time_sec": 3.264388084411621, "status": "pass"}
+{"output": "server", "count": 10, "path": "src/pages/md/", "ext": ".md", "size": "1.39 MB", "size_bytes": 1456881, "time": "4 s 704 ms", "time_sec": 4.704183578491211, "status": "pass"}

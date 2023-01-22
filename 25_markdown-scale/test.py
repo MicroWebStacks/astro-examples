@@ -1,13 +1,20 @@
 import json
 import shutil
+import os
 from os import mkdir
 from os.path import dirname,join,isdir
 import subprocess
 from pathlib import Path
 import math
 import time
+from copy import deepcopy
 
 root = Path('.')
+
+def print_list(entries):
+    for entry in entries:
+        print(entry)
+    return
 
 #https://stackoverflow.com/questions/1392413/calculating-a-directorys-size-using-python
 def dir_size(root_dir_str):
@@ -49,9 +56,24 @@ def save(text,path):
         f.write(text)
     return
 
-def clear_all(config_list):
-    for config in config_list:
-        clear(join(root,config["path"]))
+def append(text,path):
+    with open(path, "a") as f:
+        f.write(text)
+    return
+
+def append_jsonl(data,path):
+    for entry in data:
+        jsonline = json.dumps(entry)
+        append(jsonline+'\n',path)
+        del entry["size_bytes"]
+        del entry["time_sec"]
+        jsonline = json.dumps(entry)
+        print(jsonline)
+    return
+
+def clear_all(path_list):
+    for path in path_list:
+        clear(join(root,path))
     return
 
 def test(config):
@@ -63,28 +85,63 @@ def test(config):
         content = f"# Page {text_id}\n" + template
         save(content,file_dir+text_id+config["ext"])
 
-    report["count"] = config["count"]
-    report["ext"] = config["ext"]
-    report["path"] = config["path"]
+    report = config
     start_build = time.time()
-    proc = subprocess.run(["build.cmd"])#TODO ["pnpm","run","build"] the system cannot find the specific file
+
+    test_env = os.environ.copy()
+    test_env["OUTPUT"] = config["output"]
+    proc = subprocess.run(["build.cmd"], env=test_env)#TODO ["pnpm","run","build"] the system cannot find the specific file
     if(proc.returncode == 0):
         dir_size_bates = dir_size(join(root,"dist"))
-        report["size"] = dir_size_bates
-        report["size_text"] = convert_size(dir_size_bates)
+        report["size"] = convert_size(dir_size_bates)
+        report["size_bytes"] = dir_size_bates
         time_sec = time.time() - start_build
-        report["time"] = time_sec
-        report["time_text"] = convert_time(time_sec)
+        report["time"] = convert_time(time_sec)
+        report["time_sec"] = time_sec
         report["status"] = "pass"
     else:
         report["status"] = "fail"
     return report
 
+def run_config_list(config_list):
+    clear_all(["src/pages/md/","src/pages/mdx/","local/md/","local/mdx/"])
+    reports = []
+    for config in config_list:
+        report = test(config)
+        reports.append(report)
+    return reports
+
+def test_list(filename,batch,reports_filename):
+    config_lists_map = json.load(open(filename))
+    config_list = config_lists_map[batch]
+    reports = run_config_list(config_list)
+    append_jsonl(reports,reports_filename)
+    return
+
+def expand_config_list(config):
+    config_list = [config]
+    for key,val in config.items():
+        run_list = deepcopy(config_list)
+        for entry in config_list:
+            if(type(entry[key]) == list):
+                run_list.remove(entry)
+                for output_val in entry[key]:
+                    sample_config = deepcopy(entry)
+                    sample_config[key] = output_val
+                    run_list.append(sample_config)
+        config_list = run_list
+    return config_list
+
+def test_range(filename,batch,reports_filename):
+    config_lists_map = json.load(open(filename))
+    config_list = expand_config_list(config_lists_map[batch])
+    print_list(config_list)
+    reports = run_config_list(config_list)
+    append_jsonl(reports,reports_filename)
+    return
+
 
 template = open("template.md").read()
-config_list = json.load(open("pages_count.json"))
 
-clear_all(config_list)
-report = test(config_list[0])
-
-print(report)
+#test_list("test_list.json","output","reports.jsonl")
+test_range("test_range.json","output_count","reports.jsonl")

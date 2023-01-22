@@ -1,0 +1,20 @@
+{
+    "output":{
+        "output":["server","static"],
+        "count":10,
+        "path":"src/pages/md/",
+        "ext":".md"
+    },
+    "page_count":{
+        "output":"static",
+        "count":[10,100,1000,10000],
+        "path":"src/pages/md/",
+        "ext":".md"
+    },
+    "output_count":{
+        "output":["server","static"],
+        "count":[10,100,1000,10000],
+        "path":"src/pages/md/",
+        "ext":".md"
+    }
+}
