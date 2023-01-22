@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const {page} = Astro.params;
+
+let found = true
+let Post = null
+const posts = import.meta.glob('../../../local/markdown/**/*.{md,mdx}')//relative to this component file
+
+const Post_path = Object.keys(posts).find((path)=>(path.replace(".mdx","").replace(".md","") == `../../../local/markdown/${page}`))
+
+if((typeof Post_path == "undefined")){
+    console.warn(`Astro/blog> ${page} could not be imported`)
+    found = false
+}
+if(found){
+    Post = await posts[Post_path]()
+}
+
+export async function getStaticPaths(){
+    console.log("get static patsh")
+    const posts = import.meta.glob('../../../local/markdown/**/*.{md,mdx}')
+    const static_files_paths = Object.keys(posts).map((file)=>(file.replace("../../../local/markdown/","").replace(".mdx","").replace(".md","")))
+    console.log(static_files_paths)
+    return static_files_paths.map((url)=>({params:{page:url}}))
+}
+
+---
+{Post &&
+<Layout title={Post.frontmatter.title} headings={Post.getHeadings()}>
+        <Post.Content />
+</Layout>
+}
