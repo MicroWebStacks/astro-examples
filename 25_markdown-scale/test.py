@@ -142,17 +142,18 @@ def test_range(filename,batch,reports_filename):
     config_list = expand_config_list(config_lists_map[batch])
     print_list(config_list)
     reports = run_config_list(config_list)
+    #plot
     append_jsonl(reports,reports_filename)
     return
 
 #--------- main ---------
 
 template = open("template.md").read()
-clear_path_list = ["dist","src/pages/md/","src/pages/mdx/","local/md/","local/mdx/"]
+clear_path_list = ["dist","src/pages/md/","src/pages/mdx/","local/md/","local/mdx/","local/markdown/"]
 
 
 if(len(sys.argv) == 2):
     batch = sys.argv[1]
 else:
-    batch = "local"
+    batch = "server"
 test_range("test_range.json",batch,"reports.jsonl")

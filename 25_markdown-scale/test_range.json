@@ -23,10 +23,16 @@
         "path":"src/pages/md/",
         "ext":[".md",".mdx"]
     },
-    "local":{
+    "pages_local":{
         "output":"static",
         "count":100,
         "path":["src/pages/md/","local/markdown/"],
+        "ext":".md"
+    },
+    "server":{
+        "output":["static","server"],
+        "count":10000,
+        "path":"local/markdown/",
         "ext":".md"
     }
 }
