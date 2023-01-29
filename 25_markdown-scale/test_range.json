@@ -16,5 +16,17 @@
         "count":[10,100,1000,10000],
         "path":"src/pages/md/",
         "ext":".md"
+    },
+    "mdx":{
+        "output":"static",
+        "count":100,
+        "path":"src/pages/md/",
+        "ext":[".md",".mdx"]
+    },
+    "local":{
+        "output":"static",
+        "count":100,
+        "path":["src/pages/md/","local/markdown/"],
+        "ext":".md"
     }
 }
