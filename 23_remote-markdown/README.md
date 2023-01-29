@@ -1,6 +1,9 @@
 # 23_remote-markdown
 [../23_remote-markdown](../23_remote-markdown)
 
+* adapter : node-standalone
+
+features
 * `astro-remote` works with astr v2 but not an official integration
 * Passing default components only `Heading, CodeBlock, CodeSpan, Note` no mapping of custom components, e.g. images,...
 

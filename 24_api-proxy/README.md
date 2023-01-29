@@ -1,6 +1,14 @@
 # 24_api-proxy
 [../24_api-proxy](../24_api-proxy)
 
+4 Locations where to alter server config
+
+* `/vite.config.js`
+* `/astro.config.mjs:server.port,proxy`
+* `/astro.config.mjs:site.server.port,proxy`
+* `/src/libs/inetgration-test.js:config_setup().update_config()`
+
+summary
 * can Astro proxy a service with the Vite server.proxy feature ?
     * No, Astro does not forward server.proxy to Vite
 * does Astro need a proxy to access a different port running on the same host ?

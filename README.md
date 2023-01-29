@@ -123,6 +123,8 @@ custom 404 page from : https://codepen.io/Stephane/pen/Jdozrp
 [./09_dynamic-imports](./09_dynamic-imports)
 
 * adapter : node-standalone
+* deferr loading of js on event or timeout
+* spinner while waiting
 
 This is about dynamically importing a js script only when the component logic decides to do it. In this case, after 2 seconds from window load.
 
