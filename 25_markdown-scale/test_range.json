@@ -31,7 +31,7 @@
     },
     "server":{
         "output":["static","server"],
-        "count":10000,
+        "count":1000,
         "path":"local/markdown/",
         "ext":".md"
     }

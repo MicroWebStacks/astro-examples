@@ -9,6 +9,7 @@ from pathlib import Path
 import math
 import time
 from copy import deepcopy
+import psutil
 
 
 root = Path('.')
@@ -95,11 +96,24 @@ def test(config):
 
     test_env = os.environ.copy()
     test_env["OUTPUT"] = config["output"]
-    proc = subprocess.run(["build.cmd"], env=test_env)#TODO ["pnpm","run","build"] the system cannot find the specific file
-    dir_size_bates = dir_size(join(root,"dist"))
-    if(dir_size_bates != 0):
-        report["size"] = convert_size(dir_size_bates)
-        report["size_bytes"] = dir_size_bates
+    proc = subprocess.Popen(["build.cmd"], env=test_env)#TODO ["pnpm","run","build"] the system cannot find the specific file
+
+    pid = proc.pid
+    p = psutil.Process(pid)
+    mem_info = p.memory_info()
+    max_memory = mem_info.rss
+    print(convert_size(max_memory))
+    while proc.poll() is None:
+        mem_info = p.memory_info()
+        max_memory = max(max_memory, mem_info.rss)
+        time.sleep(0.1)
+
+    print("Max memory consumption: ", convert_size(max_memory))
+
+    dir_size_bytes = dir_size(join(root,"dist"))
+    if(dir_size_bytes != 0):
+        report["size"] = convert_size(dir_size_bytes)
+        report["size_bytes"] = dir_size_bytes
         time_sec = time.time() - start_build
         report["time"] = convert_time(time_sec)
         report["time_sec"] = time_sec
