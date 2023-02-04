@@ -1,0 +1,24 @@
+[
+    {
+        "output": "static",
+        "count": 10000,
+        "path": "local/markdown/",
+        "ext": ".md",
+        "size": "7.95 MB",
+        "size_bytes": 8333492,
+        "time": "2 mn 27 s 35 ms",
+        "time_sec": 147.03571271896362,
+        "status": "pass"
+    },
+    {
+        "output": "server",
+        "count": 10000,
+        "path": "local/markdown/",
+        "ext": ".md",
+        "size": "22.32 MB",
+        "size_bytes": 23405094,
+        "time": "1 mn 5 s 771 ms",
+        "time_sec": 65.77144694328308,
+        "status": "pass"
+    }
+]
