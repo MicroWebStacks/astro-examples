@@ -5,11 +5,12 @@
         "path":"src/pages/md/",
         "ext":".md"
     },
-    "page_count":{
+    "count":{
         "output":"static",
-        "count":[10,100,1000,10000],
+        "count":[10,100,1000,10000,100000],
         "path":"src/pages/md/",
-        "ext":".md"
+        "ext":".md",
+        "title":"Pages count 10-100K"
     },
     "output_count":{
         "output":["server","static"],
@@ -21,18 +22,28 @@
         "output":"static",
         "count":100,
         "path":"src/pages/md/",
-        "ext":[".md",".mdx"]
+        "ext":[".md",".mdx"],
+        "title":"MD Vs MDX"
     },
     "pages_local":{
         "output":"static",
         "count":100,
         "path":["src/pages/md/","local/markdown/"],
-        "ext":".md"
+        "ext":".md",
+        "title":"Local Pages"
     },
     "server":{
         "output":["static","server"],
-        "count":1000,
+        "count":10000,
         "path":"local/markdown/",
-        "ext":".md"
+        "ext":".md",
+        "title":"SSG Vs SSR (10K pages)"
+    },
+    "simple":{
+        "output":"static",
+        "count":100000,
+        "path":"local/markdown/",
+        "ext":".md",
+        "title":"Test Run"
     }
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build --max-old-space-size=6000",
     "preview": "astro preview",
     "astro": "astro"
   },

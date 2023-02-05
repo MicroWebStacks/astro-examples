@@ -10,7 +10,8 @@ import math
 import time
 from copy import deepcopy
 import psutil
-
+from psutil._common import bytes2human
+import platform
 
 root = Path('.')
 
@@ -25,6 +26,7 @@ def dir_size(root_dir_str):
     return sum(f.stat().st_size for f in root_dir.glob('**/*') if f.is_file())
 
 #https://stackoverflow.com/questions/5194057/better-way-to-convert-file-sizes-in-python
+# check "bytes2human"
 def convert_size(size_bytes):
    if size_bytes == 0:
        return "0B"
@@ -33,6 +35,14 @@ def convert_size(size_bytes):
    p = math.pow(1024, i)
    s = round(size_bytes / p, 2)
    return "%s %s" % (s, size_name[i])
+
+#https://github.com/giampaolo/psutil/blob/master/scripts/meminfo.py
+def pprint_ntuple(nt):
+    for name in nt._fields:
+        value = getattr(nt, name)
+        if name != 'percent':
+            value = bytes2human(value)
+        print('%-10s : %7s' % (name.capitalize(), value))
 
 def convert_time(seconds):
     minutes = int(seconds / 60)
@@ -47,6 +57,19 @@ def convert_time(seconds):
         text += f"{milliseconds} ms"
     text.rstrip(" ")
     return text
+
+def print_system_info():
+    print(f"System    : {platform.system()}")
+    print(f"machine   : {platform.machine()}")
+    print(f"processor : {platform.processor()}")
+    print(f"nb cpu    : {psutil.cpu_count()}")
+    print(f"version   : {platform.version()}")
+    print(f"platform  : {platform.platform()}")
+    return
+
+def print_memory_info():
+    pprint_ntuple(psutil.virtual_memory())
+    return
 
 def clear(dir):
     if isdir(dir):
@@ -68,10 +91,12 @@ def append_jsonl(data,path):
     for entry in data:
         jsonline = json.dumps(entry)
         append(jsonline+'\n',path)
-        if("size_bytes" in entry):
-            del entry["size_bytes"]
+        if("disk_bytes" in entry):
+            del entry["disk_bytes"]
         if("time_sec" in entry):
             del entry["time_sec"]
+        if("memory_bytes" in entry):
+            del entry["memory_bytes"]
         jsonline = json.dumps(entry)
         print(jsonline)
     return
@@ -81,45 +106,69 @@ def clear_all(path_list):
         clear(join(root,path))
     return
 
-def test(config):
-    print(f"running test : {config}")
-    report = {}
-    file_dir = join(root,config["path"])
+def get_child_proc_rss(pid):
+    total_mem = 0
+    try:
+        parent = psutil.Process(pid)
+        children = parent.children(recursive=True)
+        children.append(parent)
+        for p in children:
+            try:
+                total_mem += p.memory_info().rss
+            except Exception as e:
+                print("Process finished :",e)
+    except Exception as e:
+        print("Process finished :",e)
+    return total_mem
 
+def run_get_max_mem(commands,env):
+    proc = subprocess.Popen(commands, env=env)#TODO ["pnpm","run","build"] the system cannot find the specific file
+    max_memory = 0
+    while proc.poll() is None:
+        current_memory = get_child_proc_rss(proc.pid)
+        max_memory = max(max_memory, current_memory)
+        time.sleep(0.2)
+    return max_memory
+
+def create_files(config):
+    file_dir = join(root,config["path"])
     for id in range(config["count"]):
         text_id = "{:06d}".format(id)
         content = f"# Page {text_id}\n" + template
         save(content,file_dir+text_id+config["ext"])
+    return
+
+def test(config):
+    print(f"running test : {config}")
+
+    create_files(config)
+
+    print_system_info()
+    print_memory_info()
 
     report = config
     start_build = time.time()
 
     test_env = os.environ.copy()
     test_env["OUTPUT"] = config["output"]
-    proc = subprocess.Popen(["build.cmd"], env=test_env)#TODO ["pnpm","run","build"] the system cannot find the specific file
+    max_memory = run_get_max_mem(["build.cmd"], test_env)
 
-    pid = proc.pid
-    p = psutil.Process(pid)
-    mem_info = p.memory_info()
-    max_memory = mem_info.rss
-    print(convert_size(max_memory))
-    while proc.poll() is None:
-        mem_info = p.memory_info()
-        max_memory = max(max_memory, mem_info.rss)
-        time.sleep(0.1)
+    print(f"Max memory consumption: {convert_size(max_memory)}")
 
-    print("Max memory consumption: ", convert_size(max_memory))
+    report["memory_bytes"] = max_memory
+    report["memory"] = convert_size(max_memory)
 
     dir_size_bytes = dir_size(join(root,"dist"))
     if(dir_size_bytes != 0):
-        report["size"] = convert_size(dir_size_bytes)
-        report["size_bytes"] = dir_size_bytes
+        report["disk"] = convert_size(dir_size_bytes)
+        report["disk_bytes"] = dir_size_bytes
         time_sec = time.time() - start_build
         report["time"] = convert_time(time_sec)
         report["time_sec"] = time_sec
         report["status"] = "pass"
     else:
         report["status"] = "fail"
+    
     return report
 
 def run_config_list(config_list):
@@ -157,6 +206,7 @@ def test_range(filename,batch,reports_filename):
     print_list(config_list)
     reports = run_config_list(config_list)
     #plot
+    print("\njsonl report:")
     append_jsonl(reports,reports_filename)
     return
 
