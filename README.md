@@ -384,6 +384,8 @@ summary
 # 25_markdown-scale
 [./25_markdown-scale](./25_markdown-scale)
 
+Benchmark results charts : https://microwebstacks.github.io/astro-examples/
+
 * scalability stress test and limiting facrors (e.g. 15000 pages)
 * markdown pages generator
     * pages markdown
