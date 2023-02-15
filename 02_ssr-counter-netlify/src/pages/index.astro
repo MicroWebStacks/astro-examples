@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { get_count, increment } from './shared';
+
+const proj = "02_ssr-counter-netlify"
+
+increment()
+const current_count = get_count()
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Astro page1 count = <span class="text-gradient">{current_count}</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<a href="/page2">page2</a>
+		<p>shared global var demo. reload the page to increment the counter. All pages share the same counter</p>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
