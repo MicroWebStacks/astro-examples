@@ -39,6 +39,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
+* live demo on netlify : https://astro-ssr-counters.netlify.app/
 
 # 02_ssr-counter-cloudflare
 [./02_ssr-counter-cloudflare](./02_ssr-counter-cloudflare)
@@ -47,6 +48,8 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
+* live demo on cloudflare : https://astro-examples-ssr-counter.pages.dev/
+
 # 02_ssr-counter-vercel
 [./02_ssr-counter-vercel](./02_ssr-counter-vercel)
 
@@ -54,6 +57,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
+* live demo in vercel : https://astro-ssr-counters.vercel.app/
 
 # 03_sse-counter
 [./03_sse-counter](./03_sse-counter)
