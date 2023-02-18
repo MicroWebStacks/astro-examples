@@ -1,1 +1,1 @@
-pnpm run preview
+node dist/server/entry.mjs
