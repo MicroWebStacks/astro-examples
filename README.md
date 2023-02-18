@@ -173,6 +173,8 @@ Not only `<Card title="Test" client:visible/>` is not supported by astro as dire
 
 Note: Testing this example only makes sense in production mode (with build and run). Only gitpod left because it has a shell script that builds and runs by default while the others (StackBliz and Codesandbox) run in preview mode.
 
+<img src="./media/09_dynamic-imports.png" width="400">
+
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/09_dynamic-imports)
 
 # 10_prerender
