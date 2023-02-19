@@ -1,9 +1,12 @@
 # 09_dynamic-imports
 [../09_dynamic-imports](../09_dynamic-imports)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 * adapter : node-standalone
-* deferr loading of js on event or timeout
-* spinner while waiting
+* Deferr loading of js on event or timeout
+    * `setTimeout`
+    * [Dynamic import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
+    * Spinner while waiting : Astro Component with animated SVG
 
 This is about dynamically importing a js script only when the component logic decides to do it. In this case, after 2 seconds from window load.
 

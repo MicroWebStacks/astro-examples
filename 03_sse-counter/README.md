@@ -1,7 +1,11 @@
 # 03_sse-counter
 [../03_sse-counter](../03_sse-counter)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 * adapter : node-standalone
+* [Server Endpoints](https://docs.astro.build/en/core-concepts/endpoints/#server-endpoints-api-routes)
+* [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
+
 
 SSE: Server Sent Events. global var using a timer and Emitter
 

@@ -3,6 +3,9 @@
 
 Decentralized scoping js execution on an Astro component used mutiple times on the same page
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+
 Constraints :
 * decentralized : not conflicting with multiple integrations using the same concept
 * no global state management : which is not easy to fulfill when using components from different sources

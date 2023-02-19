@@ -1,6 +1,7 @@
 # 02_ssr-counter
 [../02_ssr-counter](../02_ssr-counter)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 * adapter : node-standalone
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter

@@ -1,6 +1,11 @@
 # 13_client-cookie-counter
 [../13_client-cookie-counter](../13_client-cookie-counter)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+* Astro API [Astro.cookies.get()](https://docs.astro.build/en/guides/server-side-rendering/#astrocookies)
+
+
 This counter uses a cookie `counter=1` to persist through pages relaod despite being a client counter.
 
 For Astro SSR there is a simplicity advantage for using a cookie over using client sotrage :
@@ -17,4 +22,4 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 ## references
 * https://stackoverflow.com/questions/73341205/why-does-the-icon-in-this-astro-svelte-component-flicker-on-refresh/74873656#74873656
 
-* todo : check example with blocling head script can solve ssg
+* todo : check example with blocking head script can solve ssg

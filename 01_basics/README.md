@@ -3,6 +3,9 @@
 
 This is a minimal example that shows the node version running
 
+* Layout [Slots](https://docs.astro.build/en/core-concepts/astro-components/#slots)
+
+
 <img src="../media/01_basics.png" width="400">
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/01_basics)

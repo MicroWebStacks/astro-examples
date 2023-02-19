@@ -1,6 +1,9 @@
 # 19_images-integration
 [../19_images-integration](../19_images-integration)
 
+* adapter : node-standalone
+* integration : image
+
 example using astrojs/image integration
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/19_images-integration)
