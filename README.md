@@ -6,6 +6,9 @@ showcase examples for isolated simple usage patterns
 
 This is a minimal example that shows the node version running
 
+* Layout [Slots](https://docs.astro.build/en/core-concepts/astro-components/#slots)
+
+
 <img src="./media/01_basics.png" width="400">
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/01_basics)
@@ -17,6 +20,7 @@ This is a minimal example that shows the node version running
 # 02_ssr-counter
 [./02_ssr-counter](./02_ssr-counter)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 * adapter : node-standalone
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
@@ -35,6 +39,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 02_ssr-counter-netlify
 [./02_ssr-counter-netlify](./02_ssr-counter-netlify)
 
+* integration : [@astrojs/netlify](https://docs.astro.build/en/guides/integrations-guide/netlify/)
 * adapter : netlify
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
@@ -44,6 +49,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 02_ssr-counter-cloudflare
 [./02_ssr-counter-cloudflare](./02_ssr-counter-cloudflare)
 
+* integration : [cloudflare](https://docs.astro.build/en/guides/integrations-guide/cloudflare/)
 * adapter : cloudflare
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
@@ -53,6 +59,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 02_ssr-counter-vercel
 [./02_ssr-counter-vercel](./02_ssr-counter-vercel)
 
+* integration : [vercel](https://docs.astro.build/en/guides/integrations-guide/vercel/)
 * adapter : vercel
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
@@ -62,6 +69,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 02_ssr-counter-denodeploy
 [./02_ssr-counter-denodeploy](./02_ssr-counter-denodeploy)
 
+* integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
 * adapter : deno
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
@@ -73,7 +81,11 @@ shared global var demo. reload the page to increment the counter. All pages shar
 # 03_sse-counter
 [./03_sse-counter](./03_sse-counter)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 * adapter : node-standalone
+* [Server Endpoints](https://docs.astro.build/en/core-concepts/endpoints/#server-endpoints-api-routes)
+* [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
+
 
 SSE: Server Sent Events. global var using a timer and Emitter
 
@@ -93,6 +105,11 @@ requires Node18 Node18 for ReadableStream(), currently only on Gitpod
 
 A simple approach for multiple instances of a component. A `<script>` is included once. It initiates all components of a class on page load without requiring unique identification
 
+* Card [Astro Component](https://docs.astro.build/en/core-concepts/astro-components/)
+    * [Client-side Scripts](https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts)
+    * [Css Styles](https://docs.astro.build/en/core-concepts/astro-components/#css-styles)
+
+
 <img src="./media/04_client-counters.png" width="400">
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/04_client-counters)
@@ -106,6 +123,9 @@ A simple approach for multiple instances of a component. A `<script>` is include
 [./05_client-uid-counters](./05_client-uid-counters)
 
 Decentralized scoping js execution on an Astro component used mutiple times on the same page
+
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
 
 Constraints :
 * decentralized : not conflicting with multiple integrations using the same concept
@@ -134,6 +154,11 @@ Optionally:
 
 Using unified config for all of `astro.config.mjs`, `.astro` and `.js` server files
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+* [astro-xelement](https://github.com/aFuzzyBear/xelement)
+
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/06_astro-xelement)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/06_astro-xelement)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/06_astro-xelement)
@@ -142,6 +167,11 @@ Using unified config for all of `astro.config.mjs`, `.astro` and `.js` server fi
 [./07_env-config](./07_env-config)
 
 using environment variables from file in `astro.config.mjs` and `.js` server files
+
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+* [dotenv](https://github.com/motdotla/dotenv#readme)
+
 
 * todo test with loadEnv from 'vite'
 
@@ -154,6 +184,14 @@ using environment variables from file in `astro.config.mjs` and `.js` server fil
 
 Page not found redirect to 404
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* output server
+    * adapter : node-standalone
+* output static
+* [dotenv](https://github.com/motdotla/dotenv#readme)
+* [Custom 404 Error page](https://docs.astro.build/en/core-concepts/astro-pages/#custom-404-error-page)
+* Dynamic Route with [Rest parameters](https://docs.astro.build/en/core-concepts/routing/#rest-parameters) `[...path].astro`
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/08_404-error-handling)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/08_404-error-handling)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/08_404-error-handling)
@@ -163,9 +201,12 @@ custom 404 page from : https://codepen.io/Stephane/pen/Jdozrp
 # 09_dynamic-imports
 [./09_dynamic-imports](./09_dynamic-imports)
 
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 * adapter : node-standalone
-* deferr loading of js on event or timeout
-* spinner while waiting
+* Deferr loading of js on event or timeout
+    * `setTimeout`
+    * [Dynamic import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
+    * Spinner while waiting : Astro Component with animated SVG
 
 This is about dynamically importing a js script only when the component logic decides to do it. In this case, after 2 seconds from window load.
 
@@ -182,20 +223,25 @@ Note: Testing this example only makes sense in production mode (with build and r
 
 This example uses the experimental `prerender` feature. index page `'/'` is prerendered while `'/rerender'` page is server side rendered on every fetch
 
-Note only Stackbliz working for this sample (Codesandbox and Gitpod wip)
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+* [Hybrid Rendering](https://docs.astro.build/en/guides/server-side-rendering/#hybrid-rendering) with `export const prerender=true`
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/10_prerender)
 
 # 11_deno-env
 [./11_deno-env](./11_deno-env)
 
+* integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
 * adapter : deno
 
 Testing environment variables in deno and deno.deploy
 
-demo : https://astro-env.deno.dev/
+live demo : https://astro-env.deno.dev/
 
 project : https://dash.deno.com/projects/astro-env
+
 
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/11_deno-env)
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/11_deno-env)
@@ -204,12 +250,12 @@ project : https://dash.deno.com/projects/astro-env
 # 12_content-collections
 [./12_content-collections](./12_content-collections)
 
-Simplest example with content collections
-* Index page is using `getCollection()` API for info retrieval and rendering of a markdown array in parallel async call
-* every page is rendered in a dynamic path `[...slug].astro` also using `getCollection()` with a filter on the slug name, because `getEntry()` takes filename as input which is not known for the query
-
-* Astro docs : https://docs.astro.build/en/guides/content-collections/
-* Astro official example : https://github.com/withastro/astro/tree/main/examples/with-content
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+* [Content Collections](https://docs.astro.build/en/guides/content-collections/)
+    * get all frontmatter meta data with [getCollection()](https://docs.astro.build/en/reference/api-reference/#getcollection)
+    * rendering of multiple Markdown pages in one page with `await Promise.all()` and [item.render()](https://docs.astro.build/en/reference/api-reference/#render)
+    * Single pages rendering in a dynamic path `[...slug].astro` with [getEntryBySlug()](https://docs.astro.build/en/reference/api-reference/#getentrybyslug)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/12_content-collections)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/12_content-collections)
@@ -219,6 +265,11 @@ Simplest example with content collections
 
 # 13_client-cookie-counter
 [./13_client-cookie-counter](./13_client-cookie-counter)
+
+* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
+* adapter : node-standalone
+* Astro API [Astro.cookies.get()](https://docs.astro.build/en/guides/server-side-rendering/#astrocookies)
+
 
 This counter uses a cookie `counter=1` to persist through pages relaod despite being a client counter.
 
@@ -236,7 +287,7 @@ Note : For a demo using cookies, the Astro.cookies could only be read in Gitpod
 ## references
 * https://stackoverflow.com/questions/73341205/why-does-the-icon-in-this-astro-svelte-component-flicker-on-refresh/74873656#74873656
 
-* todo : check example with blocling head script can solve ssg
+* todo : check example with blocking head script can solve ssg
 
 # 14_client-storage-counter
 [./14_client-storage-counter](./14_client-storage-counter)

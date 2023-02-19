@@ -6,9 +6,6 @@ import {int_test} from './src/libs/integration-test'
 
 export default defineConfig({
   output: "server",
-  experimental: {
-    contentCollections: true,
-  },
   adapter: node({
     mode: 'standalone'
   }),

@@ -18,7 +18,7 @@ async function server_start({ address }){
 async function server_done(){
 	green_log(`astro:server:done>`)
 }
-async function build_start({ buildConfig }){
+async function build_start(){
 	green_log(`astro:build:start>`)
 }
 async function build_setup({vite, pages, target}){
