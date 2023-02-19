@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Markdown } from "astro-remote";
 import Heading from "../components/Heading.astro";
 import { suid } from '../libs/utils';
+import Card from '../components/Card.astro';
 
 const proj = "23_remote-markdown"
 
@@ -13,11 +14,15 @@ const readme = `# hello markdown
 more text
 
 dynamic vals = **${suid()}**
+
+it is also possible to render custom components in the Markdown
+<Card title="custom Card" />
 `
 
 ---
 
 <Layout title="Welcome to Astro.">
+	<Card title="What now ?" />
 	<main>
 		<h1>Astro remote <span class="text-gradient">Markdown</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
@@ -26,7 +31,7 @@ dynamic vals = **${suid()}**
 
 			<Markdown
 			content={readme}
-			components={{ Heading }}
+			components={{ Heading, Card }}
 			/>
 		</div>
 	</main>
