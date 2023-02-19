@@ -219,5 +219,5 @@ clear_path_list = ["dist","src/pages/md/","src/pages/mdx/","local/md/","local/md
 if(len(sys.argv) == 2):
     batch = sys.argv[1]
 else:
-    batch = "server"
+    batch = "simple"
 test_range("test_range.json",batch,"reports.jsonl")
