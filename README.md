@@ -519,7 +519,12 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 demo for variable persisted on redis database. reload the page to increment the counter. All pages share the same counter.
 
-.env not taken has to manually inject env var `DENO_DEPLOY_TOKEN`
+expected environment variables
+* local `DENO_DEPLOY_TOKEN` : to be manually injected in the env before calling `deploy`
+* your redis credentials, needed both locally to be injected manually and on deploy entered on the project settings
+    * REDIS_URL=******.redislabs.com
+    * REDIS_PORT=*****
+    * REDIS_PASSWORD=***********
 
 * live demo in deno deploy : https://astro-redis-counter.deno.dev/
 
