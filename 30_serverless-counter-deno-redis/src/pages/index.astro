@@ -1,20 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { get_count, increment } from './shared';
+import { get_count, increment } from './redis';
 
-const proj = "02_ssr-counter-netlify"
+const proj = "30_serverless-counter-deno-redis"
 
-increment()
-const current_count = get_count()
+await increment()
+const current_count = await get_count()
+
+const versions = Deno.version
+console.log(`index.astro> Deno ${versions.deno} ; v8 ${versions.v8} ; typescript ${versions.typescript}`)
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Astro page1 count = <span class="text-gradient">{current_count}</span></h1>
+		<h1>SSR counter = <span class="text-gradient">{current_count}</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
-		<a href="/page2">page2</a>
-		<p>shared global var demo. reload the page to increment the counter. All pages share the same counter</p>
+		<p>shared global var demo. reload the page to increment the counter.</p>
 	</main>
 </Layout>
 

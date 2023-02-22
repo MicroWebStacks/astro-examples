@@ -36,56 +36,6 @@ shared global var demo. reload the page to increment the counter. All pages shar
 [![open in Gitpod](./media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
 
 
-# 02_ssr-counter-netlify
-[./02_ssr-counter-netlify](./02_ssr-counter-netlify)
-
-* integration : [@astrojs/netlify](https://docs.astro.build/en/guides/integrations-guide/netlify/)
-* adapter : netlify
-
-shared global var demo. reload the page to increment the counter. All pages share the same counter
-
-    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
-
-* live demo on netlify : https://astro-ssr-counters.netlify.app/
-
-# 02_ssr-counter-cloudflare
-[./02_ssr-counter-cloudflare](./02_ssr-counter-cloudflare)
-
-* integration : [cloudflare](https://docs.astro.build/en/guides/integrations-guide/cloudflare/)
-* adapter : cloudflare
-
-shared global var demo. reload the page to increment the counter. All pages share the same counter
-
-    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
-
-* live demo on cloudflare : https://astro-examples-ssr-counter.pages.dev/
-
-# 02_ssr-counter-vercel
-[./02_ssr-counter-vercel](./02_ssr-counter-vercel)
-
-* integration : [vercel](https://docs.astro.build/en/guides/integrations-guide/vercel/)
-* adapter : vercel
-
-shared global var demo. reload the page to increment the counter. All pages share the same counter
-
-    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
-
-* live demo in vercel : https://astro-ssr-counters.vercel.app/
-
-# 02_ssr-counter-denodeploy
-[./02_ssr-counter-denodeploy](./02_ssr-counter-denodeploy)
-
-* integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
-* adapter : deno
-
-shared global var demo. reload the page to increment the counter. All pages share the same counter
-
-    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
-
-.env not taken has to manually inject env var `DENO_DEPLOY_TOKEN`
-
-* live demo in deno deploy : https://astro-ssr-counters.deno.dev
-
 # 03_sse-counter
 [./03_sse-counter](./03_sse-counter)
 
@@ -504,6 +454,72 @@ Benchmark results charts : https://microwebstacks.github.io/astro-examples/
 ## References
 * Discord 4k pages, static, json ~10kB/page https://discord.com/channels/830184174198718474/1066464117327659111
 * nodejs limit 1.7GB https://stackoverflow.com/questions/38558989/node-js-heap-out-of-memory
+
+# 26_serverless-counter-netlify
+[./26_serverless-counter-netlify](./26_serverless-counter-netlify)
+
+* integration : [@astrojs/netlify](https://docs.astro.build/en/guides/integrations-guide/netlify/)
+* adapter : netlify
+
+shared global var demo. reload the page to increment the counter. All pages share the same counter
+
+    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
+
+* live demo on netlify : https://astro-ssr-counters.netlify.app/
+
+# 27_serverless-counter-cloudflare
+[./27_serverless-counter-cloudflare](./27_serverless-counter-cloudflare)
+
+* integration : [cloudflare](https://docs.astro.build/en/guides/integrations-guide/cloudflare/)
+* adapter : cloudflare
+
+shared global var demo. reload the page to increment the counter. All pages share the same counter
+
+    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
+
+* live demo on cloudflare : https://astro-examples-ssr-counter.pages.dev/
+
+# 28_serverless-counter-vercel
+[./28_serverless-counter-vercel](./28_serverless-counter-vercel)
+
+* integration : [vercel](https://docs.astro.build/en/guides/integrations-guide/vercel/)
+* adapter : vercel
+
+shared global var demo. reload the page to increment the counter. All pages share the same counter
+
+    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
+
+* live demo in vercel : https://astro-ssr-counters.vercel.app/
+
+# 29_serverless-counter-denodeploy
+[./29_serverless-counter-denodeploy](./29_serverless-counter-denodeploy)
+
+* integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
+* adapter : deno
+
+shared global var demo. reload the page to increment the counter. All pages share the same counter
+
+    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
+
+.env not taken has to manually inject env var `DENO_DEPLOY_TOKEN`
+
+* live demo in deno deploy : https://astro-ssr-counters.deno.dev
+
+# 30_serverless-counter-deno-redis
+[./30_serverless-counter-deno-redis](./30_serverless-counter-deno-redis)
+
+* integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
+* adapter : deno
+* database : [redis](https://app.redislabs.com/#/databases)
+
+shared global var demo. reload the page to increment the counter. All pages share the same counter
+
+    Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
+
+.env not taken has to manually inject env var `DENO_DEPLOY_TOKEN`
+
+* live demo in deno deploy : https://astro-deno-deploy.deno.dev
+
 
 # Upcoming
 
