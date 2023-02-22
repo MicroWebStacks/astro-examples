@@ -1,1 +1,1 @@
-deployctl deploy --project=astro-ssr-counters --no-static --include=./dist ./dist/server/entry.mjs
+deployctl deploy --project=astro-redis-counter --prod --no-static --include=./dist ./dist/server/entry.mjs

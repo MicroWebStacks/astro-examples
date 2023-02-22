@@ -1,0 +1,9 @@
+[build]
+  # Set the entrypoint of your application
+  entrypoint = "./dist/server/entry.mjs"
+
+[permissions]
+  # Set the permissions for your application
+  read = true
+[allow]
+net = ["redislabs.com"]

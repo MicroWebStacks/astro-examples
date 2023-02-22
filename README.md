@@ -465,37 +465,41 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
     Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
 
-* live demo on netlify : https://astro-ssr-counters.netlify.app/
+* live demo on netlify : https://astro-serverless-counter.netlify.app/
 
 # 27_serverless-counter-cloudflare
 [./27_serverless-counter-cloudflare](./27_serverless-counter-cloudflare)
 
 * integration : [cloudflare](https://docs.astro.build/en/guides/integrations-guide/cloudflare/)
 * adapter : cloudflare
+* NODE_VERSION : 16.19.1
+* cannot rename deployment url after creation
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
     Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
 
-* live demo on cloudflare : https://astro-examples-ssr-counter.pages.dev/
+* live demo on cloudflare : https://astro-serverless-counter.pages.dev/
 
 # 28_serverless-counter-vercel
 [./28_serverless-counter-vercel](./28_serverless-counter-vercel)
 
 * integration : [vercel](https://docs.astro.build/en/guides/integrations-guide/vercel/)
 * adapter : vercel
+* free account does not deploy from github organization
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
     Note ! in serverless deployment, the in-memory state only persistes temporarily until a different instance is started
 
-* live demo in vercel : https://astro-ssr-counters.vercel.app/
+* live demo in vercel : https://astro-serverless-counter.vercel.app/
 
 # 29_serverless-counter-denodeploy
 [./29_serverless-counter-denodeploy](./29_serverless-counter-denodeploy)
 
 * integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
 * adapter : deno
+* deployment from command line
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
@@ -503,7 +507,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 .env not taken has to manually inject env var `DENO_DEPLOY_TOKEN`
 
-* live demo in deno deploy : https://astro-ssr-counters.deno.dev
+* live demo in deno deploy : https://astro-serverless-counter.deno.dev/
 
 # 30_serverless-counter-deno-redis
 [./30_serverless-counter-deno-redis](./30_serverless-counter-deno-redis)
@@ -511,6 +515,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 * integration : [deno](https://docs.astro.build/en/guides/integrations-guide/deno/)
 * adapter : deno
 * database : [redis](https://app.redislabs.com/#/databases)
+* `Deno.version` not working resulting in crash on deploy
 
 shared global var demo. reload the page to increment the counter. All pages share the same counter
 
@@ -518,7 +523,7 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 .env not taken has to manually inject env var `DENO_DEPLOY_TOKEN`
 
-* live demo in deno deploy : https://astro-deno-deploy.deno.dev
+* live demo in deno deploy : https://astro-redis-counter.deno.dev/
 
 
 # Upcoming
