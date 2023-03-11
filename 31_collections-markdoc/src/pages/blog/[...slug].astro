@@ -1,0 +1,14 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const { slug } = Astro.params;
+const entry = await getEntryBySlug('ex_doc', slug);
+console.log(`[...slug].astro>`)
+console.log(entry)
+const { Content } = await entry.render();
+
+---
+<Layout title={entry.id}>
+    <Content />
+</Layout>
