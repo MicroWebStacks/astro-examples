@@ -1,18 +1,15 @@
-# 23_remote-markdown
-[../23_remote-markdown](../23_remote-markdown)
+# 31_collections-markdoc
+[../31_collections-markdoc](../31_collections-markdoc)
 
-* adapter : node-standalone
+* integration : [@astrojs/markdoc](https://docs.astro.build/en/guides/integrations-guide/markdoc/)
+* [Content Collections](https://docs.astro.build/en/guides/content-collections/) mandatory for markdoc
 
-features
-* `astro-remote` works with astr v2 but not an official integration
-* Passing default components only `Heading, CodeBlock, CodeSpan, Note` no mapping of custom components, e.g. images,...
+## Status
+* render : OK
+* custom components : Fail
+* image colocation : Not supported
+* custom extension : Not supported
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/23_remote-markdown)
-[![open in Codesandbox](../media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/23_remote-markdown)
-[![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/23_remote-markdown)
-
-## references
-* Astro docs : https://docs.astro.build/en/guides/markdown-content/#fetching-remote-markdown
-* https://github.com/natemoo-re/astro-remote
-* demo : https://github.com/natemoo-re/astro-remote/tree/main/packages/demo
-
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc)
+[![open in Codesandbox](../media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc)
+[![open in Gitpod](../media/gitpod.svg)](https://gitpod.io/?on=gitpod#https://github.com/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc)

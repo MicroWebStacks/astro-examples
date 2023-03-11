@@ -16,4 +16,3 @@ expected environment variables
     * REDIS_PASSWORD=***********
 
 * live demo in deno deploy : https://astro-redis-counter.deno.dev/
-

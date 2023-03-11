@@ -86,9 +86,16 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"ex_doc": {
-"test_markdoc.md": {
-  id: "test_markdoc.md",
+"test_markdoc.mdoc": {
+  id: "test_markdoc.mdoc",
   slug: "test_markdoc",
+  body: string,
+  collection: "ex_doc",
+  data: any
+} & { render(): Render[".mdoc"] },
+"test_markdown.md": {
+  id: "test_markdown.md",
+  slug: "test_markdown",
   body: string,
   collection: "ex_doc",
   data: any

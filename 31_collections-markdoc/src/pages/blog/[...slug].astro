@@ -1,14 +1,21 @@
 ---
+import { getCollection } from 'astro:content';
 import { getEntryBySlug } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Heading from '../../components/Heading.astro';
+import H1 from '../../components/H1.astro';
 
 const { slug } = Astro.params;
 const entry = await getEntryBySlug('ex_doc', slug);
-console.log(`[...slug].astro>`)
-console.log(entry)
 const { Content } = await entry.render();
+
+
+export async function getStaticPaths(){
+    const blogPosts = await getCollection('ex_doc');	//for the meta data only
+    return blogPosts.map((item)=>({params:{slug:item.slug}}))
+}
 
 ---
 <Layout title={entry.id}>
-    <Content />
+    <Content components={{ Heading, H1 }}/>
 </Layout>
