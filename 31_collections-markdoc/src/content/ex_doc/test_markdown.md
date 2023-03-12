@@ -1,8 +1,8 @@
-# Markdown
+# H1 Heading
 using .md
 Hello from inside Markdoc file
 
 
-## L2 Heading
+## H2 Heading
 
 more text

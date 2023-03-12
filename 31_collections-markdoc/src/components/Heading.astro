@@ -1,18 +1,24 @@
 ---
+console.log(`Heading>${JSON.stringify(Astro.props)}`)
 type Props = {
   level: number;
 }
 const { level } = Astro.props;
+const Tag = `h${level}`
 ---
 
-<Fragment set:html={`<h${level}>`}>
-  <a href="">
+<Tag>
     <slot />
-  </a>
-<Fragment set:html={`</h${level}>`}>
+</Tag>
 
 <style>
-  :global(h1) {
+  h1{
+    color: #17475f;
+  }
+  h2{
+    color: #346b86;
+  }
+  h3{
     color: #5599bb;
   }
   a{

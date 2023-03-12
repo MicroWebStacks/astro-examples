@@ -536,9 +536,8 @@ expected environment variables
 
 ## Status
 * render : OK
-* custom components : Fail
-* image colocation : Not supported
-* custom extension : Not supported
+* custom components - nodes : OK
+* custom components - tags : wip
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc)
 [![open in Codesandbox](./media/codesandbox.svg)](https://codesandbox.io/s/github/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc)

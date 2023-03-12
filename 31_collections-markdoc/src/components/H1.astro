@@ -1,16 +1,17 @@
 ---
+console.log(`H1>${JSON.stringify(Astro.props)}`)
 const { as: Component, href } = Astro.props;
 ---
 
-<Component>
-    <a href={href}>
+<h1>
+    <a href="">
         <slot />
     </a>
-</Component>
+</h1>
 
 <style>
   h1 {
-    color: #5599bb;
+    color: #97443a;
   }
   a{
 	text-decoration: none;
