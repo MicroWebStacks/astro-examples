@@ -1,15 +1,18 @@
 ---
-const { as: Component, href } = Astro.props;
+type Props = {
+  level: number;
+}
+const { level } = Astro.props;
 ---
 
-<Component>
-    <a href={href}>
-        <slot />
-    </a>
-</Component>
+<Fragment set:html={`<h${level}>`}>
+  <a href="">
+    <slot />
+  </a>
+<Fragment set:html={`</h${level}>`}>
 
 <style>
-  h1 {
+  :global(h1) {
     color: #5599bb;
   }
   a{
