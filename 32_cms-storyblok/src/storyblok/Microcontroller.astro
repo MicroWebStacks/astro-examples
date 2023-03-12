@@ -1,0 +1,15 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import marked from 'marked'
+
+const { blok } = Astro.props
+
+const features_html = marked.parse(blok.features)
+---
+
+<article {...storyblokEditable(blok)}>
+  <h1>{blok.title}</h1>
+  <p>
+    <Fragment set:html={features_html}></Fragment>
+  </p>
+</article>

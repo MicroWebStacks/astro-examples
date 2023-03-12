@@ -11,7 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^5.1.0",
+    "@storyblok/astro": "^2.0.12",
+    "@storyblok/js": "^2.1.0",
     "astro": "^2.1.2",
-    "@astrojs/node": "^5.1.0"
+    "marked": "^4.2.12",
+    "vite": "^4.1.4"
   }
 }

@@ -1,0 +1,12 @@
+@token = {{$dotenv STORYBLOK_TOKEN}}
+
+### home
+get https://api.storyblok.com/v2/cdn/stories/home?version=draft&token={{token}}
+
+
+### uwb
+get https://api.storyblok.com/v2/cdn/stories/ultra-wide-band-dwm1001-dev?version=draft&token={{token}}
+
+
+### image
+get https://a.storyblok.com/f/205236/783x943/180ac0cfd5/07-uwb-anchor-18650-front.png
