@@ -1,16 +1,10 @@
 ---
-import { useStoryblokApi } from '@storyblok/astro'
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 import { config } from '../../config'
 import Layout from '../layouts/Layout.astro';
 
-const storyblokApi = useStoryblokApi()
 const version = import.meta.env.DEV ? "draft" : "published"
-//const api_data = await storyblokApi.get("cdn/stories/ultra-wide-band-dwm1001-dev", {version});
-//console.log(api_data)
-
 const url = `https://api.storyblok.com/v2/cdn/stories/ultra-wide-band-dwm1001-dev?version=${version}&token=${config.token}`
-
 const response = await fetch(url);
 const data = await response.json()
 const content = data.story.content;

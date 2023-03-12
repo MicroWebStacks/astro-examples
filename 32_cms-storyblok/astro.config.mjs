@@ -14,7 +14,9 @@ export default defineConfig({
       components: {
         microcontroller: 'storyblok/Microcontroller'
       },
-      apiOptions: {region: 'us'},
+      apiOptions: {
+        cache: { clear: "auto", type: "memory" },
+      },
       useCustomApi: false,
     })
   ]

@@ -1,8 +1,15 @@
 ---
+import { useStoryblokApi } from '@storyblok/astro'
 import Layout from '../layouts/Layout.astro';
 
 const proj = "32_cms-storyblok"
 
+const storyblokApi = useStoryblokApi()
+const version = import.meta.env.DEV ? "draft" : "published"
+const { data } = await storyblokApi.get('cdn/stories', {
+  version,
+  content_type: 'microcontroller',
+})
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,9 +18,14 @@ const proj = "32_cms-storyblok"
 		<p>
 			<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		</p>
-		<p>
-			<a href="/uwb" >UWB Microcontroller</a>
-		</p>
+		<h2>Stories</h2>
+		{
+			data.stories.map(story=>(
+				<p>
+					<a href={`/uc/${story.slug}`}>{story.name}</a>
+				</p>
+			))
+		}
 		<p>CMS Storyblok demo</p>
 	</main>
 </Layout>
