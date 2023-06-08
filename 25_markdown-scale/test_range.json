@@ -20,7 +20,7 @@
     },
     "mdx":{
         "output":"static",
-        "count":100,
+        "count":1000,
         "path":"src/pages/md/",
         "ext":[".md",".mdx"],
         "title":"MD Vs MDX"

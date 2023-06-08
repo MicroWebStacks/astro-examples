@@ -15,8 +15,8 @@
     "@astrojs/node": "^5.0.0-beta.1"
   },
   "devDependencies": {
-    "astro": "^2.0.2",
-    "@astrojs/mdx": "^0.15.1",
+    "astro": "^2.6.1",
+    "@astrojs/mdx": "^0.19.7",
     "gray-matter": "^4.0.3"
   }  
 }
