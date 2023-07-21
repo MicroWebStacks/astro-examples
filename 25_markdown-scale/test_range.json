@@ -41,7 +41,7 @@
     },
     "simple":{
         "output":"static",
-        "count":100,
+        "count":3000,
         "path":"local/markdown/",
         "ext":".md",
         "title":"Test Run"

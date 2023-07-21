@@ -3,6 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 
 const {page} = Astro.params;
 
+console.timeEnd('page')
+console.time('page')
+
 let found = true
 let Post = null
 const posts = import.meta.glob('../../../local/markdown/**/*.{md,mdx}')//relative to this component file
