@@ -1,0 +1,17 @@
+---
+import { getEntryBySlug, getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const { slug } = Astro.params;
+const entry = await getEntryBySlug('blog', slug);
+const { Content } = await entry.render();
+
+export async function getStaticPaths(){
+    const blogPosts = await getCollection('blog');	//for the meta data only
+    return blogPosts.map((item)=>({params:{slug:item.slug}}))
+}
+
+---
+<Layout title={entry.data.title}>
+    <Content />
+</Layout>

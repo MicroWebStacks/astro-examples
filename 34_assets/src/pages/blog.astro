@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+const allBlogPosts = await getCollection("blog");
+---
+
+{
+  allBlogPosts.map((post) => (
+    <div>
+        {console.log(post.data.cover)}
+      <Image 
+            src={post.data.cover}
+            alt={post.data.coverAlt} 
+        />
+      <h2>
+        <a href={"/blog/" + post.slug}>{post.data.title}</a>
+      </h2>
+    </div>
+  ))
+}

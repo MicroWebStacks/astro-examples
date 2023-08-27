@@ -11,6 +11,13 @@ console.log(`index.astro> node version = ${node_version}`)
 
 <Layout title="Welcome to Astro.">
 	<main>
+		<div class="menu">
+			<a href="md/colocation">markdown colocation</a>
+			<a href="md/relative">markdown relative</a>
+			<a href="/alias">alias</a>
+			<a href="/image">image</a>
+			<a href="/blog">content blog</a>
+		</div>
 		<h1>Astro <span class="text-gradient">Assets</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
@@ -48,5 +55,9 @@ console.log(`index.astro> node version = ${node_version}`)
 		background-color: white;
 		padding: 1rem;
 		border-radius: 0.4rem;
+	}
+	.menu{
+		display: flex;
+		gap:20px;
 	}
 </style>
