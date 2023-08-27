@@ -563,6 +563,7 @@ expected environment variables
 * testing Astro middleware see https://docs.astro.build/en/guides/middleware/
 
 # 34_assets
+[./34_assets](./34_assets)
 
 * testing Astro assets see https://docs.astro.build/en/guides/assets/
 
