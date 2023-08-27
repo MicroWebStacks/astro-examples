@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "paths": {
-      "@custom_assets/*": ["src/custom_assets/*"]
+      "~/custom_assets/*": ["src/custom_assets/*"]
     }
   }
 }
