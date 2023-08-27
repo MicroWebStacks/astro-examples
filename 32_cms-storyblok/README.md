@@ -3,6 +3,7 @@
 
 * integration : [@storyblok/astro](https://github.com/storyblok/storyblok-astro)
 * env variable in `.env` file `STORYBLOK_TOKEN` loaded with vite loadEnv in config.js
+* test with `story.http` using VSCode REST Client and dotenv from `.env`
 
 ## Status
 * render : WIP
