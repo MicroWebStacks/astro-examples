@@ -5,7 +5,7 @@ tasks:
   - before: |
       # Update node version and run first sample
     init: |
-      nvm install 18.12.1
+      nvm install 18.14.1
     command: |
       chmod a+x .gitpod/gitpod-setup.sh
       .gitpod/gitpod-setup.sh
