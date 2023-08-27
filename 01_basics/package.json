@@ -11,9 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "3.0.0-beta.0"
+    "astro": "3.0.0-beta.0",
+    "typescript": "^5.2.2"
   },
-  "engines" : { 
-    "node" : ">=18.2.0 <20.0.0"
+  "engines": {
+    "node": ">=18.2.0 <20.0.0"
   }
 }
