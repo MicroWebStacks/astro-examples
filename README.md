@@ -575,20 +575,6 @@ expected environment variables
     * '/md/standard' `![Tree](./tree.svg)` Working (note `![Tree](tree.svg)` will not work the './' is needed)
     * '/md/special' relative all the way back to assets `![Tree](../../assets/tree.svg)`
 
-# Upcoming
-
-* deployments : https://docs.astro.build/en/guides/deploy/
-    * AWS
-    * Google cloud
-* cms : https://docs.astro.build/en/guides/cms/
-    * Storyblock
-    * Contentful
-    * ButterCMS
-    * Prismic
-    * Sanity
-* jwt (secure cookie)
-* request specific context passing in Astro to avoid props drilling
-
 # More Astro examples
 
 ## astro-big doc
