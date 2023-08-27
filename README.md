@@ -565,15 +565,15 @@ expected environment variables
 # 34_assets
 [./34_assets](./34_assets)
 
-* testing Astro assets see https://docs.astro.build/en/guides/assets/
+* Astro assets working as expected for more details see https://docs.astro.build/en/guides/assets/
 
+tested scenarios
 
-* in .astro working in `3.0.0-beta.0` but failing with `3.0.0-rc.7`
-    * `~/assets/` works `@custom_assets/*` fails
-
-* in .md
-    * '/md/standard' `![Tree](./tree.svg)` Working (note `![Tree](tree.svg)` will not work the './' is needed)
-    * '/md/special' relative all the way back to assets `![Tree](../../assets/tree.svg)`
+* relative import within .astro file `index.astro`
+* alias usage is still a work in progress `alias.astro`
+* in .md although these two tests are identical, one of them takes the same directory path, the other a neighboring directory that a bit further away but both are strictly relative and have no special character
+    * '/md/colocation' `![Tree](./tree.svg)` Working (note `![Tree](tree.svg)` will not work the './' is needed)
+    * '/md/relative' relative all the way back to assets `![Tree](../../assets/tree.svg)`
 
 # More Astro examples
 
