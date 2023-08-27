@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import tree from '~/assets/tree.svg'
+import logo from '~/assets/Logo.png'
+
+const proj = "34_assets"
+const node_version = process.version
+console.log(`index.astro> node version = ${node_version}`)
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Astro <span class="text-gradient">Assets</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<p class="instructions">
+			This is a minimal example that checks Astro assets
+		</p>
+		<h2>Tree SVG</h2>
+		<img src={tree.src} width={tree.width} height={tree.height} alt="A vector sinple green Tree." />
+		<h2>Logo PNG</h2>
+		<img src={logo.src} width={logo.width} height={logo.height} alt="A Logo For Micro Web Stacks." />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>

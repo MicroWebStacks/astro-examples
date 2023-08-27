@@ -1,0 +1,20 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "3.0.0-beta.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.14.1 <20.0.0"
+  }
+}
