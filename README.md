@@ -580,7 +580,11 @@ tests
     * SVG : Not OK, as svg rendered within an image tag which deprive it from text selection capabilities, probably not being the main use case for the Image component and needed for some Hero images that do not consider the text to be an important use case
 
 * content collections : OK. import image with checks
-
+# ideas
+* SSR Node RAM consumption
+* fix astro middleware
+* glob import of a list of Astro components
+* custom client directive for predictive load before client visible
 # More Astro examples
 
 ## astro-big doc
