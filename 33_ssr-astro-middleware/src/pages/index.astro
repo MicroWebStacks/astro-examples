@@ -1,45 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { suid } from '../libs/utils';
-import {get,set} from './page-data'
 
-const proj = "21_ssr-cache-middleware"
-
-const timeout = 2000
+const proj = "33_ssr-astro-middleware"
 
 const data = Astro.locals;
 console.log(`locals.title = ${data.title}`)
-let uid = get()
-if(uid == 0){
-	uid = suid()
-	set(uid)//TODO update hash within set(uid)
-	console.log(`index> assigning new id (${uid}) to '${Astro.url.pathname}'`)
-}else{
-	console.log(`index> existing id (${uid}) in '${Astro.url.pathname}'`)
-}
 
-//hash = ETag
-Astro.response.headers.set("ETag",uid)
-
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-await delay(timeout)
 console.log(`index> done`)
 
 
 
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={data.title}>
 	<main>
-		<h1>Server cache <span class="text-gradient">{uid}</span></h1>
+		<h1>Astro <span class="text-gradient">Middleware</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
 		<p class="instructions">
-			example for testing server cache. Fresh load has {timeout} ms delay.
+			example for testing Astro middleware
 		</p>
-		<p class="client"></p>
-		<button class="update">update (spoil cache)</button>
 	</main>
 </Layout>
 
@@ -70,15 +49,3 @@ console.log(`index> done`)
 		border-radius: 0.4rem;
 	}
 </style>
-
-<script>
-	import {async_put,suid} from '../libs/utils'
-	document.querySelector(".update").onclick = ()=>{
-		const newVal = suid()
-		console.log(`updating with '${newVal}'`)
-		async_put("/api/update",{value:newVal}).then((resp)=>{
-			console.log(newVal)
-			console.log(resp)
-		})
-	}
-</script>
