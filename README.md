@@ -29,6 +29,16 @@ shared global var demo. reload the page to increment the counter. All pages shar
 
 <img src="./media/02_ssr-counter.png" width="400">
 
+* SSR Memory profiling, run with `python test.py`
+
+output with the page being loaded from a browser and switching pages
+```
+Server listening on http://127.0.0.1:3000
+Max memory consumption: 4.44 MB
+Max memory consumption: 51.71 MB
+Max memory consumption: 51.71 MB
+Max memory consumption: 54.93 MB
+```
 
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/02_ssr-counter)
