@@ -611,6 +611,8 @@ simple Astro example for integration of a Kute.js morph
 
 * Live demo : https://astro-kutejs-morph.netlify.app/
 
+## References
+* https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218
 # ideas
 * SSR Node RAM consumption
 * fix astro middleware
