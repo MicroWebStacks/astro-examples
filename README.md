@@ -614,8 +614,6 @@ simple Astro example for integration of a Kute.js morph
 ## References
 * https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218
 # ideas
-* SSR Node RAM consumption
-* fix astro middleware
 * glob import of a list of Astro components
 * custom client directive for predictive load before client visible
 # More Astro examples
