@@ -593,6 +593,17 @@ tests
     * SVG : Not OK, as svg rendered within an image tag which deprive it from text selection capabilities, probably not being the main use case for the Image component and needed for some Hero images that do not consider the text to be an important use case
 
 * content collections : OK. import image with checks
+
+# 51_lib-lottie-react
+Astro example integrating lottie librarie with react
+
+* https://airbnb.design/lottie/
+* https://github.com/Gamote/lottie-react
+* groovyWalk.json from https://www.npmjs.com/package/lottie-react
+
+## references
+* https://stackoverflow.com/questions/74551923/how-to-use-lottie-react-in-astro-build-framework/74851823#74851823
+
 # ideas
 * SSR Node RAM consumption
 * fix astro middleware
@@ -632,10 +643,4 @@ Main features :
 screenshot :
 
 <img src="./media/astro-home-control.png" width="400">
-
-## astro-lottie
-
-* Github repo : https://github.com/MicroWebStacks/astro-examples_react-lottie
-* https://airbnb.design/lottie/
-* https://github.com/Gamote/lottie-react
 
