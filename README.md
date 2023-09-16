@@ -604,6 +604,12 @@ Astro example integrating lottie librarie with react
 ## references
 * https://stackoverflow.com/questions/74551923/how-to-use-lottie-react-in-astro-build-framework/74851823#74851823
 
+# 52_kutejs-morph
+simple Astro example for integration of a Kute.js morph
+
+* http://thednp.github.io/kute.js/svgMorph.html
+
+
 # ideas
 * SSR Node RAM consumption
 * fix astro middleware
