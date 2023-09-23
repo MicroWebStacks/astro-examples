@@ -616,6 +616,7 @@ simple Astro example for integration of a Kute.js morph
 # ideas
 * glob import of a list of Astro components
 * custom client directive for predictive load before client visible
+* check math katex for mdx examples
 # More Astro examples
 
 ## astro-big doc
