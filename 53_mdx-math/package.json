@@ -1,0 +1,27 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "3.1.2",
+    "@astrojs/mdx": "^1.1.0",
+    "@mdx-js/mdx": "^2.3.0"
+  },
+  "devDependencies": {
+    "rehype-mathjax": "^4.0.2",
+    "remark-math": "^5.1.1",
+    "unist-util-visit": "^4.1.1",
+    "rehype-katex": "^6.0.2"
+  },
+  "engines": {
+    "node": ">=18.14.1 <20.0.0"
+  }
+}
