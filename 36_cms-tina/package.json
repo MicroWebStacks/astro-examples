@@ -11,9 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "3.1.2"
-  },
-  "devDependencies": {
+    "@tinacms/cli": "^1.5.29",
+    "astro": "3.1.2",
+    "tinacms": "^1.5.20"
   },
   "engines": {
     "node": ">=18.14.1 <20.0.0"
