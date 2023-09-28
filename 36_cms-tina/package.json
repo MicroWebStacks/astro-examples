@@ -11,15 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "3.1.2",
-    "@astrojs/mdx": "^1.1.0",
-    "@mdx-js/mdx": "^2.3.0"
+    "astro": "3.1.2"
   },
   "devDependencies": {
-    "rehype-mathjax": "^4.0.2",
-    "remark-math": "^5.1.1",
-    "unist-util-visit": "^4.1.1",
-    "rehype-katex": "^6.0.2"
   },
   "engines": {
     "node": ">=18.14.1 <20.0.0"
