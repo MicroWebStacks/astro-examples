@@ -218,8 +218,8 @@ project : https://dash.deno.com/projects/astro-env
 # 12_content-collections
 [./12_content-collections](./12_content-collections)
 
-* integration : [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
-* adapter : node-standalone
+* markdown with image optimization
+* using node standalone
 * [Content Collections](https://docs.astro.build/en/guides/content-collections/)
     * get all frontmatter meta data with [getCollection()](https://docs.astro.build/en/reference/api-reference/#getcollection)
     * rendering of multiple Markdown pages in one page with `await Promise.all()` and [item.render()](https://docs.astro.build/en/reference/api-reference/#render)
