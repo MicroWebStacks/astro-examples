@@ -1,0 +1,19 @@
+---
+import { cache_has,cache_get,cache_set } from './cache';
+export interface Props {
+	name?: string;
+}
+
+const { name = "default" } = Astro.props;
+
+let html = ""
+if(cache_has(name) && import.meta.env.PROD){
+    html = cache_get(name)
+}else{
+    console.log(` ** rendering ** '${name}' => cache_set()`)
+    html = await Astro.slots.render(name);
+    cache_set(name,html)
+}
+
+---
+<Fragment set:html={html} />
