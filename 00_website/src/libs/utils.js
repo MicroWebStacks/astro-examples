@@ -1,9 +1,14 @@
 import {promises as fs} from 'fs';
 import { readFile } from 'fs/promises';
-import {dirname,join} from 'path'
+import {dirname} from 'path'
 import {createHash} from 'crypto';
 import yaml from 'js-yaml';
 
+
+async function load_text(abs_path){
+  const text = await fs.readFile(abs_path,'utf-8')
+  return text
+}
 
 async function load_json(abs_path){
   const text = await fs.readFile(abs_path,'utf-8')
@@ -49,5 +54,6 @@ export{
   load_json,
   load_yaml,
   save_json,
-  save_file
+  save_file,
+  load_text
 }

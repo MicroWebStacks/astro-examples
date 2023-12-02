@@ -13,9 +13,14 @@ const version = example.astro.replace("^"," ")
 <div class="example container">
   <div class="title">{title}</div>
   <a class="link tag" href={example.href} target="_blank">repo</a>
-  <div class="tag"><Icon filename='astro'/>{version}</div>
-  <div class="tag">{ example.config.output}</div>
-
+  <div class="icon"><Icon filename='astro'/><div>{version}</div></div>
+  <div class="icon">
+    {(example.config.output=="server")?
+      <Icon filename='server'/>:
+      <Icon filename='documents' />
+    }
+    <div>{example.config.output}</div>
+  </div>
 </div>
 
 <style>
@@ -29,6 +34,11 @@ const version = example.astro.replace("^"," ")
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display:flex;
   flex-direction:column;
+  gap:5px;
+}
+.icon{
+  display: flex;
+  align-items: center;
   gap:5px;
 }
 .tag{
@@ -46,12 +56,5 @@ a.link{
 }
 a.link:hover{
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.3);
-}
-</style>
-
-<style is:global>
-.tag > svg{
-  height: 16px;
-  width:  16px;
 }
 </style>

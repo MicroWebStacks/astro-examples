@@ -11,6 +11,13 @@ const { filename } = Astro.props as Props;
 const filepath = join(config.rootdir,`src/assets/${filename}.svg`)
 const innerHTML = existsSync(filepath)?readFileSync(filepath).toString():"<svg/>";
 ---
+<div class="icon">
+  <Fragment set:html={innerHTML} />
+</div>
 
-<Fragment set:html={innerHTML} />
-
+<style is:global>
+div.icon > svg{
+  height: 20px;
+  width:  20px;
+ } 
+</style>

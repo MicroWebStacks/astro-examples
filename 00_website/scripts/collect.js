@@ -1,7 +1,7 @@
 import {glob} from 'glob'
 import { fileURLToPath } from 'url';
 import { join, relative, resolve, sep, dirname } from 'path';
-import { load_json, save_json } from './utils.js';
+import { load_json, save_json } from '../src/libs/utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const websitedir = dirname(dirname(__filename));

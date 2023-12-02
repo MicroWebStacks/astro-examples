@@ -2,7 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import examples from '@/examples.json'
 import Example from '@/components/Example.astro'
+import {get_entry} from '@/libs/md_utils.js'
+import {AstroMarkdown} from 'astro-markdown-render'
 
+const {tree,content} = await get_entry("01_basics")
+console.log(content)
 ---
 
 <Layout title="Welcome to Astro.">
@@ -22,7 +26,8 @@ import Example from '@/components/Example.astro'
 		<a href="https://github.com/MicroWebStacks/astro-examples#25_markdown-scale" target="_blank">github repo</a>
 		<p>This Benchmark is a Work in Progress, shall not be used as proof nor referenced in issues nor in blog posts. References should point to the <a href="https://github.com/MicroWebStacks/astro-examples#25_markdown-scale" target="_blank">github repo</a></p>
 	</div>
-	<div class="benchmark container" id="benchmark-charts"></div>			
+	<div class="benchmark container" id="benchmark-charts"></div>
+	<AstroMarkdown node={tree} data={content} />
 </Layout>
 <script src="../libs/draw_charts.js" />
 
