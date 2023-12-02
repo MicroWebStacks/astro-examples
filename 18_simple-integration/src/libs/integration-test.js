@@ -1,4 +1,4 @@
-import {green_log} from './utils'
+import {green_log} from './utils.js'
 
 
 async function config_setup({ updateConfig, config, addPageExtension, command }) {

@@ -1,8 +1,8 @@
 import node from '@astrojs/node'
 import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
-import {remarkCheck} from './src/libs/remark-check'
-import {int_test} from './src/libs/integration-test'
+import {remarkCheck} from './src/libs/remark-check.js'
+import {int_test} from './src/libs/integration-test.js'
 
 export default defineConfig({
   output: "server",

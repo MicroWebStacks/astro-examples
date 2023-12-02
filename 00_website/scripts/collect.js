@@ -31,11 +31,27 @@ async function save_samples_data(){
         const astroConfigPath = join(rootdir, dir, "astro.config.mjs");
         const config_url = `file:///${astroConfigPath.replace(/\\/g, '/')}`; // Replace backslashes with forward slashes and add three slashes after 'file:'
         const config_data = await import(config_url).then(module => module.default);
-        console.log(config_data)
+        let config = {}
+        if(Object.hasOwn(config_data,"output")){
+            config.output = config_data.output
+        }else{
+            config.output = "static"
+        }
+        if(Object.hasOwn(config_data,"adapter")){
+            config.adapter = config_data.adapter.name
+        }else{
+            config.adapter = null
+        }
+        if(Object.hasOwn(config_data,"integrations")){
+            config.integrations = config_data.integrations.map((integration)=>(integration.name))
+        }else{
+            config.inetgrations = []
+        }
         samples_data.push({
             dir: dir,
             astro: package_data.dependencies.astro,
-            href: `https://github.com/MicroWebStacks/astro-examples/tree/main/${dir}`
+            href: `https://github.com/MicroWebStacks/astro-examples/tree/main/${dir}`,
+            config:config
         })
     }
     await save_json(samples_data,join(websitedir,"examples.json"))

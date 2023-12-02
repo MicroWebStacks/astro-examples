@@ -1,6 +1,5 @@
-import node from '@astrojs/node'
 import { defineConfig } from 'astro/config';
-import {int_test} from './src/libs/integration-test'
+import {int_test} from './src/libs/integration-test.js'
 
 export default defineConfig({
   integrations: [int_test()],
