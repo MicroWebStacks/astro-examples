@@ -1,12 +1,14 @@
 import {Emitter} from '../events'
 
-export async function get({request}){
+export async function GET(){
 
     console.log("stream.js> get()")
-    
+
+    let events_listener
+
     const stream = new ReadableStream({
         start(controller){
-            const events_listener = (counter)=>{
+            events_listener = (counter)=>{
                 console.log(`stream.js> Emitter 'count' = ${counter}`)
                 const data = `data: ${JSON.stringify({counter})}\r\n\r\n`;
                 controller.enqueue(data)
@@ -16,6 +18,7 @@ export async function get({request}){
         },
         cancel(){
             console.log("stream.js> cancel()")
+            Emitter.removeListener('count', events_listener)
         }
     })
 

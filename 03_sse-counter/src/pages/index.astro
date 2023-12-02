@@ -60,4 +60,8 @@ const current_count = get_count()
 		  console.error("EventSource failed:", err);
 		  evtSource.close();
 	};	
+	window.onbeforeunload = () => {
+		console.log("onbeforeunload> Closing Gracefully");
+		evtSource.close();
+	}
 </script>
