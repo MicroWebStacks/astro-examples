@@ -133,6 +133,9 @@ async function draw_all_charts(){
     draw_chart(pages_count)
 }
 
-Accessibility(Highcharts);
+//error   Cannot read properties of undefined (reading 'Core/Globals.js')
+//File:
+//  D:\Dev\MicroWebStacks\astro\astro-examples\00_website\node_modules\.pnpm\highcharts@11.2.0\node_modules\highcharts\modules\accessibility.js:10:561     
+//Accessibility(Highcharts);
 
 draw_all_charts().then(console.log("done"))
