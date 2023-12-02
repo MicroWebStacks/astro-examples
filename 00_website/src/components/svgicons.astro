@@ -1,0 +1,16 @@
+---
+//https://ellodave.dev/blog/article/using-svgs-as-astro-components-and-inline-css/
+import {existsSync,readFileSync} from 'fs'
+import { config } from '@/config';
+import {join} from 'path'
+export interface Props {
+  filename: string;
+}
+
+const { filename } = Astro.props as Props;
+const filepath = join(config.rootdir,`src/assets/${filename}.svg`)
+const innerHTML = existsSync(filepath)?readFileSync(filepath).toString():"<svg/>";
+---
+
+<Fragment set:html={innerHTML} />
+

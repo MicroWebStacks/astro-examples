@@ -47,9 +47,10 @@ async function save_samples_data(){
         }else{
             config.inetgrations = []
         }
+        const astro = package_data.dependencies.astro?package_data.dependencies.astro:package_data.devDependencies.astro 
         samples_data.push({
             dir: dir,
-            astro: package_data.dependencies.astro,
+            astro: astro,
             href: `https://github.com/MicroWebStacks/astro-examples/tree/main/${dir}`,
             config:config
         })

@@ -218,6 +218,7 @@
   },
   {
     "dir": "22_mdx-svg",
+    "astro": "^2.0.14",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/22_mdx-svg",
     "config": {
       "output": "server",
@@ -229,6 +230,7 @@
   },
   {
     "dir": "23_remote-markdown",
+    "astro": "3.2.2",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/23_remote-markdown",
     "config": {
       "output": "static",
@@ -238,6 +240,7 @@
   },
   {
     "dir": "24_api-proxy",
+    "astro": "^2.0.0-beta.2",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/24_api-proxy",
     "config": {
       "output": "static",
@@ -249,6 +252,7 @@
   },
   {
     "dir": "25_markdown-scale",
+    "astro": "^2.6.1",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/25_markdown-scale",
     "config": {
       "output": "static",
