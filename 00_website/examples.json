@@ -1,0 +1,203 @@
+[
+  {
+    "dir": "00_website",
+    "astro": "^3.6.4",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/00_website"
+  },
+  {
+    "dir": "01_basics",
+    "astro": "^3.5.5",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/01_basics"
+  },
+  {
+    "dir": "02_ssr-counter",
+    "astro": "2.4.4",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/02_ssr-counter"
+  },
+  {
+    "dir": "03_sse-counter",
+    "astro": "^3.6.4",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/03_sse-counter"
+  },
+  {
+    "dir": "04_client-counters",
+    "astro": "^1.8.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/04_client-counters"
+  },
+  {
+    "dir": "05_client-uid-counters",
+    "astro": "^1.6.7",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/05_client-uid-counters"
+  },
+  {
+    "dir": "06_astro-xelement",
+    "astro": "^1.6.7",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/06_astro-xelement"
+  },
+  {
+    "dir": "07_env-config",
+    "astro": "^1.6.7",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/07_env-config"
+  },
+  {
+    "dir": "08_404-error-handling",
+    "astro": "^1.7.1",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/08_404-error-handling"
+  },
+  {
+    "dir": "09_dynamic-imports",
+    "astro": "^2.0.2",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/09_dynamic-imports"
+  },
+  {
+    "dir": "10_prerender",
+    "astro": "^2.0.14",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/10_prerender"
+  },
+  {
+    "dir": "11_deno-env",
+    "astro": "^1.7.1",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/11_deno-env"
+  },
+  {
+    "dir": "12_content-collections",
+    "astro": "^3.5.3",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/12_content-collections"
+  },
+  {
+    "dir": "13_client-cookie-counter",
+    "astro": "^1.6.7",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/13_client-cookie-counter"
+  },
+  {
+    "dir": "14_client-storage-counter",
+    "astro": "^1.7.1",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/14_client-storage-counter"
+  },
+  {
+    "dir": "15_server-cookie-counter",
+    "astro": "^1.8.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/15_server-cookie-counter"
+  },
+  {
+    "dir": "16_html-string",
+    "astro": "^2.0.14",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/16_html-string"
+  },
+  {
+    "dir": "17_dynamic-javascript",
+    "astro": "^1.8.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/17_dynamic-javascript"
+  },
+  {
+    "dir": "18_simple-integration",
+    "astro": "^1.8.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/18_simple-integration"
+  },
+  {
+    "dir": "19_images-integration",
+    "astro": "^2.0.14",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/19_images-integration"
+  },
+  {
+    "dir": "20_ssr-cache-proxy",
+    "astro": "^1.8.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/20_ssr-cache-proxy"
+  },
+  {
+    "dir": "21_ssr-cache-middleware",
+    "astro": "^1.8.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/21_ssr-cache-middleware"
+  },
+  {
+    "dir": "22_mdx-svg",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/22_mdx-svg"
+  },
+  {
+    "dir": "23_remote-markdown",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/23_remote-markdown"
+  },
+  {
+    "dir": "24_api-proxy",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/24_api-proxy"
+  },
+  {
+    "dir": "25_markdown-scale",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/25_markdown-scale"
+  },
+  {
+    "dir": "26_serverless-counter-netlify",
+    "astro": "^3.5.3",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/26_serverless-counter-netlify"
+  },
+  {
+    "dir": "27_serverless-counter-cloudflare",
+    "astro": "^2.0.10",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/27_serverless-counter-cloudflare"
+  },
+  {
+    "dir": "28_serverless-counter-vercel",
+    "astro": "^2.0.10",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/28_serverless-counter-vercel"
+  },
+  {
+    "dir": "29_serverless-counter-denodeploy",
+    "astro": "^2.0.14",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/29_serverless-counter-denodeploy"
+  },
+  {
+    "dir": "30_serverless-counter-deno-redis",
+    "astro": "^2.0.14",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/30_serverless-counter-deno-redis"
+  },
+  {
+    "dir": "31_collections-markdoc",
+    "astro": "^2.4.4",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc"
+  },
+  {
+    "dir": "32_cms-storyblok",
+    "astro": "^2.1.2",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/32_cms-storyblok"
+  },
+  {
+    "dir": "33_ssr-astro-middleware",
+    "astro": "^3.0.13",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/33_ssr-astro-middleware"
+  },
+  {
+    "dir": "34_assets",
+    "astro": "3.0.0-rc.7",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/34_assets"
+  },
+  {
+    "dir": "35_mdx-math",
+    "astro": "^3.4.3",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/35_mdx-math"
+  },
+  {
+    "dir": "36_cms-tina",
+    "astro": "3.1.2",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/36_cms-tina"
+  },
+  {
+    "dir": "37_ssr-forms",
+    "astro": "^3.4.3",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/37_ssr-forms"
+  },
+  {
+    "dir": "38_cached-component",
+    "astro": "^3.5.5",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/38_cached-component"
+  },
+  {
+    "dir": "51_lib-lottie-react",
+    "astro": "^1.6.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/51_lib-lottie-react"
+  },
+  {
+    "dir": "52_kutejs-morph",
+    "astro": "3.1.0",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/52_kutejs-morph"
+  }
+]

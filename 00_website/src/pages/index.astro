@@ -1,42 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import examples from '@/examples.json'
+import Example from '@/components/Example.astro'
 
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<div class="main">
 		<h1>Astro Examples by <span class="text-gradient">Micro Web Stacks</span></h1>
 		<p class="instructions">
 			Astro design patterns examples, client-server state management, markdown, caching
 		</p>
-	</main>
+	</div>
+	<div class="examples container">
+		{examples.map((example)=>
+			<Example example={example} />
+		)}
+	</div>
+	<div class="main">
+		<h1>Astro SSR SSG Benchmark</h1>
+		<a href="https://github.com/MicroWebStacks/astro-examples#25_markdown-scale" target="_blank">github repo</a>
+		<p>This Benchmark is a Work in Progress, shall not be used as proof nor referenced in issues nor in blog posts. References should point to the <a href="https://github.com/MicroWebStacks/astro-examples#25_markdown-scale" target="_blank">github repo</a></p>
+	</div>
+	<div class="benchmark container" id="benchmark-charts"></div>			
 </Layout>
+<script src="./draw_charts.js" />
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
+.main {
+	margin: auto;
+	padding: 1.5rem;
+}
+h1 {
+	font-size: 3rem;
+	font-weight: 800;
+	margin: 0;
+}
+.text-gradient {
+	background-image: var(--accent-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 400%;
+	background-position: 0%;
+}
+.instructions {
+	line-height: 1.6;
+	margin: 1rem 0;
+	border: 1px solid rgba(var(--accent), 25%);
+	background-color: white;
+	padding: 1rem;
+	border-radius: 0.4rem;
+}
+.examples.container{
+	padding: 1.5rem;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+.gradient {
+  width: auto;
+  background: repeating-linear-gradient( -90deg, #f9f9f9, #f9f9f9 20px, #cccccc 21px);
+  background-size: 100% 21px;
+}
+.benchmark.container{
+	max-width: 800px;
+	margin: auto;
+}
 </style>

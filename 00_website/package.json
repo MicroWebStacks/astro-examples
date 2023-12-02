@@ -8,11 +8,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "collect": "node scripts/collect.js"
   },
   "dependencies": {
-    "astro": "^3.5.5",
-    "typescript": "^5.2.2"
+    "astro": "^3.6.4",
+    "glob": "^10.3.10",
+    "highcharts": "^11.2.0",
+    "js-yaml": "^4.1.0"
   },
   "engines": {
     "node": ">=18.14.1 <20.0.0"
