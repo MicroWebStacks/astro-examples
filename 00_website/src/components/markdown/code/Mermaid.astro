@@ -1,0 +1,23 @@
+---
+
+export interface Props {
+    code: string;
+    params: object;
+}
+
+const { code, params } = Astro.props as Props;
+
+const response = await fetch("https://mermaid.live/svg/",{
+  method: 'POST',
+  body: JSON.stringify({ code: code }),
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+
+const  svg_text = await response.text()
+
+---
+<div>
+    <Fragment set:html={svg_text}></Fragment>
+</div>

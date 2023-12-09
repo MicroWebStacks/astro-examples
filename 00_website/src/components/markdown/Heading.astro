@@ -1,0 +1,48 @@
+---
+import {toHast} from 'mdast-util-to-hast'
+import {toHtml} from 'hast-util-to-html'
+import Svgicons from '../svgicons.astro';
+export interface Props {
+    node: object;
+    headings: object;
+}
+
+const { node, headings } = Astro.props as Props;
+
+const HeadingLevel = `h${node.depth}`
+const heading_line = node.position.start.line
+const slug = headings.find((entry)=>(entry.line == heading_line)).slug
+---
+<HeadingLevel id={slug} class="heading bar">
+  <a href={`#${slug}`} class="link">
+    <div class="text">
+      {node.children.map((node)=>(
+        <Fragment set:html={toHtml(toHast(node))}></Fragment>
+      ))}
+    </div>
+    <div class="icon"><Svgicons filename="link"/></div>
+  </a>
+</HeadingLevel>
+
+<style>
+.heading.bar{
+  width: fit-content;
+}
+.link{
+    display: flex;
+    gap:10px;
+}
+.link:hover{
+  text-decoration: underline;
+}
+</style>
+<style is:inline>
+.icon > svg{
+    width:16px;
+    fill:rgb(101, 96, 96);
+}
+.heading.bar > a{
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

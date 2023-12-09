@@ -1,16 +1,23 @@
-//in DEV Mode process.env does not have .env content
-import { fileURLToPath } from 'url';
-import {join,dirname} from 'path'
 
-const __filename = fileURLToPath(import.meta.url);
-let __dirname = dirname(__filename);
-if(import.meta.env?.MODE == "production"){
-	__dirname = join(__dirname,'../../..')
-}
+const rootdir = Object.hasOwn(globalThis,"rootdir")?globalThis.rootdir:"."
 
 const config = {
-    rootdir: __dirname,
+    rootdir:rootdir,
+    content: "..",
+
 }
+
+config.collect_content = {
+    rootdir:config.rootdir,
+    rel_contentdir:config.content,
+    rel_outdir:"public",//because integrations cannot persist on dist before start of build
+    raw_menu:"menu.yaml",
+    debug:true,
+    tags:{
+        page:'page::([\\w-.]+)'
+    }
+}
+
 console.log(config)
 
 export {

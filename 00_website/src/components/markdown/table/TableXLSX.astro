@@ -1,0 +1,49 @@
+---
+import * as XLSX from 'xlsx';
+import * as fs from "fs";
+import { readFile, set_fs } from "xlsx";
+import {join,dirname} from 'path'
+import {config} from '@/config.js'
+
+export interface Props {
+    src: string;
+    title: string;
+    filepath: string;
+}
+
+const { src, title, filepath } = Astro.props as Props;
+
+set_fs(fs);
+const abs_file = join(config.rootdir,config.content,dirname(filepath),src)
+console.log(` * loading xlsx file '${abs_file}'`)
+const workbook = readFile(abs_file);
+
+const sheet_name = workbook.SheetNames[0]
+const worksheet = workbook.Sheets[sheet_name]
+const html = XLSX.utils.sheet_to_html(worksheet);
+
+---
+<div class="scoped table">
+    <div class="title">{title} - {sheet_name}</div>
+    <Fragment set:html={html}></Fragment>
+</div>
+
+<style is:global>
+.table{
+    margin-bottom: 20px;
+}
+.title{
+    font-size: large;
+    font-weight: bold;
+}
+.scoped.table > table,.scoped.table th,.scoped.table td {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(195, 195, 195);
+  border-spacing: 0;
+}
+
+.scoped.table th, .scoped.table td{
+    padding: 2px;
+}
+</style>

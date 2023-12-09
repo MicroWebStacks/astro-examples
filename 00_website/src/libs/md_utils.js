@@ -3,8 +3,7 @@ import {config} from '@/config.js'
 import {load_text} from '@/libs/utils.js'
 import {parse_markdown,set_config} from 'content-structure'
 
-set_config({rootdir:config.rootdir,rel_contentdir:"..",tags:{page:'page::([\\w-.]+)'}})
-
+set_config(config.collect_content)
 
 async function get_entry(name){
     const rel_path = join(name,"README.md")

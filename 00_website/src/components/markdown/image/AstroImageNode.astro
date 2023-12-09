@@ -1,0 +1,20 @@
+---
+export interface Props {
+  src: string;
+  node: object;
+}
+
+const { src, node } = Astro.props as Props;
+
+const alt = node.attributes.alt
+
+const title = Object.hasOwn(node.attributes,"title")?node.attributes.title:alt
+let style = ""
+if(node.attributes.width){
+  style += `width:${node.attributes.width}px;`
+}
+if(node.attributes.height){
+  style += `height:${node.attributes.height}px;`
+}
+---
+<img src={src} title={title} alt={alt} style={style}/>

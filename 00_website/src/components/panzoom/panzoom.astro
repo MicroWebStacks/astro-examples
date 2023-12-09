@@ -1,0 +1,101 @@
+---
+//https://ellodave.dev/blog/article/using-svgs-as-astro-components-and-inline-css/
+import PanZoomModal from './panzoommodal.astro'
+import SvgIcons from '@/components/svgicons.astro'
+export interface Props {
+  src: string;
+  alt: string;
+  title: string;
+}
+
+const { src, alt, title } = Astro.props as Props;
+const asseturl = src;
+const assetname = asseturl.substring(asseturl.lastIndexOf('/') + 1)
+console.log(` * panzoom : '${src}' : '${asseturl}'`)
+
+const isSvg = asseturl.endsWith(".svg")
+const isImg = !isSvg
+
+//<img src={asseturl} title={title} alt={alt} />
+---
+<div class="container panzoom" data-type={isSvg?"svg":"img"} data-name={assetname} data-url-map={}>
+  <div class="header open">
+    <SvgIcons filename="full-screen"/>
+  </div>
+  <div class="figure">
+    {isSvg&&
+      <object data={asseturl} name={title} data-alt={alt} />
+    }
+    {isImg&&
+      <img src={asseturl} title={title} alt={alt} />
+    }
+  </div>
+  <PanZoomModal url={asseturl} />
+</div>
+
+<style >
+.container{
+  background: white;
+  border-radius: 5px;
+  display:flex;
+  
+  justify-content: flex-start;
+  gap:0px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding:10px;
+  padding-top:20px;
+  width:fit-content;
+  border-top: 4px solid transparent;
+}
+.container:hover{
+  box-shadow: 4px 2px 8px 4px rgba(81, 81, 81, 0.5);
+  border: 0px solid transparent;
+  border-color: transparent;
+  padding-left:10px;
+  padding-top:0px;
+}
+.header{
+  display:none;
+  flex-direction: row;
+  justify-content: center;
+  background:white;
+  align-items: stretch;
+  width:98%;/* not clear why right side padding is ignored */
+  padding: 2px;
+  border-radius: 5px;
+}
+.header:hover{
+  background:#ddd;
+  cursor: pointer;
+}
+
+.container:hover .header {
+  display: flex; /* Show the header on hover */
+}
+
+.figure{
+  display: flex;
+}
+
+object{
+  max-width: 100%;
+}
+</style>
+
+<style is:inline>
+  .header > svg{
+  height: 16px;
+  width: 16px;
+  margin:0px;
+  padding:2px;
+  fill:#aaa;
+}
+.header:hover > svg{
+  fill:rgb(56, 56, 56);
+}
+
+</style>
+
+<script src="./panzoom.js" />
+

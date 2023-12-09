@@ -1,0 +1,24 @@
+---
+import {diagram_cache} from './diagram.js'
+import plantumlEncoder from "plantuml-encoder";
+import DiagramCode from './DiagramCode.astro'
+import {config} from '@/config.js'
+
+export interface Props {
+    code: string;
+    params: object;
+}
+
+const { code, params } = Astro.props as Props;
+
+async function generator(code){
+    const url = `${config.plantuml_server}/${plantumlEncoder.encode(code)}`;
+    const response = await fetch(url)
+    const svg_text = await response.text()
+    return svg_text
+}
+
+const hash = await diagram_cache(code, generator)
+---
+<DiagramCode hash={hash} code={code} params={params} />
+

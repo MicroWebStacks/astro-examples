@@ -1,0 +1,93 @@
+---
+import SvgIcons from '@/components/svgicons.astro'
+import yaml from 'js-yaml'
+import {assetToUrl} from '@/libs/utils'
+
+export interface Props {
+  code: string;
+  filepath: string;
+}
+
+const { code, filepath } = Astro.props as Props;
+
+const data = yaml.load(code)
+let should_render = true
+let src = ""
+let title = ""
+let poster = ""
+let environment_image = ""
+let error_text = ""
+//mandatory params
+if(Object.hasOwn(data,"src")){
+  src = assetToUrl(data.src,filepath)
+}else{
+  should_render = false
+  const err = "ModelViewerCode missing 'src' param ; "
+  console.warn(err)
+  error_text += err
+}
+if(Object.hasOwn(data,"title")){
+  title = data.title
+}else{
+  should_render = false
+  const err = "ModelViewerCode missing 'title' param"
+  console.warn(err)
+  error_text += err
+}
+//optional params
+if(Object.hasOwn(data,"poster")){
+  poster = assetToUrl(data.poster,filepath)
+}
+if(Object.hasOwn(data,"environment-image")){
+  environment_image = assetToUrl(data["environment-image"],filepath)
+}
+
+//potential additional params
+//camera-orbit="-10.92deg 80.06deg 58.4m"
+//field-of-view="30deg"
+
+---
+{should_render &&
+  <div class="header">
+  <div>{title}</div>
+  <a href={src} download>
+      <button class="download" data-file={src}><SvgIcons filename="download"/></button>
+  </a>
+  </div>
+  <model-viewer 
+    alt={title}
+    src={src}
+    shadow-intensity="1" 
+    camera-controls
+    touch-action="pan-y"
+    poster={(poster === "")?false:poster}
+    environment-image={(environment_image === "")?false:environment_image}
+    >
+  </model-viewer>
+}
+{!should_render &&
+  <div>{error_text}</div>
+}
+
+<script>
+  import '@google/model-viewer';
+</script>
+
+<style>
+model-viewer{
+    height:400px;
+    width: 100%;
+    background-color: #eef;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+button{
+  cursor:pointer;
+  margin: auto;
+}
+a{
+}
+</style>

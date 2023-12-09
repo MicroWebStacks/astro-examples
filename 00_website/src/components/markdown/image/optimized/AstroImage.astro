@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets"
+import sharp from 'sharp';
+import {assetUrlToPath} from '@/libs/utils'
+
+export interface Props {
+  src: string;
+  alt: string;
+  title: string;
+}
+
+const { src, alt, title=null } = Astro.props as Props;
+
+const image_path = assetUrlToPath(src)
+
+const image = sharp(image_path);
+const metadata = await image.metadata();
+const imported_image_src = {
+  src:src,
+  width:metadata.width,
+  height:metadata.height,
+  format:metadata.format
+}
+
+---
+<Image src={imported_image_src} title={title} alt={alt} />

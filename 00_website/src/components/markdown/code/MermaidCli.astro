@@ -1,0 +1,30 @@
+---
+import { run } from "@mermaid-js/mermaid-cli";
+import {promises as fs} from 'fs';
+import {join} from 'path'
+import {config} from '@/config.js'
+import { diagram_cache } from "./diagram.js";
+import DiagramCode from './DiagramCode.astro'
+
+
+export interface Props {
+    code: string;
+    params: object;
+}
+
+const { code, params } = Astro.props as Props;
+
+async function generator(code){
+    const temp_file = join(config.rootdir,config.content_out,"temp.mmd")
+    await fs.writeFile(temp_file,code)
+    const out_file = join(config.rootdir,config.content_out,"mmd.svg")
+    await run(temp_file, out_file);
+    const svg_text = await fs.readFile(out_file,'utf-8')
+    await fs.unlink(temp_file)
+    await fs.unlink(out_file)
+    return svg_text
+}
+
+const hash = await diagram_cache(code, generator)
+---
+<DiagramCode code={code} hash={hash} params={params}/>

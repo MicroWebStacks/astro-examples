@@ -1,0 +1,57 @@
+---
+import Highlighter from './Highlighter.astro'
+import Panzoom from '@/components/panzoom/panzoom.astro'
+
+export interface Props {
+    hash:string;
+    code: string;
+    params: object;
+}
+
+const {hash, code, params} = Astro.props as Props;
+const diagram_url = `/diagrams/${hash}/diagram.svg`
+let alt = ""
+let title = ""
+if(params && (params.length > 0)){
+    alt = params[0]
+    title = params[0]
+}
+
+---
+<button class="toggler" data-hash={hash}>code/diagram</button>
+<div class="diagram visible" data-hash={hash}>
+    <Panzoom src={diagram_url} alt={alt} title={title} />
+</div>
+<div class="code hidden" data-hash={hash}>
+    <Highlighter code={code} language={"javascript"} params={params} />
+</div>
+
+<style>
+.visible{
+    display:block;
+}
+.hidden{
+    display:none;
+}
+</style>
+
+<script>
+const buttons = document.querySelectorAll('button.toggler');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const hash = button.getAttribute('data-hash');
+        const diagramDiv = document.querySelector(`.diagram[data-hash="${hash}"]`);
+        const codeDiv = document.querySelector(`.code[data-hash="${hash}"]`);
+
+        // Toggle classes to switch visibility
+        if (codeDiv.classList.contains('hidden')) {
+                codeDiv.classList.replace('hidden', 'visible');
+                diagramDiv.classList.replace('visible', 'hidden');
+            } else {
+                codeDiv.classList.replace('visible', 'hidden');
+                diagramDiv.classList.replace('hidden', 'visible');
+        }
+    });
+});
+</script>

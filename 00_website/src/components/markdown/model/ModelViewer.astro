@@ -1,0 +1,49 @@
+---
+import SvgIcons from '@/components/svgicons.astro'
+
+export interface Props {
+  src: string;
+  title: string;
+}
+
+const { src, title} = Astro.props as Props;
+
+
+---
+<div class="header">
+<div>{title}</div>
+<a href={src} download>
+    <button class="download" data-file={src}><SvgIcons filename="download"/></button>
+</a>
+</div>
+<model-viewer 
+  alt={title}
+  src={src}
+  shadow-intensity="1" 
+  camera-controls
+  touch-action="pan-y"
+  >
+</model-viewer>
+
+<script>
+  import '@google/model-viewer';
+</script>
+
+<style>
+model-viewer{
+    height:400px;
+    width: 100%;
+    background-color: #eef;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+button{
+  cursor:pointer;
+  margin: auto;
+}
+a{
+}
+</style>

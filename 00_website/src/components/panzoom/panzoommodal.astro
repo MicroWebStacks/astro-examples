@@ -1,0 +1,103 @@
+---
+
+export interface Props {
+    url: string;
+}
+
+//TODO currently all pazoom items do create and ship html for svg
+//this is because the parent object .shadowRoot could be be captured to be cloned within a free Svg
+//A free Svg instead of object is important in panzoom to keep interactivity enbaled
+//object would require to pass mouse events to allow panzoom which disables interactivity
+
+const {url} = Astro.props as Props;
+
+---
+<div class="modal-background" data-state={"init"}>
+  <div class="modal">
+    <div class="modal-header close">
+      <span class="close-x">&times;</span>
+    </div>
+    <div class="modal-content">
+      <div class="modal-center" data-url={url}>
+        <!-- injected svg or img on modal init -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<style >
+.modal-background{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 5vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-background.visible{
+  display: block;
+}
+.modal {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 5px;
+  border: 1px solid #888;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width:90vw;
+  height:90vh;
+}
+.modal-header{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 5px;
+  width:100%;
+}
+.modal-content{
+  overflow: hidden;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-x {
+  color: #aaa;
+  font-size: 20px;
+  font-weight: bold;
+}
+.modal-header:hover {
+  text-decoration: none;
+  cursor: pointer;
+  background:#ddd;
+}
+.modal-header:hover > span{
+  color: #000;
+
+}
+</style>
+
+<style is:inline>
+  .header > svg{
+  height: 16px;
+  width: 16px;
+  margin:0px;
+  padding:2px;
+  fill:#aaa;
+}
+.header:hover > svg{
+  fill:rgb(56, 56, 56);
+}
+
+</style>
+
+<script src="./panzoommodal.js" />

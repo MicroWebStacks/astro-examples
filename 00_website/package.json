@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "astro": "^3.6.4",
-    "astro-markdown-render": "^0.1.2",
     "content-structure": "^0.6.8",
     "glob": "^10.3.10",
     "highcharts": "^11.2.0",

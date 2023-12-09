@@ -1,0 +1,74 @@
+---
+import Heading from './Heading.astro';
+import DataTable from './table/DataTable.astro'
+import MarkdownImage from './image/MarkdownImage.astro'
+import Code from './code/Code.astro'
+import Tag from './Tag.astro'
+import Link from './Link.astro'
+import Directive from './Directive.astro'
+import {toHast} from 'mdast-util-to-hast'
+import {toHtml} from 'hast-util-to-html'
+export interface Props {
+    node: object;
+    data: object;
+}
+
+const {node, data} = Astro.props;
+const handled_types = [ "root","heading","table","paragraph",
+                        "image","code","tag","link",
+                        "list", "listItem","textDirective"
+                    ]
+const other_type = !handled_types.includes(node.type)
+---
+{(node.type == "root") &&
+    <>
+        {node.children.map((node)=>(
+            <Astro.self node={node} data={data} />
+        ))}
+    </>
+}
+{(node.type == "paragraph") &&
+<div class="paragraph">
+    {node.children.map((node)=>(
+        <Astro.self node={node} data={data}/>
+    ))}
+</div>
+}
+{(node.type == "list") &&
+<ul>
+    {node.children.map((node)=>(
+        <Astro.self node={node} data={data}/>
+    ))}
+</ul>
+}
+{(node.type == "listItem") &&
+<li>
+    {node.children.map((node)=>(
+        <Astro.self node={node} data={data}/>
+    ))}
+</li>
+}
+{(node.type == "heading") &&
+    <Heading node={node} headings={data.headings}/>
+}
+{(node.type == "table") &&
+    <DataTable node={node} />
+}
+{(node.type == "image") &&
+    <MarkdownImage node={node}  filepath={data.path}/>
+}
+{(node.type == "code") &&
+    <Code node={node}  filepath={data.path}/>
+}
+{(node.type == "tag") &&
+    <Tag node={node}  />
+}
+{(node.type == "link") &&
+    <Link node={node}  filepath={data.path}/>
+}
+{(node.type == "textDirective") &&
+    <Directive node={node}  filepath={data.path}/>
+}
+{other_type &&
+    <Fragment set:html={toHtml(toHast(node))}></Fragment>
+}

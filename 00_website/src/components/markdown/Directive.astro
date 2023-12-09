@@ -1,0 +1,28 @@
+---
+import {relAssetToUrl} from '@/libs/utils'
+import AstroImageNode from './image/AstroImageNode.astro';
+
+export interface Props {
+    node: object;
+    filepath: string;
+}
+
+const { node, filepath} = Astro.props as Props;
+
+const is_image = (node.name == "image")
+const is_other = !is_image
+
+let asseturl = ""
+if(is_image){
+  asseturl = relAssetToUrl(node.attributes.src, filepath)
+}
+
+---
+{is_image &&
+  <AstroImageNode src={asseturl} node={node} />
+}
+{is_other &&
+  <div>{node.name}
+    {Object.keys(node.attributes).map((key)=>(<span>{key} = {node.attributes[key]}</span>))}
+  </div>
+}

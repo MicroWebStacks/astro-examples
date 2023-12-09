@@ -1,0 +1,27 @@
+---
+import {toHast} from 'mdast-util-to-hast'
+import {toHtml} from 'hast-util-to-html'
+
+export interface Props {
+    node: object;
+}
+
+const { node } = Astro.props as Props;
+
+---
+<div class="scoped table">
+    <Fragment set:html={toHtml(toHast(node))}></Fragment>
+</div>
+
+<style is:global>
+.scoped.table > table,.scoped.table th,.scoped.table td {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(195, 195, 195);
+  border-spacing: 0;
+}
+
+.scoped.table th, .scoped.table td{
+    padding: 2px;
+}
+</style>
