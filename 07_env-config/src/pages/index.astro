@@ -13,6 +13,7 @@ const env_var = get_var()
 	<main>
 		<h1>Astro Env MY_VAR <span class="text-gradient">{env_var}</span></h1>
 		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<div>direct in page {import.meta.env.MY_VAR}</div>
 	</main>
 </Layout>
 
