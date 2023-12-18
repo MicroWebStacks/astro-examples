@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const proj = "53_splide-slider"
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<a href="/">home</a>
+		<a href="/simple">simlpe slider</a>
+		<h1>Splider <span class="text-gradient">Slider</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<p class="instructions" >Demo for Splider </p>
+
+		<section id="main-slider" class="splide" aria-label="Splide Basic HTML Example">
+			<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide">Slide 01</li>
+						<li class="splide__slide">Slide 02</li>
+						<li class="splide__slide">Slide 03</li>
+						<li class="splide__slide">Slide 04</li>
+						<li class="splide__slide">Slide 05</li>
+						<li class="splide__slide">Slide 06</li>
+					</ul>
+			</div>
+		</section>
+		<section id="thumbnail-slider" class="splide" aria-label="Splide Basic HTML Example">
+			<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide">Slide 01</li>
+						<li class="splide__slide">Slide 02</li>
+						<li class="splide__slide">Slide 03</li>
+						<li class="splide__slide">Slide 04</li>
+						<li class="splide__slide">Slide 05</li>
+						<li class="splide__slide">Slide 06</li>
+					</ul>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.splide__slide{
+		height:200px;
+		background-color: bisque;
+	}
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
+
+
+<script src="./splider_thumbnail.js"></script>

@@ -670,6 +670,11 @@ simple Astro example for integration of a Kute.js morph
 
 * Live demo : https://astro-kutejs-morph.netlify.app/
 
+# 53_splider-slider
+
+* example integration of splider.js following https://splidejs.com/guides/getting-started/
+
+
 ## References
 * https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218
 # ideas
