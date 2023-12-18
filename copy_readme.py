@@ -20,7 +20,7 @@ def copy_section(section):
         section = section.replace(f"./{section_name}",f"../{section_name}")
         save_file(section_readme_file,section)
     else:
-        print(f"{section_name} is not an example directory")
+        print(f" !! (x) !! {section_name} is not an example directory")
     return
 readme = load_file("README.md")
 
