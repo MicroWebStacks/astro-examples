@@ -4,6 +4,3 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/53_splide-slider)
 
-
-## References
-* https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218

@@ -670,6 +670,9 @@ simple Astro example for integration of a Kute.js morph
 
 * Live demo : https://astro-kutejs-morph.netlify.app/
 
+## References
+* https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218
+
 # 53_splide-slider
 
 * example integration of splider.js following https://splidejs.com/guides/getting-started/
@@ -677,32 +680,42 @@ simple Astro example for integration of a Kute.js morph
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/53_splide-slider)
 
 
-## References
-* https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218
+# 54_swiper-slider
+
+* example integration of swiper.js following https://swiperjs.com/get-started
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/54_swiper-slider)
+
+
 # ideas
 * glob import of a list of Astro components
 * custom client directive for predictive load before client visible
 * check math katex for mdx examples
 # More Astro examples
 
+* Official repo examples : https://github.com/withastro/astro/tree/main/examples
+* Astro Themes : https://astro.build/themes/
+
+
 ## astro-big doc
 
-* Astro Theme submission https://astro.build/themes/details/astro-big-doc/
+Astro Theme for big doc websites. Hierarchical pages menu from files structure, table of content, Markdown rendered as CMS with Astro components for panzoom, 3D, links, interactive tables and more.
+
+* Astro Theme Link https://astro.build/themes/details/astro-big-doc/
 * Github repo : https://github.com/MicroWebStacks/astro-big-doc
-* Live demo : https://microwebstacks.github.io/astro-big-doc/blog/gallery.mdx/
+* Live demo : https://astro-big-doc.netlify.app/
 
 Main features :
 
-* Clean Markdown without js pollution : Layout injected from .astro files
-* Free Path selection : can be placed anywhere within the repo
-* Relative assets management : uses relative assets located in the same directory as the Markdown file
+* Markdown CMS : using https://github.com/MicroWebStacks/content-structure
+* Pure Markdown with GFM : Augmented with Astro components
 * Enhancement with Astro components : standard tags can be replaced with an Astro component without touching the Markdown files
 * Modal Images and Gallery Components
 * Nav Bar, Hierarchical menu, Table of Content with scroll spy,...
 
 screenshot :
 
-<img src="./media/astro-big-doc.png" width="400">
+<img src="./media/astro-big-doc.webp" width="400">
 
 
 ## astro-home-control

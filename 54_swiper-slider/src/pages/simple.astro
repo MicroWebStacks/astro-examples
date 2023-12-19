@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const proj = "54_swiper-slider"
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<a href="/">home</a>
+		<a href="/simple">simlpe slider</a>
+		<h1>Slider <span class="text-gradient">Swiper</span></h1>
+		<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+		<p class="instructions" >Demo for Swiper</p>
+
+		<div class="swiper-body">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">Slide 1</div>
+					<div class="swiper-slide">Slide 2</div>
+					<div class="swiper-slide">Slide 3</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-scrollbar"></div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.swiper-body{
+		position: relative;
+		height: 600px;
+	}
+	.swiper {
+		width: 100%;
+		height: 100%;
+	}
+	.swiper-slide {
+
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+	
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
+
+
+<script src="./simple_slider.js"></script>
