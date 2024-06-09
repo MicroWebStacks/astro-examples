@@ -1,4 +1,5 @@
 # 54_swiper-slider
+[../54_swiper-slider](../54_swiper-slider)
 
 * example integration of swiper.js following https://swiperjs.com/get-started
 

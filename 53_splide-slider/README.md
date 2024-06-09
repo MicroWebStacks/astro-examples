@@ -1,4 +1,5 @@
 # 53_splide-slider
+[../53_splide-slider](../53_splide-slider)
 
 * example integration of splider.js following https://splidejs.com/guides/getting-started/
 

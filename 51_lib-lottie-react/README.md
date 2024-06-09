@@ -1,4 +1,6 @@
 # 51_lib-lottie-react
+[../51_lib-lottie-react](../51_lib-lottie-react)
+
 Astro example integrating lottie librarie with react
 
 * https://airbnb.design/lottie/
