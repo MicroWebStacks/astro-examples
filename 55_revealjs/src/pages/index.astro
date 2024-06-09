@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const proj = "55_revealjs"
+
+---
+<Layout>
+	<main>
+		<div>
+			<h1>Slider <span class="text-gradient">Swiper</span></h1>
+			<a href={`https://github.com/MicroWebStacks/astro-examples/tree/main/${proj}`} target="_blank">github project '{proj}'</a>
+			<p class="instructions" >Demo for Reveal.js</p>
+		</div>
+		</main>
+		<div id="reveal-container" class="reveal">
+			<div class="slides">
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+				<section data-markdown>
+<textarea data-template>
+## Slide MD 1
+A paragraph with some text and a link to [Astro docs](https://docs.astro.build/en/getting-started/)
+---
+## Slide MD 2
+---
+## Slide MD 3
+</textarea>
+				</section>
+			</div>
+		</div>
+</Layout>
+
+<style>
+	#reveal-container{
+		height:50vh;
+	}
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>
+
+
+<script src="../libs/reveal_client.js"></script>
