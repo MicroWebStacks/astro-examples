@@ -111,7 +111,7 @@
   },
   {
     "dir": "12_content-collections",
-    "astro": "^3.5.3",
+    "astro": "^4.0.3",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/12_content-collections",
     "config": {
       "output": "server",
@@ -314,7 +314,7 @@
   },
   {
     "dir": "31_collections-markdoc",
-    "astro": "^2.4.4",
+    "astro": "^4.0.3",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/31_collections-markdoc",
     "config": {
       "output": "static",
@@ -412,6 +412,36 @@
     "dir": "52_kutejs-morph",
     "astro": "3.1.0",
     "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/52_kutejs-morph",
+    "config": {
+      "output": "static",
+      "adapter": null,
+      "inetgrations": []
+    }
+  },
+  {
+    "dir": "53_splide-slider",
+    "astro": "^4.0.6",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/53_splide-slider",
+    "config": {
+      "output": "static",
+      "adapter": null,
+      "inetgrations": []
+    }
+  },
+  {
+    "dir": "54_swiper-slider",
+    "astro": "^4.0.6",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/54_swiper-slider",
+    "config": {
+      "output": "static",
+      "adapter": null,
+      "inetgrations": []
+    }
+  },
+  {
+    "dir": "55_revealjs",
+    "astro": "^4.10.1",
+    "href": "https://github.com/MicroWebStacks/astro-examples/tree/main/55_revealjs",
     "config": {
       "output": "static",
       "adapter": null,
