@@ -654,6 +654,8 @@ References
 
 
 # 51_lib-lottie-react
+[./51_lib-lottie-react](./51_lib-lottie-react)
+
 Astro example integrating lottie librarie with react
 
 * https://airbnb.design/lottie/
@@ -664,6 +666,8 @@ Astro example integrating lottie librarie with react
 * https://stackoverflow.com/questions/74551923/how-to-use-lottie-react-in-astro-build-framework/74851823#74851823
 
 # 52_kutejs-morph
+[./52_kutejs-morph](./52_kutejs-morph)
+
 simple Astro example for integration of a Kute.js morph
 
 * http://thednp.github.io/kute.js/svgMorph.html
@@ -674,6 +678,7 @@ simple Astro example for integration of a Kute.js morph
 * https://stackoverflow.com/questions/77117676/kute-js-integration-on-astro/77118218#77118218
 
 # 53_splide-slider
+[./53_splide-slider](./53_splide-slider)
 
 * example integration of splider.js following https://splidejs.com/guides/getting-started/
 
@@ -681,12 +686,14 @@ simple Astro example for integration of a Kute.js morph
 
 
 # 54_swiper-slider
+[./54_swiper-slider](./54_swiper-slider)
 
 * example integration of swiper.js following https://swiperjs.com/get-started
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/MicroWebStacks/astro-examples/tree/main/54_swiper-slider)
 
 # 55_revealjs
+[./55_revealjs](./55_revealjs)
 
 * example integration of reveal.js https://revealjs.com/
 
