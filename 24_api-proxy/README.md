@@ -5,7 +5,7 @@
 
 * `/vite.config.js`
 * `/astro.config.mjs:server.port,proxy`
-* `/astro.config.mjs:site.server.port,proxy`
+* `/astro.config.mjs:vite.server.port,proxy`
 * `/src/libs/inetgration-test.js:config_setup().update_config()`
 
 summary
